@@ -1,0 +1,96 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      borderWidth: {
+        '3': '3px',
+        '4': '4px',
+        '5': '5px',
+        '6': '6px',
+      },
+      borderRadius: {
+        civic: '4px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+      },
+      fontFamily: {
+        arcade: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        pixel: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        display: ['"IBM Plex Serif"', '"IBM Plex Sans"', 'Georgia', 'serif'],
+        body: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        terminal: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+      },
+      colors: {
+        retro: {
+          bg: 'var(--color-bg)',
+          card: 'var(--color-card)',
+          border: 'var(--color-border)',
+          borderLight: 'var(--color-border-light)',
+          primary: 'var(--color-primary)',
+          primaryHover: 'var(--color-primary-hover)',
+          primaryGlow: 'var(--color-primary-glow)',
+          accent: 'var(--color-accent)',
+          accentHover: 'var(--color-accent-hover)',
+          accentGlow: 'var(--color-accent-glow)',
+          text: 'var(--color-text)',
+          muted: 'var(--color-muted)',
+          danger: 'var(--color-danger)',
+          dangerHover: 'var(--color-danger-hover)',
+          success: 'var(--color-success)',
+          shadow: 'var(--color-shadow)',
+          subtle: 'var(--color-subtle)',
+          hoverSurface: 'var(--color-hover-surface)',
+          hoverInk: 'var(--color-hover-ink)',
+          navy: 'var(--color-navy)',
+          saffron: 'var(--color-saffron)',
+        },
+        intel: {
+          DEFAULT: 'var(--color-intel)',
+          subtle: 'var(--color-intel-subtle)',
+          muted: 'var(--color-intel-muted)',
+          hover: 'var(--color-intel-hover)',
+        },
+      },
+      boxShadow: {
+        'pixel-xs': '0 1px 0 var(--color-shadow)',
+        'pixel-sm': '0 1px 2px rgba(15, 23, 42, 0.08)',
+        'pixel': '0 1px 2px rgba(15, 23, 42, 0.08)',
+        'pixel-md': '0 2px 8px rgba(15, 23, 42, 0.08)',
+        'pixel-lg': '0 4px 16px rgba(15, 23, 42, 0.1)',
+        'pixel-xl': '0 8px 24px rgba(15, 23, 42, 0.12)',
+        'pixel-inset': 'inset 0 1px 0 rgba(255, 255, 255, 0.4)',
+        'pixel-glow-primary': '0 0 0 1px var(--color-primary)',
+        'pixel-glow-accent': '0 0 0 1px var(--color-accent)',
+        'elevated': 'var(--shadow-elevated)',
+        'card-hover': 'var(--shadow-card-hover)',
+      },
+      gap: {
+        'section': 'var(--section-gap)',
+      },
+      keyframes: {
+        'count-up': {
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'intel-glow': {
+          '0%, 100%': { opacity: '0.4' },
+          '50%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'count-up': 'count-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both',
+        'intel-glow': 'intel-glow 2.4s ease-in-out infinite',
+      },
+    },
+  },
+  plugins: [],
+}

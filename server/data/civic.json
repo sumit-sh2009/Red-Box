@@ -1,0 +1,4355 @@
+{
+  "complaints": [
+    {
+      "id": "cmp_b50fea463aff",
+      "author_id": "usr_047f0b548b93",
+      "body": "The road outside Central School is badly damaged with a massive crater.",
+      "image_url": null,
+      "location_text": "Central School entrance",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-122",
+      "created_at": "2026-08-20T22:27:25.301Z",
+      "updated_at": "2026-08-20T22:27:35.988Z"
+    },
+    {
+      "id": "cmp_c56c34eb2ecb",
+      "author_id": "usr_047f0b548b93",
+      "body": "There is a huge pothole outside Central School gate affecting student commute.",
+      "image_url": null,
+      "location_text": "Outside Central School",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Education & Community",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-497",
+      "created_at": "2026-08-20T22:27:11.452Z",
+      "updated_at": "2026-08-20T22:27:22.231Z"
+    },
+    {
+      "id": "cmp_492ff453bd97",
+      "author_id": "usr_047f0b548b93",
+      "body": "The situation here is getting worse every day.",
+      "image_url": null,
+      "location_text": "Unknown road",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Other Civic Issues",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_f03268db2120",
+      "tracking_code": "CIV-2026-931",
+      "created_at": "2026-08-20T22:26:55.061Z",
+      "updated_at": "2026-08-20T22:27:08.011Z"
+    },
+    {
+      "id": "cmp_4bf0b143df8d",
+      "author_id": "usr_047f0b548b93",
+      "body": "High voltage transformer sparking intermittently creating fire hazard.",
+      "image_url": null,
+      "location_text": "Plot 45, Ward 4",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Public Safety & Hazards",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_0188701c8782",
+      "tracking_code": "CIV-2026-630",
+      "created_at": "2026-08-20T22:26:42.406Z",
+      "updated_at": "2026-08-20T22:26:50.792Z"
+    },
+    {
+      "id": "cmp_69bd75dabf01",
+      "author_id": "usr_047f0b548b93",
+      "body": "Residents have had irregular water supply since Monday.",
+      "image_url": null,
+      "location_text": "Kalyan Nagar, Ward 3",
+      "ward": "Ward 3 - East District",
+      "category": "Water Supply & Drainage",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_63f4a0376e38",
+      "tracking_code": "CIV-2026-497",
+      "created_at": "2026-08-20T22:26:26.716Z",
+      "updated_at": "2026-08-20T22:26:37.776Z"
+    },
+    {
+      "id": "cmp_f41dce94a1cf",
+      "author_id": "usr_047f0b548b93",
+      "body": "Garbage has not been collected for five days in our neighborhood.",
+      "image_url": null,
+      "location_text": "Sector 4B, Ward 2",
+      "ward": "Ward 2 - Civil Lines",
+      "category": "Sanitation & Waste",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_fc2aecd0100d",
+      "tracking_code": "CIV-2026-496",
+      "created_at": "2026-08-20T22:26:13.292Z",
+      "updated_at": "2026-08-20T22:26:21.297Z"
+    },
+    {
+      "id": "cmp_474db8616636",
+      "author_id": "usr_047f0b548b93",
+      "body": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "image_url": null,
+      "location_text": "Central School, Ward 1",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "in_progress",
+      "support_count": 1,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-458",
+      "created_at": "2026-08-20T22:25:54.245Z",
+      "updated_at": "2026-08-20T22:27:51.246Z"
+    },
+    {
+      "id": "cmp_652ad65b8953",
+      "author_id": "usr_94c3db936329",
+      "body": "High voltage transformer sparking intermittently creating fire hazard.",
+      "image_url": null,
+      "location_text": "Plot 45, Ward 4",
+      "ward": "Ward 1 - Central Zone",
+      "category": null,
+      "status": "pending_ai",
+      "support_count": 0,
+      "cluster_id": "clu_0188701c8782",
+      "tracking_code": "CIV-2026-223",
+      "created_at": "2026-08-20T22:24:59.770Z",
+      "updated_at": "2026-08-20T22:24:59.770Z"
+    },
+    {
+      "id": "cmp_f878eea7db1b",
+      "author_id": "usr_94c3db936329",
+      "body": "Residents have had irregular water supply since Monday.",
+      "image_url": null,
+      "location_text": "Kalyan Nagar, Ward 3",
+      "ward": "Ward 3 - East District",
+      "category": "Water Supply & Drainage",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_63f4a0376e38",
+      "tracking_code": "CIV-2026-781",
+      "created_at": "2026-08-20T22:24:43.390Z",
+      "updated_at": "2026-08-20T22:24:56.308Z"
+    },
+    {
+      "id": "cmp_9456aacb184d",
+      "author_id": "usr_94c3db936329",
+      "body": "Garbage has not been collected for five days in our neighborhood.",
+      "image_url": null,
+      "location_text": "Sector 4B, Ward 2",
+      "ward": "Ward 2 - Civil Lines",
+      "category": "Sanitation & Waste",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_fc2aecd0100d",
+      "tracking_code": "CIV-2026-425",
+      "created_at": "2026-08-20T22:23:51.612Z",
+      "updated_at": "2026-08-20T22:24:03.358Z"
+    },
+    {
+      "id": "cmp_500b5bb0f647",
+      "author_id": "usr_94c3db936329",
+      "body": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "image_url": null,
+      "location_text": "Central School, Ward 1",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-512",
+      "created_at": "2026-08-20T22:23:34.566Z",
+      "updated_at": "2026-08-20T22:23:47.897Z"
+    },
+    {
+      "id": "cmp_1404e6b2fde6",
+      "author_id": "usr_2945f0b17c59",
+      "body": "Garbage has not been collected for five days in our neighborhood.",
+      "image_url": null,
+      "location_text": "Sector 4B, Ward 2",
+      "ward": "Ward 2 - Civil Lines",
+      "category": "Sanitation & Waste",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_fc2aecd0100d",
+      "tracking_code": "CIV-2026-824",
+      "created_at": "2026-08-20T22:22:07.705Z",
+      "updated_at": "2026-08-20T22:22:17.371Z"
+    },
+    {
+      "id": "cmp_1d72450fe961",
+      "author_id": "usr_2945f0b17c59",
+      "body": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "image_url": null,
+      "location_text": "Central School, Ward 1",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-275",
+      "created_at": "2026-08-20T22:21:50.526Z",
+      "updated_at": "2026-08-20T22:22:03.763Z"
+    },
+    {
+      "id": "cmp_d7a29b926f7d",
+      "author_id": "usr_21d2bd6b691d",
+      "body": "Garbage has not been collected for five days in our neighborhood.",
+      "image_url": null,
+      "location_text": "Sector 4B, Ward 2",
+      "ward": "Ward 2 - Civil Lines",
+      "category": "Sanitation & Waste",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_fc2aecd0100d",
+      "tracking_code": "CIV-2026-627",
+      "created_at": "2026-08-20T22:20:46.830Z",
+      "updated_at": "2026-08-20T22:20:55.448Z"
+    },
+    {
+      "id": "cmp_e93a9a4c211f",
+      "author_id": "usr_21d2bd6b691d",
+      "body": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "image_url": null,
+      "location_text": "Central School, Ward 1",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-318",
+      "created_at": "2026-08-20T22:20:31.639Z",
+      "updated_at": "2026-08-20T22:20:42.344Z"
+    },
+    {
+      "id": "cmp_3294c50f5628",
+      "author_id": "usr_2b7ffa96c02c",
+      "body": "The road outside Central School is badly damaged with a massive crater.",
+      "image_url": null,
+      "location_text": "Central School entrance",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-362",
+      "created_at": "2026-08-20T22:14:52.064Z",
+      "updated_at": "2026-08-20T22:14:52.105Z"
+    },
+    {
+      "id": "cmp_a85fd9c74c38",
+      "author_id": "usr_2b7ffa96c02c",
+      "body": "There is a huge pothole outside Central School gate affecting student commute.",
+      "image_url": null,
+      "location_text": "Outside Central School",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Education & Community",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-935",
+      "created_at": "2026-08-20T22:14:51.997Z",
+      "updated_at": "2026-08-20T22:14:52.053Z"
+    },
+    {
+      "id": "cmp_2465c972d4cf",
+      "author_id": "usr_2b7ffa96c02c",
+      "body": "The situation here is getting worse every day.",
+      "image_url": null,
+      "location_text": "Unknown road",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_f03268db2120",
+      "tracking_code": "CIV-2026-617",
+      "created_at": "2026-08-20T22:14:51.927Z",
+      "updated_at": "2026-08-20T22:14:51.975Z"
+    },
+    {
+      "id": "cmp_2790529bdbde",
+      "author_id": "usr_2b7ffa96c02c",
+      "body": "High voltage transformer sparking intermittently creating fire hazard.",
+      "image_url": null,
+      "location_text": "Plot 45, Ward 4",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Street Lighting & Power",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_936f785eb9e8",
+      "tracking_code": "CIV-2026-452",
+      "created_at": "2026-08-20T22:14:51.868Z",
+      "updated_at": "2026-08-20T22:14:51.917Z"
+    },
+    {
+      "id": "cmp_8d36d74569c4",
+      "author_id": "usr_2b7ffa96c02c",
+      "body": "Residents have had irregular water supply since Monday.",
+      "image_url": null,
+      "location_text": "Kalyan Nagar, Ward 3",
+      "ward": "Ward 3 - East District",
+      "category": "Water Supply & Drainage",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_63f4a0376e38",
+      "tracking_code": "CIV-2026-558",
+      "created_at": "2026-08-20T22:14:51.812Z",
+      "updated_at": "2026-08-20T22:14:51.858Z"
+    },
+    {
+      "id": "cmp_f7055d6460ec",
+      "author_id": "usr_2b7ffa96c02c",
+      "body": "Garbage has not been collected for five days in our neighborhood.",
+      "image_url": null,
+      "location_text": "Sector 4B, Ward 2",
+      "ward": "Ward 2 - Civil Lines",
+      "category": "Sanitation & Waste",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_fc2aecd0100d",
+      "tracking_code": "CIV-2026-536",
+      "created_at": "2026-08-20T22:14:51.743Z",
+      "updated_at": "2026-08-20T22:14:51.801Z"
+    },
+    {
+      "id": "cmp_e2e469650919",
+      "author_id": "usr_2b7ffa96c02c",
+      "body": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "image_url": null,
+      "location_text": "Central School, Ward 1",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "in_progress",
+      "support_count": 1,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-881",
+      "created_at": "2026-08-20T22:14:42.189Z",
+      "updated_at": "2026-08-20T22:14:52.207Z"
+    },
+    {
+      "id": "cmp_0f4bb9041a18",
+      "author_id": "user_citizen_demo",
+      "body": "Students are struggling because of the damaged road near Central School again today.",
+      "image_url": null,
+      "location_text": "Near Central School",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Education & Community",
+      "status": "open",
+      "support_count": 0,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-926",
+      "created_at": "2026-08-20T20:13:04.806Z",
+      "updated_at": "2026-08-20T20:13:04.970Z"
+    },
+    {
+      "id": "cmp_review",
+      "author_id": "user_citizen_demo",
+      "body": "Something is wrong near the old mill but I cannot tell if it is a drain or a cable. Please check.",
+      "image_url": null,
+      "location_text": "Old mill road",
+      "ward": "Ward 4 - South Bay",
+      "category": "Other Civic Issues",
+      "status": "needs_review",
+      "support_count": 1,
+      "cluster_id": null,
+      "tracking_code": "CIV-2026-IEW",
+      "created_at": "2026-08-21T08:00:00.000Z",
+      "updated_at": "2026-08-21T08:00:00.000Z"
+    },
+    {
+      "id": "cmp_power",
+      "author_id": "user_citizen_demo",
+      "body": "Street lights on the industrial corridor have been dead for two weeks. Pedestrians cannot see the crossing.",
+      "image_url": null,
+      "location_text": "Industrial Corridor crossing",
+      "ward": "Ward 5 - Industrial Corridor",
+      "category": "Street Lighting & Power",
+      "status": "open",
+      "support_count": 6,
+      "cluster_id": null,
+      "tracking_code": "CIV-2026-WER",
+      "created_at": "2026-08-15T08:00:00.000Z",
+      "updated_at": "2026-08-15T08:00:00.000Z"
+    },
+    {
+      "id": "cmp_garbage",
+      "author_id": "user_citizen_demo",
+      "body": "Garbage has not been collected for five days on Lane 3, Kalyan Nagar. Stray dogs are tearing bags open.",
+      "image_url": null,
+      "location_text": "Kalyan Nagar, Lane 3",
+      "ward": "Ward 3 - East District",
+      "category": "Sanitation & Waste",
+      "status": "open",
+      "support_count": 7,
+      "cluster_id": "clu_fc2aecd0100d",
+      "tracking_code": "CIV-2026-AGE",
+      "created_at": "2026-08-21T06:15:00.000Z",
+      "updated_at": "2026-08-21T06:15:00.000Z"
+    },
+    {
+      "id": "cmp_water",
+      "author_id": "user_citizen_demo",
+      "body": "Street flooding after every shower near Sector 4B community centre. Drain is clogged with silt.",
+      "image_url": null,
+      "location_text": "Sector 4B, opposite Community Centre",
+      "ward": "Ward 2 - Civil Lines",
+      "category": "Water Supply & Drainage",
+      "status": "resolved",
+      "support_count": 11,
+      "cluster_id": null,
+      "tracking_code": "CIV-2026-TER",
+      "created_at": "2026-08-20T14:20:00.000Z",
+      "updated_at": "2026-08-21T03:49:35.405Z"
+    },
+    {
+      "id": "cmp_pothole_c",
+      "author_id": "user_citizen_demo",
+      "body": "Students are struggling because of the damaged road near Central School. Same stretch for weeks.",
+      "image_url": null,
+      "location_text": "Near Central School",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 9,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-E_C",
+      "created_at": "2026-08-20T11:05:00.000Z",
+      "updated_at": "2026-08-20T11:05:00.000Z"
+    },
+    {
+      "id": "cmp_pothole_b",
+      "author_id": "user_citizen_demo",
+      "body": "The road outside Central School is broken. Students are walking into the street to avoid the crater.",
+      "image_url": null,
+      "location_text": "Central School gate",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 14,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-E_B",
+      "created_at": "2026-08-19T09:40:00.000Z",
+      "updated_at": "2026-08-19T09:40:00.000Z"
+    },
+    {
+      "id": "cmp_pothole_a",
+      "author_id": "user_citizen_demo",
+      "body": "There is a huge pothole outside Central School. Two-wheelers are swerving into the oncoming lane.",
+      "image_url": null,
+      "location_text": "Outside Central School, Main Road",
+      "ward": "Ward 1 - Central Zone",
+      "category": "Roads & Infrastructure",
+      "status": "open",
+      "support_count": 18,
+      "cluster_id": "clu_central_school_road",
+      "tracking_code": "CIV-2026-E_A",
+      "created_at": "2026-08-18T07:10:00.000Z",
+      "updated_at": "2026-08-18T07:10:00.000Z"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "clu_central_school_road",
+      "title": "Road damage — Central School area",
+      "summary": "Multiple independent reports describe broken carriageway / a large pothole outside Central School, affecting students and two-wheelers.",
+      "category": "Roads & Infrastructure",
+      "location_text": "Outside Central School",
+      "ward": "Ward 1 - Central Zone",
+      "size": 13,
+      "support_total": 43,
+      "department": "Public Works Department (Roads)",
+      "urgency": "high",
+      "created_at": "2026-08-18T07:10:00.000Z",
+      "updated_at": "2026-08-20T22:27:35.986Z"
+    },
+    {
+      "id": "clu_fc2aecd0100d",
+      "title": "Sanitation & Waste — Sector 4B, Ward 2",
+      "summary": "Sanitation & Waste reports near Sector 4B, Ward 2",
+      "category": "Sanitation & Waste",
+      "location_text": "Sector 4B, Ward 2",
+      "ward": "Ward 2 - Civil Lines",
+      "size": 6,
+      "support_total": 7,
+      "department": "Sanitation & Solid Waste",
+      "urgency": "medium",
+      "created_at": "2026-08-20T22:14:51.793Z",
+      "updated_at": "2026-08-20T22:26:21.293Z"
+    },
+    {
+      "id": "clu_63f4a0376e38",
+      "title": "Water Supply & Drainage — Kalyan Nagar, Ward 3",
+      "summary": "Water Supply & Drainage reported at Kalyan Nagar, Ward 3.",
+      "category": "Water Supply & Drainage",
+      "location_text": "Kalyan Nagar, Ward 3",
+      "ward": "Ward 3 - East District",
+      "size": 3,
+      "support_total": 0,
+      "department": "Water Supply & Drainage",
+      "urgency": "medium",
+      "created_at": "2026-08-20T22:14:51.856Z",
+      "updated_at": "2026-08-20T22:26:37.773Z"
+    },
+    {
+      "id": "clu_936f785eb9e8",
+      "title": "Street Lighting & Power — Plot 45, Ward 4",
+      "summary": "Street Lighting & Power reported at Plot 45, Ward 4.",
+      "category": "Street Lighting & Power",
+      "location_text": "Plot 45, Ward 4",
+      "ward": "Ward 1 - Central Zone",
+      "size": 1,
+      "support_total": 0,
+      "department": "Electricity / Street Lighting",
+      "urgency": "high",
+      "created_at": "2026-08-20T22:14:51.916Z",
+      "updated_at": "2026-08-20T22:14:51.917Z"
+    },
+    {
+      "id": "clu_f03268db2120",
+      "title": "Roads & Infrastructure — Unknown road",
+      "summary": "Roads & Infrastructure reported at Unknown road.",
+      "category": "Roads & Infrastructure",
+      "location_text": "Unknown road",
+      "ward": "Ward 1 - Central Zone",
+      "size": 2,
+      "support_total": 0,
+      "department": "Municipal Administration",
+      "urgency": "medium",
+      "created_at": "2026-08-20T22:14:51.973Z",
+      "updated_at": "2026-08-20T22:27:08.009Z"
+    },
+    {
+      "id": "clu_0188701c8782",
+      "title": "Public Safety & Hazards — Plot 45, Ward 4",
+      "summary": "High voltage transformer sparking intermittently creating fire hazard.",
+      "category": "Public Safety & Hazards",
+      "location_text": "Plot 45, Ward 4",
+      "ward": "Ward 1 - Central Zone",
+      "size": 2,
+      "support_total": 0,
+      "department": "Electricity / Street Lighting",
+      "urgency": "high",
+      "created_at": "2026-08-20T22:26:50.782Z",
+      "updated_at": "2026-08-20T22:26:50.790Z"
+    }
+  ],
+  "ai_analyses": [
+    {
+      "id": "ai_59106f57f241",
+      "complaint_id": "cmp_474db8616636",
+      "workflow_id": "wf_0de0ba9269",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Roads & Infrastructure",
+      "subcategory": "Roads & Infrastructure",
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Public Works Department (PWD) / Roads",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_500b5bb0f647",
+        "cmp_1d72450fe961",
+        "cmp_e93a9a4c211f",
+        "cmp_e2e469650919",
+        "cmp_a85fd9c74c38",
+        "cmp_pothole_a",
+        "cmp_3294c50f5628",
+        "cmp_pothole_b"
+      ],
+      "summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "recommended_action": "Repair the pothole and improve drainage to prevent water accumulation.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.47
+        },
+        "python": {
+          "workflow_id": "wf_0de0ba9269",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Roads & Infrastructure",
+          "subcategory": "Roads & Infrastructure",
+          "severity": "medium",
+          "urgency": "medium",
+          "summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+          "recommended_action": "Repair the pothole and improve drainage to prevent water accumulation.",
+          "entities": [
+            "Central School"
+          ],
+          "department": "Education / Municipal Schools",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_500b5bb0f647",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_1d72450fe961",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e93a9a4c211f",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e2e469650919",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_a85fd9c74c38",
+              "score": 0.9204,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_a",
+              "score": 0.8525,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_3294c50f5628",
+              "score": 0.8051,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_b",
+              "score": 0.7807,
+              "cluster_id": "clu_central_school_road"
+            }
+          ],
+          "similar_ids": [
+            "cmp_500b5bb0f647",
+            "cmp_1d72450fe961",
+            "cmp_e93a9a4c211f",
+            "cmp_e2e469650919",
+            "cmp_a85fd9c74c38",
+            "cmp_pothole_a",
+            "cmp_3294c50f5628",
+            "cmp_pothole_b"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Education / Municipal Schools\nkeywords: school student classroom education campus\nCivic issues affecting municipal schools and student access. Often coordinates with PWD for approach roads.\n## Education / Municipal Schools\nCivic defects that block access to government schools or "
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.5,
+            "urgency": 0.5,
+            "government_priority": 0.47
+          },
+          "cluster_summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_500b5bb0f647",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_1d72450fe961",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e93a9a4c211f",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e2e469650919",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_a85fd9c74c38",
+            "score": 0.9204,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.8525,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_3294c50f5628",
+            "score": 0.8051,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.7807,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:26:10.549Z"
+    },
+    {
+      "id": "ai_f84d642c0b07",
+      "complaint_id": "cmp_b50fea463aff",
+      "workflow_id": "wf_11f531bcf3",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Roads & Infrastructure",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Public Works Department (Roads)",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.62,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_3294c50f5628",
+        "cmp_pothole_b",
+        "cmp_c56c34eb2ecb",
+        "cmp_a85fd9c74c38",
+        "cmp_pothole_c",
+        "cmp_pothole_a",
+        "cmp_0f4bb9041a18",
+        "cmp_e93a9a4c211f"
+      ],
+      "summary": "Roads & Infrastructure near Central School entrance.",
+      "recommended_action": "Inspect the site and open a work order for the matched department.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.62
+        },
+        "python": {
+          "workflow_id": "wf_11f531bcf3",
+          "used_llm": false,
+          "model": "heuristic",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Roads & Infrastructure",
+          "subcategory": null,
+          "severity": "high",
+          "urgency": "high",
+          "summary": "Roads & Infrastructure near Central School entrance.",
+          "recommended_action": "Inspect the site and open a work order for the matched department.",
+          "entities": [
+            "Central School entrance"
+          ],
+          "department": "Public Works Department (Roads)",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.62,
+          "similar": [
+            {
+              "id": "cmp_3294c50f5628",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_b",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_c56c34eb2ecb",
+              "score": 0.9318,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_a85fd9c74c38",
+              "score": 0.9318,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_c",
+              "score": 0.8842,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_a",
+              "score": 0.8795,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_0f4bb9041a18",
+              "score": 0.8792,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e93a9a4c211f",
+              "score": 0.8053,
+              "cluster_id": "clu_central_school_road"
+            }
+          ],
+          "similar_ids": [
+            "cmp_3294c50f5628",
+            "cmp_pothole_b",
+            "cmp_c56c34eb2ecb",
+            "cmp_a85fd9c74c38",
+            "cmp_pothole_c",
+            "cmp_pothole_a",
+            "cmp_0f4bb9041a18",
+            "cmp_e93a9a4c211f"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Public Works Department (Roads)\nkeywords: pothole road street footpath asphalt pavement bridge crater carriageway\nRoad repair, potholes, footpaths, storm-damaged carriageways, school-approach roads.\n## Public Works Department (Roads)\nResponsible for potholes, damaged carriageways"
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.8,
+            "urgency": 0.8,
+            "government_priority": 0.62
+          },
+          "cluster_summary": "Roads & Infrastructure near Central School entrance.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_3294c50f5628",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_c56c34eb2ecb",
+            "score": 0.9318,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_a85fd9c74c38",
+            "score": 0.9318,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_c",
+            "score": 0.8842,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.8795,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_0f4bb9041a18",
+            "score": 0.8792,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e93a9a4c211f",
+            "score": 0.8053,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:27:35.990Z"
+    },
+    {
+      "id": "ai_a64f0f853f57",
+      "complaint_id": "cmp_c56c34eb2ecb",
+      "workflow_id": "wf_93a2f4955d",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Education & Community",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Education / Municipal Schools",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.62,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_a85fd9c74c38",
+        "cmp_pothole_a",
+        "cmp_pothole_b",
+        "cmp_3294c50f5628",
+        "cmp_474db8616636",
+        "cmp_500b5bb0f647",
+        "cmp_1d72450fe961",
+        "cmp_e93a9a4c211f"
+      ],
+      "summary": "Education & Community near Outside Central School.",
+      "recommended_action": "Inspect the site and open a work order for the matched department.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.62
+        },
+        "python": {
+          "workflow_id": "wf_93a2f4955d",
+          "used_llm": false,
+          "model": "heuristic",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Education & Community",
+          "subcategory": null,
+          "severity": "high",
+          "urgency": "high",
+          "summary": "Education & Community near Outside Central School.",
+          "recommended_action": "Inspect the site and open a work order for the matched department.",
+          "entities": [
+            "Outside Central School"
+          ],
+          "department": "Education / Municipal Schools",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.62,
+          "similar": [
+            {
+              "id": "cmp_a85fd9c74c38",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_a",
+              "score": 0.9802,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_b",
+              "score": 0.9515,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_3294c50f5628",
+              "score": 0.9318,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_474db8616636",
+              "score": 0.9205,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_500b5bb0f647",
+              "score": 0.9205,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_1d72450fe961",
+              "score": 0.9205,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e93a9a4c211f",
+              "score": 0.9205,
+              "cluster_id": "clu_central_school_road"
+            }
+          ],
+          "similar_ids": [
+            "cmp_a85fd9c74c38",
+            "cmp_pothole_a",
+            "cmp_pothole_b",
+            "cmp_3294c50f5628",
+            "cmp_474db8616636",
+            "cmp_500b5bb0f647",
+            "cmp_1d72450fe961",
+            "cmp_e93a9a4c211f"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Education / Municipal Schools\nkeywords: school student classroom education campus\nCivic issues affecting municipal schools and student access. Often coordinates with PWD for approach roads.\n## Education / Municipal Schools\nCivic defects that block access to government schools or "
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.8,
+            "urgency": 0.8,
+            "government_priority": 0.62
+          },
+          "cluster_summary": "Education & Community near Outside Central School.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_a85fd9c74c38",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.9802,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.9515,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_3294c50f5628",
+            "score": 0.9318,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_474db8616636",
+            "score": 0.9205,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_500b5bb0f647",
+            "score": 0.9205,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_1d72450fe961",
+            "score": 0.9205,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e93a9a4c211f",
+            "score": 0.9205,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:27:22.233Z"
+    },
+    {
+      "id": "ai_efb7f03c2915",
+      "complaint_id": "cmp_492ff453bd97",
+      "workflow_id": "wf_743833ae11",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Other Civic Issues",
+      "subcategory": "Other Civic Issues",
+      "severity": "low",
+      "urgency": "low",
+      "department": "Education / Municipal Schools",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_2465c972d4cf",
+        "cmp_pothole_c",
+        "cmp_0f4bb9041a18",
+        "cmp_pothole_b",
+        "cmp_pothole_a",
+        "cmp_3294c50f5628",
+        "cmp_a85fd9c74c38",
+        "cmp_review"
+      ],
+      "summary": "The situation here is getting worse every day.",
+      "recommended_action": "Monitor and gather more specific details to determine appropriate response.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.25,
+          "urgency": 0.25,
+          "government_priority": 0.345
+        },
+        "python": {
+          "workflow_id": "wf_743833ae11",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Other Civic Issues",
+          "subcategory": "Other Civic Issues",
+          "severity": "low",
+          "urgency": "low",
+          "summary": "The situation here is getting worse every day.",
+          "recommended_action": "Monitor and gather more specific details to determine appropriate response.",
+          "entities": [
+            "Unknown road"
+          ],
+          "department": "Education / Municipal Schools",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_2465c972d4cf",
+              "score": 1,
+              "cluster_id": "clu_f03268db2120"
+            },
+            {
+              "id": "cmp_pothole_c",
+              "score": 0.51,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_0f4bb9041a18",
+              "score": 0.4829,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_b",
+              "score": 0.4333,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_a",
+              "score": 0.4326,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_3294c50f5628",
+              "score": 0.4205,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_a85fd9c74c38",
+              "score": 0.4121,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_review",
+              "score": 0.3934,
+              "cluster_id": null
+            }
+          ],
+          "similar_ids": [
+            "cmp_2465c972d4cf",
+            "cmp_pothole_c",
+            "cmp_0f4bb9041a18",
+            "cmp_pothole_b",
+            "cmp_pothole_a",
+            "cmp_3294c50f5628",
+            "cmp_a85fd9c74c38",
+            "cmp_review"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Education / Municipal Schools\nkeywords: school student classroom education campus\nCivic issues affecting municipal schools and student access. Often coordinates with PWD for approach roads.\n## Education / Municipal Schools\nCivic defects that block access to government schools or "
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.25,
+            "urgency": 0.25,
+            "government_priority": 0.345
+          },
+          "cluster_summary": "The situation here is getting worse every day.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_2465c972d4cf",
+            "score": 1,
+            "cluster_id": "clu_f03268db2120"
+          },
+          {
+            "id": "cmp_pothole_c",
+            "score": 0.51,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_0f4bb9041a18",
+            "score": 0.4829,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.4333,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.4326,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_3294c50f5628",
+            "score": 0.4205,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_a85fd9c74c38",
+            "score": 0.4121,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_review",
+            "score": 0.3934,
+            "cluster_id": null
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:27:08.013Z"
+    },
+    {
+      "id": "ai_f9cec74e7103",
+      "complaint_id": "cmp_4bf0b143df8d",
+      "workflow_id": "wf_a63bbdd592",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Public Safety & Hazards",
+      "subcategory": "high",
+      "severity": "high",
+      "urgency": "high",
+      "department": "Electricity / Street Lighting",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_652ad65b8953",
+        "cmp_2790529bdbde",
+        "cmp_f41dce94a1cf",
+        "cmp_9456aacb184d",
+        "cmp_1404e6b2fde6",
+        "cmp_d7a29b926f7d",
+        "cmp_f7055d6460ec"
+      ],
+      "summary": "High voltage transformer sparking intermittently creating fire hazard.",
+      "recommended_action": "Investigate and de-energize the transformer immediately to prevent fire risk.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.15,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.483
+        },
+        "python": {
+          "workflow_id": "wf_a63bbdd592",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Public Safety & Hazards",
+          "subcategory": "high",
+          "severity": "high",
+          "urgency": "high",
+          "summary": "High voltage transformer sparking intermittently creating fire hazard.",
+          "recommended_action": "Investigate and de-energize the transformer immediately to prevent fire risk.",
+          "entities": [
+            "High voltage transformer",
+            "Plot 45, Ward 4"
+          ],
+          "department": "Electricity / Street Lighting",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_652ad65b8953",
+              "score": 1,
+              "cluster_id": null
+            },
+            {
+              "id": "cmp_2790529bdbde",
+              "score": 1,
+              "cluster_id": "clu_936f785eb9e8"
+            },
+            {
+              "id": "cmp_f41dce94a1cf",
+              "score": 0.379,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_9456aacb184d",
+              "score": 0.379,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_1404e6b2fde6",
+              "score": 0.379,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_d7a29b926f7d",
+              "score": 0.379,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_f7055d6460ec",
+              "score": 0.379,
+              "cluster_id": "clu_fc2aecd0100d"
+            }
+          ],
+          "similar_ids": [
+            "cmp_652ad65b8953",
+            "cmp_2790529bdbde",
+            "cmp_f41dce94a1cf",
+            "cmp_9456aacb184d",
+            "cmp_1404e6b2fde6",
+            "cmp_d7a29b926f7d",
+            "cmp_f7055d6460ec"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Electricity / Street Lighting\nkeywords: electricity light pole transformer outage sparking\nStreet lights, transformers, public electrical hazards.\n## Electricity / Street Lighting\nDead street lights, sparking transformers, exposed cables on public land, outages affecting crossing"
+          ],
+          "scores": {
+            "popularity": 0.15,
+            "severity": 0.8,
+            "urgency": 0.8,
+            "government_priority": 0.483
+          },
+          "cluster_summary": "High voltage transformer sparking intermittently creating fire hazard.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_652ad65b8953",
+            "score": 1,
+            "cluster_id": null
+          },
+          {
+            "id": "cmp_2790529bdbde",
+            "score": 1,
+            "cluster_id": "clu_936f785eb9e8"
+          },
+          {
+            "id": "cmp_f41dce94a1cf",
+            "score": 0.379,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_9456aacb184d",
+            "score": 0.379,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_1404e6b2fde6",
+            "score": 0.379,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_d7a29b926f7d",
+            "score": 0.379,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_f7055d6460ec",
+            "score": 0.379,
+            "cluster_id": "clu_fc2aecd0100d"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:26:50.795Z"
+    },
+    {
+      "id": "ai_7f22d8d1ede8",
+      "complaint_id": "cmp_69bd75dabf01",
+      "workflow_id": "wf_d08bf680e1",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Water Supply & Drainage",
+      "subcategory": "severity and urgency: medium",
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Water Supply & Drainage",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_f878eea7db1b",
+        "cmp_8d36d74569c4",
+        "cmp_garbage",
+        "cmp_f41dce94a1cf",
+        "cmp_9456aacb184d",
+        "cmp_1404e6b2fde6",
+        "cmp_d7a29b926f7d",
+        "cmp_f7055d6460ec"
+      ],
+      "summary": "Residents have had irregular water supply since Monday.",
+      "recommended_action": "Investigate and restore consistent water supply.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.47
+        },
+        "python": {
+          "workflow_id": "wf_d08bf680e1",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Water Supply & Drainage",
+          "subcategory": "severity and urgency: medium",
+          "severity": "medium",
+          "urgency": "medium",
+          "summary": "Residents have had irregular water supply since Monday.",
+          "recommended_action": "Investigate and restore consistent water supply.",
+          "entities": [
+            "Kalyan Nagar",
+            "Ward 3"
+          ],
+          "department": "Water Supply & Drainage",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_f878eea7db1b",
+              "score": 1,
+              "cluster_id": "clu_63f4a0376e38"
+            },
+            {
+              "id": "cmp_8d36d74569c4",
+              "score": 1,
+              "cluster_id": "clu_63f4a0376e38"
+            },
+            {
+              "id": "cmp_garbage",
+              "score": 0.6283,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_f41dce94a1cf",
+              "score": 0.4996,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_9456aacb184d",
+              "score": 0.4996,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_1404e6b2fde6",
+              "score": 0.4996,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_d7a29b926f7d",
+              "score": 0.4996,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_f7055d6460ec",
+              "score": 0.4996,
+              "cluster_id": "clu_fc2aecd0100d"
+            }
+          ],
+          "similar_ids": [
+            "cmp_f878eea7db1b",
+            "cmp_8d36d74569c4",
+            "cmp_garbage",
+            "cmp_f41dce94a1cf",
+            "cmp_9456aacb184d",
+            "cmp_1404e6b2fde6",
+            "cmp_d7a29b926f7d",
+            "cmp_f7055d6460ec"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Water Supply & Drainage\nkeywords: water pipeline leak flooding waterlogging drain sewage\nDrinking water, leaks, drainage, waterlogging.\n## Water Supply & Drainage\nLeaking mains, dry taps, clogged storm drains, sewage overflow, and waterlogging after rain."
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.5,
+            "urgency": 0.5,
+            "government_priority": 0.47
+          },
+          "cluster_summary": "Residents have had irregular water supply since Monday.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_f878eea7db1b",
+            "score": 1,
+            "cluster_id": "clu_63f4a0376e38"
+          },
+          {
+            "id": "cmp_8d36d74569c4",
+            "score": 1,
+            "cluster_id": "clu_63f4a0376e38"
+          },
+          {
+            "id": "cmp_garbage",
+            "score": 0.6283,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_f41dce94a1cf",
+            "score": 0.4996,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_9456aacb184d",
+            "score": 0.4996,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_1404e6b2fde6",
+            "score": 0.4996,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_d7a29b926f7d",
+            "score": 0.4996,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_f7055d6460ec",
+            "score": 0.4996,
+            "cluster_id": "clu_fc2aecd0100d"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:26:37.779Z"
+    },
+    {
+      "id": "ai_a0a88aace4ae",
+      "complaint_id": "cmp_f41dce94a1cf",
+      "workflow_id": "wf_58fd51a8bb",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Sanitation & Waste",
+      "subcategory": "Sanitation & Waste",
+      "severity": "high",
+      "urgency": "high",
+      "department": "Sanitation & Solid Waste",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_9456aacb184d",
+        "cmp_1404e6b2fde6",
+        "cmp_d7a29b926f7d",
+        "cmp_f7055d6460ec",
+        "cmp_garbage",
+        "cmp_water",
+        "cmp_8d36d74569c4",
+        "cmp_f878eea7db1b"
+      ],
+      "summary": "Garbage has not been collected for five days in our neighborhood.",
+      "recommended_action": "Immediate waste collection and investigation of collection schedule.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.62
+        },
+        "python": {
+          "workflow_id": "wf_58fd51a8bb",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Sanitation & Waste",
+          "subcategory": "Sanitation & Waste",
+          "severity": "high",
+          "urgency": "high",
+          "summary": "Garbage has not been collected for five days in our neighborhood.",
+          "recommended_action": "Immediate waste collection and investigation of collection schedule.",
+          "entities": [
+            "Sector 4B",
+            "Ward 2"
+          ],
+          "department": "Sanitation & Solid Waste",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_9456aacb184d",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_1404e6b2fde6",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_d7a29b926f7d",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_f7055d6460ec",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_garbage",
+              "score": 0.7786,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_water",
+              "score": 0.5241,
+              "cluster_id": null
+            },
+            {
+              "id": "cmp_8d36d74569c4",
+              "score": 0.4997,
+              "cluster_id": "clu_63f4a0376e38"
+            },
+            {
+              "id": "cmp_f878eea7db1b",
+              "score": 0.4996,
+              "cluster_id": "clu_63f4a0376e38"
+            }
+          ],
+          "similar_ids": [
+            "cmp_9456aacb184d",
+            "cmp_1404e6b2fde6",
+            "cmp_d7a29b926f7d",
+            "cmp_f7055d6460ec",
+            "cmp_garbage",
+            "cmp_water",
+            "cmp_8d36d74569c4",
+            "cmp_f878eea7db1b"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Sanitation & Solid Waste\nkeywords: garbage trash dump waste bin sanitation\nCollection, dumping, public bins, street sweeping.\n## Sanitation & Solid Waste\nMissed garbage collection, overflowing bins, dumping in public land, and street sweeping failures."
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.8,
+            "urgency": 0.8,
+            "government_priority": 0.62
+          },
+          "cluster_summary": "Garbage has not been collected for five days in our neighborhood.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_9456aacb184d",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_1404e6b2fde6",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_d7a29b926f7d",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_f7055d6460ec",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_garbage",
+            "score": 0.7786,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_water",
+            "score": 0.5241,
+            "cluster_id": null
+          },
+          {
+            "id": "cmp_8d36d74569c4",
+            "score": 0.4997,
+            "cluster_id": "clu_63f4a0376e38"
+          },
+          {
+            "id": "cmp_f878eea7db1b",
+            "score": 0.4996,
+            "cluster_id": "clu_63f4a0376e38"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:26:21.300Z"
+    },
+    {
+      "id": "ai_43784f1439e3",
+      "complaint_id": "cmp_f878eea7db1b",
+      "workflow_id": "wf_e6027bdade",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Water Supply & Drainage",
+      "subcategory": "Water Supply & Drainage",
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Water Supply & Drainage",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_8d36d74569c4",
+        "cmp_garbage",
+        "cmp_9456aacb184d",
+        "cmp_1404e6b2fde6",
+        "cmp_d7a29b926f7d",
+        "cmp_f7055d6460ec",
+        "cmp_500b5bb0f647",
+        "cmp_1d72450fe961"
+      ],
+      "summary": "Residents have had irregular water supply since Monday.",
+      "recommended_action": "Investigate and restore regular water supply schedule for Kalyan Nagar, Ward 3.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.47
+        },
+        "python": {
+          "workflow_id": "wf_e6027bdade",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Water Supply & Drainage",
+          "subcategory": "Water Supply & Drainage",
+          "severity": "medium",
+          "urgency": "medium",
+          "summary": "Residents have had irregular water supply since Monday.",
+          "recommended_action": "Investigate and restore regular water supply schedule for Kalyan Nagar, Ward 3.",
+          "entities": [
+            "Kalyan Nagar",
+            "Ward 3"
+          ],
+          "department": "Water Supply & Drainage",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_8d36d74569c4",
+              "score": 1,
+              "cluster_id": "clu_63f4a0376e38"
+            },
+            {
+              "id": "cmp_garbage",
+              "score": 0.6283,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_9456aacb184d",
+              "score": 0.4997,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_1404e6b2fde6",
+              "score": 0.4997,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_d7a29b926f7d",
+              "score": 0.4997,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_f7055d6460ec",
+              "score": 0.4997,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_500b5bb0f647",
+              "score": 0.4729,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_1d72450fe961",
+              "score": 0.4729,
+              "cluster_id": "clu_central_school_road"
+            }
+          ],
+          "similar_ids": [
+            "cmp_8d36d74569c4",
+            "cmp_garbage",
+            "cmp_9456aacb184d",
+            "cmp_1404e6b2fde6",
+            "cmp_d7a29b926f7d",
+            "cmp_f7055d6460ec",
+            "cmp_500b5bb0f647",
+            "cmp_1d72450fe961"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Water Supply & Drainage\nkeywords: water pipeline leak flooding waterlogging drain sewage\nDrinking water, leaks, drainage, waterlogging.\n## Water Supply & Drainage\nLeaking mains, dry taps, clogged storm drains, sewage overflow, and waterlogging after rain."
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.5,
+            "urgency": 0.5,
+            "government_priority": 0.47
+          },
+          "cluster_summary": "Residents have had irregular water supply since Monday.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_8d36d74569c4",
+            "score": 1,
+            "cluster_id": "clu_63f4a0376e38"
+          },
+          {
+            "id": "cmp_garbage",
+            "score": 0.6283,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_9456aacb184d",
+            "score": 0.4997,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_1404e6b2fde6",
+            "score": 0.4997,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_d7a29b926f7d",
+            "score": 0.4997,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_f7055d6460ec",
+            "score": 0.4997,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_500b5bb0f647",
+            "score": 0.4729,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_1d72450fe961",
+            "score": 0.4729,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:24:56.310Z"
+    },
+    {
+      "id": "ai_3734069dd41f",
+      "complaint_id": "cmp_9456aacb184d",
+      "workflow_id": "wf_11407b3777",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Sanitation & Waste",
+      "subcategory": "Sanitation & Waste",
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Sanitation & Solid Waste",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_1404e6b2fde6",
+        "cmp_d7a29b926f7d",
+        "cmp_f7055d6460ec",
+        "cmp_garbage",
+        "cmp_water",
+        "cmp_8d36d74569c4",
+        "cmp_power",
+        "cmp_500b5bb0f647"
+      ],
+      "summary": "Garbage has not been collected for five days in our neighborhood.",
+      "recommended_action": "Schedule immediate garbage collection and implement a regular pickup schedule to prevent health hazards.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.35,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.443
+        },
+        "python": {
+          "workflow_id": "wf_11407b3777",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Sanitation & Waste",
+          "subcategory": "Sanitation & Waste",
+          "severity": "medium",
+          "urgency": "medium",
+          "summary": "Garbage has not been collected for five days in our neighborhood.",
+          "recommended_action": "Schedule immediate garbage collection and implement a regular pickup schedule to prevent health hazards.",
+          "entities": [
+            "Sector 4B",
+            "Ward 2"
+          ],
+          "department": "Sanitation & Solid Waste",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_1404e6b2fde6",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_d7a29b926f7d",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_f7055d6460ec",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_garbage",
+              "score": 0.7786,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_water",
+              "score": 0.5241,
+              "cluster_id": null
+            },
+            {
+              "id": "cmp_8d36d74569c4",
+              "score": 0.4996,
+              "cluster_id": "clu_63f4a0376e38"
+            },
+            {
+              "id": "cmp_power",
+              "score": 0.3829,
+              "cluster_id": null
+            },
+            {
+              "id": "cmp_500b5bb0f647",
+              "score": 0.3823,
+              "cluster_id": "clu_central_school_road"
+            }
+          ],
+          "similar_ids": [
+            "cmp_1404e6b2fde6",
+            "cmp_d7a29b926f7d",
+            "cmp_f7055d6460ec",
+            "cmp_garbage",
+            "cmp_water",
+            "cmp_8d36d74569c4",
+            "cmp_power",
+            "cmp_500b5bb0f647"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Sanitation & Solid Waste\nkeywords: garbage trash dump waste bin sanitation\nCollection, dumping, public bins, street sweeping.\n## Sanitation & Solid Waste\nMissed garbage collection, overflowing bins, dumping in public land, and street sweeping failures."
+          ],
+          "scores": {
+            "popularity": 0.35,
+            "severity": 0.5,
+            "urgency": 0.5,
+            "government_priority": 0.443
+          },
+          "cluster_summary": "Garbage has not been collected for five days in our neighborhood.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_1404e6b2fde6",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_d7a29b926f7d",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_f7055d6460ec",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_garbage",
+            "score": 0.7786,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_water",
+            "score": 0.5241,
+            "cluster_id": null
+          },
+          {
+            "id": "cmp_8d36d74569c4",
+            "score": 0.4996,
+            "cluster_id": "clu_63f4a0376e38"
+          },
+          {
+            "id": "cmp_power",
+            "score": 0.3829,
+            "cluster_id": null
+          },
+          {
+            "id": "cmp_500b5bb0f647",
+            "score": 0.3823,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:24:03.363Z"
+    },
+    {
+      "id": "ai_48724a38dc82",
+      "complaint_id": "cmp_500b5bb0f647",
+      "workflow_id": "wf_68cb25d5be",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Roads & Infrastructure",
+      "subcategory": "medium",
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Education / Municipal Schools",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_1d72450fe961",
+        "cmp_e93a9a4c211f",
+        "cmp_e2e469650919",
+        "cmp_a85fd9c74c38",
+        "cmp_pothole_a",
+        "cmp_3294c50f5628",
+        "cmp_pothole_b",
+        "cmp_pothole_c"
+      ],
+      "summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "recommended_action": "Repair the pothole and improve drainage to prevent water accumulation.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.47
+        },
+        "python": {
+          "workflow_id": "wf_68cb25d5be",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Roads & Infrastructure",
+          "subcategory": "medium",
+          "severity": "medium",
+          "urgency": "medium",
+          "summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+          "recommended_action": "Repair the pothole and improve drainage to prevent water accumulation.",
+          "entities": [
+            "Central School"
+          ],
+          "department": "Education / Municipal Schools",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_1d72450fe961",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e93a9a4c211f",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e2e469650919",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_a85fd9c74c38",
+              "score": 0.9205,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_a",
+              "score": 0.8526,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_3294c50f5628",
+              "score": 0.8053,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_b",
+              "score": 0.7807,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_c",
+              "score": 0.7699,
+              "cluster_id": "clu_central_school_road"
+            }
+          ],
+          "similar_ids": [
+            "cmp_1d72450fe961",
+            "cmp_e93a9a4c211f",
+            "cmp_e2e469650919",
+            "cmp_a85fd9c74c38",
+            "cmp_pothole_a",
+            "cmp_3294c50f5628",
+            "cmp_pothole_b",
+            "cmp_pothole_c"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Education / Municipal Schools\nkeywords: school student classroom education campus\nCivic issues affecting municipal schools and student access. Often coordinates with PWD for approach roads.\n## Education / Municipal Schools\nCivic defects that block access to government schools or "
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.5,
+            "urgency": 0.5,
+            "government_priority": 0.47
+          },
+          "cluster_summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_1d72450fe961",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e93a9a4c211f",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e2e469650919",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_a85fd9c74c38",
+            "score": 0.9205,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.8526,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_3294c50f5628",
+            "score": 0.8053,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.7807,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_c",
+            "score": 0.7699,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:23:47.901Z"
+    },
+    {
+      "id": "ai_8ab4ad5cd0db",
+      "complaint_id": "cmp_1404e6b2fde6",
+      "workflow_id": "wf_161ce05114",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Sanitation & Waste",
+      "subcategory": "Sanitation & Waste",
+      "severity": "high",
+      "urgency": "high",
+      "department": "Sanitation & Solid Waste",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_d7a29b926f7d",
+        "cmp_f7055d6460ec",
+        "cmp_garbage",
+        "cmp_water",
+        "cmp_8d36d74569c4",
+        "cmp_power",
+        "cmp_1d72450fe961",
+        "cmp_e93a9a4c211f"
+      ],
+      "summary": "Garbage has not been collected for five days in our neighborhood.",
+      "recommended_action": "Immediate waste collection and investigation of collection schedule.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.3,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.565
+        },
+        "python": {
+          "workflow_id": "wf_161ce05114",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Sanitation & Waste",
+          "subcategory": "Sanitation & Waste",
+          "severity": "high",
+          "urgency": "high",
+          "summary": "Garbage has not been collected for five days in our neighborhood.",
+          "recommended_action": "Immediate waste collection and investigation of collection schedule.",
+          "entities": [
+            "Sector 4B",
+            "Ward 2"
+          ],
+          "department": "Sanitation & Solid Waste",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_d7a29b926f7d",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_f7055d6460ec",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_garbage",
+              "score": 0.7786,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_water",
+              "score": 0.5241,
+              "cluster_id": null
+            },
+            {
+              "id": "cmp_8d36d74569c4",
+              "score": 0.4996,
+              "cluster_id": "clu_63f4a0376e38"
+            },
+            {
+              "id": "cmp_power",
+              "score": 0.3828,
+              "cluster_id": null
+            },
+            {
+              "id": "cmp_1d72450fe961",
+              "score": 0.3823,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e93a9a4c211f",
+              "score": 0.3823,
+              "cluster_id": "clu_central_school_road"
+            }
+          ],
+          "similar_ids": [
+            "cmp_d7a29b926f7d",
+            "cmp_f7055d6460ec",
+            "cmp_garbage",
+            "cmp_water",
+            "cmp_8d36d74569c4",
+            "cmp_power",
+            "cmp_1d72450fe961",
+            "cmp_e93a9a4c211f"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Sanitation & Solid Waste\nkeywords: garbage trash dump waste bin sanitation\nCollection, dumping, public bins, street sweeping.\n## Sanitation & Solid Waste\nMissed garbage collection, overflowing bins, dumping in public land, and street sweeping failures."
+          ],
+          "scores": {
+            "popularity": 0.3,
+            "severity": 0.8,
+            "urgency": 0.8,
+            "government_priority": 0.565
+          },
+          "cluster_summary": "Garbage has not been collected for five days in our neighborhood.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_d7a29b926f7d",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_f7055d6460ec",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_garbage",
+            "score": 0.7786,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_water",
+            "score": 0.5241,
+            "cluster_id": null
+          },
+          {
+            "id": "cmp_8d36d74569c4",
+            "score": 0.4996,
+            "cluster_id": "clu_63f4a0376e38"
+          },
+          {
+            "id": "cmp_power",
+            "score": 0.3828,
+            "cluster_id": null
+          },
+          {
+            "id": "cmp_1d72450fe961",
+            "score": 0.3823,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e93a9a4c211f",
+            "score": 0.3823,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:22:17.372Z"
+    },
+    {
+      "id": "ai_456e54aeb3f5",
+      "complaint_id": "cmp_1d72450fe961",
+      "workflow_id": "wf_22282e0f10",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Roads & Infrastructure",
+      "subcategory": "Roads & Infrastructure",
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Education / Municipal Schools",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_e93a9a4c211f",
+        "cmp_e2e469650919",
+        "cmp_a85fd9c74c38",
+        "cmp_pothole_a",
+        "cmp_3294c50f5628",
+        "cmp_pothole_b",
+        "cmp_pothole_c",
+        "cmp_0f4bb9041a18"
+      ],
+      "summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "recommended_action": "Repair the pothole and improve drainage to prevent water accumulation.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.47
+        },
+        "python": {
+          "workflow_id": "wf_22282e0f10",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Roads & Infrastructure",
+          "subcategory": "Roads & Infrastructure",
+          "severity": "medium",
+          "urgency": "medium",
+          "summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+          "recommended_action": "Repair the pothole and improve drainage to prevent water accumulation.",
+          "entities": [
+            "Central School"
+          ],
+          "department": "Education / Municipal Schools",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_e93a9a4c211f",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e2e469650919",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_a85fd9c74c38",
+              "score": 0.9204,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_a",
+              "score": 0.8525,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_3294c50f5628",
+              "score": 0.8051,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_b",
+              "score": 0.7806,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_c",
+              "score": 0.7698,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_0f4bb9041a18",
+              "score": 0.758,
+              "cluster_id": "clu_central_school_road"
+            }
+          ],
+          "similar_ids": [
+            "cmp_e93a9a4c211f",
+            "cmp_e2e469650919",
+            "cmp_a85fd9c74c38",
+            "cmp_pothole_a",
+            "cmp_3294c50f5628",
+            "cmp_pothole_b",
+            "cmp_pothole_c",
+            "cmp_0f4bb9041a18"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Education / Municipal Schools\nkeywords: school student classroom education campus\nCivic issues affecting municipal schools and student access. Often coordinates with PWD for approach roads.\n## Education / Municipal Schools\nCivic defects that block access to government schools or "
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.5,
+            "urgency": 0.5,
+            "government_priority": 0.47
+          },
+          "cluster_summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_e93a9a4c211f",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e2e469650919",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_a85fd9c74c38",
+            "score": 0.9204,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.8525,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_3294c50f5628",
+            "score": 0.8051,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.7806,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_c",
+            "score": 0.7698,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_0f4bb9041a18",
+            "score": 0.758,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:22:03.764Z"
+    },
+    {
+      "id": "ai_de38583da315",
+      "complaint_id": "cmp_d7a29b926f7d",
+      "workflow_id": "wf_d671a1ace8",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Sanitation & Waste",
+      "subcategory": "Sanitation & Waste",
+      "severity": "high",
+      "urgency": "high",
+      "department": "Sanitation & Solid Waste",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_f7055d6460ec",
+        "cmp_garbage",
+        "cmp_water",
+        "cmp_8d36d74569c4",
+        "cmp_power",
+        "cmp_e93a9a4c211f",
+        "cmp_e2e469650919",
+        "cmp_2790529bdbde"
+      ],
+      "summary": "Garbage has not been collected for five days in our neighborhood.",
+      "recommended_action": "Immediate waste collection and investigation of collection schedule.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.25,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.538
+        },
+        "python": {
+          "workflow_id": "wf_d671a1ace8",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Sanitation & Waste",
+          "subcategory": "Sanitation & Waste",
+          "severity": "high",
+          "urgency": "high",
+          "summary": "Garbage has not been collected for five days in our neighborhood.",
+          "recommended_action": "Immediate waste collection and investigation of collection schedule.",
+          "entities": [
+            "Sector 4B",
+            "Ward 2"
+          ],
+          "department": "Sanitation & Solid Waste",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_f7055d6460ec",
+              "score": 1,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_garbage",
+              "score": 0.7786,
+              "cluster_id": "clu_fc2aecd0100d"
+            },
+            {
+              "id": "cmp_water",
+              "score": 0.524,
+              "cluster_id": null
+            },
+            {
+              "id": "cmp_8d36d74569c4",
+              "score": 0.4996,
+              "cluster_id": "clu_63f4a0376e38"
+            },
+            {
+              "id": "cmp_power",
+              "score": 0.3829,
+              "cluster_id": null
+            },
+            {
+              "id": "cmp_e93a9a4c211f",
+              "score": 0.3823,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_e2e469650919",
+              "score": 0.3823,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_2790529bdbde",
+              "score": 0.379,
+              "cluster_id": "clu_936f785eb9e8"
+            }
+          ],
+          "similar_ids": [
+            "cmp_f7055d6460ec",
+            "cmp_garbage",
+            "cmp_water",
+            "cmp_8d36d74569c4",
+            "cmp_power",
+            "cmp_e93a9a4c211f",
+            "cmp_e2e469650919",
+            "cmp_2790529bdbde"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Sanitation & Solid Waste\nkeywords: garbage trash dump waste bin sanitation\nCollection, dumping, public bins, street sweeping.\n## Sanitation & Solid Waste\nMissed garbage collection, overflowing bins, dumping in public land, and street sweeping failures."
+          ],
+          "scores": {
+            "popularity": 0.25,
+            "severity": 0.8,
+            "urgency": 0.8,
+            "government_priority": 0.538
+          },
+          "cluster_summary": "Garbage has not been collected for five days in our neighborhood.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_f7055d6460ec",
+            "score": 1,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_garbage",
+            "score": 0.7786,
+            "cluster_id": "clu_fc2aecd0100d"
+          },
+          {
+            "id": "cmp_water",
+            "score": 0.524,
+            "cluster_id": null
+          },
+          {
+            "id": "cmp_8d36d74569c4",
+            "score": 0.4996,
+            "cluster_id": "clu_63f4a0376e38"
+          },
+          {
+            "id": "cmp_power",
+            "score": 0.3829,
+            "cluster_id": null
+          },
+          {
+            "id": "cmp_e93a9a4c211f",
+            "score": 0.3823,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e2e469650919",
+            "score": 0.3823,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_2790529bdbde",
+            "score": 0.379,
+            "cluster_id": "clu_936f785eb9e8"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:20:55.450Z"
+    },
+    {
+      "id": "ai_ca8587bd40c9",
+      "complaint_id": "cmp_e93a9a4c211f",
+      "workflow_id": "wf_f9e9a86caa",
+      "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+      "used_llm": true,
+      "category": "Roads & Infrastructure",
+      "subcategory": "Roads & Infrastructure",
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Education / Municipal Schools",
+      "department_confidence": 0.95,
+      "overall_confidence": 0.82,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_e2e469650919",
+        "cmp_a85fd9c74c38",
+        "cmp_pothole_a",
+        "cmp_3294c50f5628",
+        "cmp_pothole_b",
+        "cmp_pothole_c",
+        "cmp_0f4bb9041a18",
+        "cmp_water"
+      ],
+      "summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+      "recommended_action": "Repair the pothole and improve drainage to prevent water accumulation.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.4,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.47
+        },
+        "python": {
+          "workflow_id": "wf_f9e9a86caa",
+          "used_llm": true,
+          "model": "openrouter:nvidia/nemotron-3-nano-30b-a3b:free",
+          "embedding_provider": "openrouter:openai/text-embedding-3-small",
+          "category": "Roads & Infrastructure",
+          "subcategory": "Roads & Infrastructure",
+          "severity": "medium",
+          "urgency": "medium",
+          "summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+          "recommended_action": "Repair the pothole and improve drainage to prevent water accumulation.",
+          "entities": [
+            "Central School"
+          ],
+          "department": "Education / Municipal Schools",
+          "department_confidence": 0.95,
+          "overall_confidence": 0.82,
+          "similar": [
+            {
+              "id": "cmp_e2e469650919",
+              "score": 1,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_a85fd9c74c38",
+              "score": 0.9205,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_a",
+              "score": 0.8526,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_3294c50f5628",
+              "score": 0.8053,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_b",
+              "score": 0.7808,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_pothole_c",
+              "score": 0.7699,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_0f4bb9041a18",
+              "score": 0.7581,
+              "cluster_id": "clu_central_school_road"
+            },
+            {
+              "id": "cmp_water",
+              "score": 0.4852,
+              "cluster_id": null
+            }
+          ],
+          "similar_ids": [
+            "cmp_e2e469650919",
+            "cmp_a85fd9c74c38",
+            "cmp_pothole_a",
+            "cmp_3294c50f5628",
+            "cmp_pothole_b",
+            "cmp_pothole_c",
+            "cmp_0f4bb9041a18",
+            "cmp_water"
+          ],
+          "flagged": false,
+          "needs_review": false,
+          "rag_snippets": [
+            "Education / Municipal Schools\nkeywords: school student classroom education campus\nCivic issues affecting municipal schools and student access. Often coordinates with PWD for approach roads.\n## Education / Municipal Schools\nCivic defects that block access to government schools or "
+          ],
+          "scores": {
+            "popularity": 0.4,
+            "severity": 0.5,
+            "urgency": 0.5,
+            "government_priority": 0.47
+          },
+          "cluster_summary": "There is a huge pothole near Central School and water collects there whenever it rains.",
+          "steps": [
+            "validate",
+            "classify_extract",
+            "retrieve_similar",
+            "rag_departments",
+            "route_department",
+            "priority",
+            "evaluate"
+          ]
+        },
+        "similar": [
+          {
+            "id": "cmp_e2e469650919",
+            "score": 1,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_a85fd9c74c38",
+            "score": 0.9205,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.8526,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_3294c50f5628",
+            "score": 0.8053,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.7808,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_c",
+            "score": 0.7699,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_0f4bb9041a18",
+            "score": 0.7581,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_water",
+            "score": 0.4852,
+            "cluster_id": null
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:20:42.346Z"
+    },
+    {
+      "id": "ai_301535d1199d",
+      "complaint_id": "cmp_3294c50f5628",
+      "workflow_id": "wf_cmp_3294c50f5628",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Roads & Infrastructure",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Public Works Department (Roads)",
+      "department_confidence": 0.77,
+      "overall_confidence": 0.8,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_pothole_b",
+        "cmp_a85fd9c74c38",
+        "cmp_e2e469650919",
+        "cmp_0f4bb9041a18",
+        "cmp_pothole_c",
+        "cmp_pothole_a"
+      ],
+      "summary": "Roads & Infrastructure reported at Central School entrance.",
+      "recommended_action": "Route to Public Works Department (Roads) for site inspection.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.95,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.773
+        },
+        "python": null,
+        "similar": [
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.8516426653750027,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_a85fd9c74c38",
+            "score": 0.8181001297545927,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e2e469650919",
+            "score": 0.7691654871740581,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_0f4bb9041a18",
+            "score": 0.7444633567547863,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_c",
+            "score": 0.7106248661989156,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.6835878313976915,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:14:52.114Z"
+    },
+    {
+      "id": "ai_54db3b2eab93",
+      "complaint_id": "cmp_a85fd9c74c38",
+      "workflow_id": "wf_cmp_a85fd9c74c38",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Education & Community",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Education / Municipal Schools",
+      "department_confidence": 0.9,
+      "overall_confidence": 0.8,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_pothole_a",
+        "cmp_pothole_b",
+        "cmp_e2e469650919",
+        "cmp_pothole_c",
+        "cmp_0f4bb9041a18"
+      ],
+      "summary": "Education & Community reported at Outside Central School.",
+      "recommended_action": "Route to Education / Municipal Schools for site inspection.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.9,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.745
+        },
+        "python": null,
+        "similar": [
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.8785876448272993,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.7509510660886203,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_e2e469650919",
+            "score": 0.7269804075385278,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_c",
+            "score": 0.62956319251842,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_0f4bb9041a18",
+            "score": 0.6207809011747609,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:14:52.055Z"
+    },
+    {
+      "id": "ai_c9d023efc0cd",
+      "complaint_id": "cmp_2465c972d4cf",
+      "workflow_id": "wf_cmp_2465c972d4cf",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Roads & Infrastructure",
+      "subcategory": null,
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Municipal Administration",
+      "department_confidence": 0.7,
+      "overall_confidence": 0.65,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [],
+      "summary": "Roads & Infrastructure reported at Unknown road.",
+      "recommended_action": "Route to Municipal Administration for site inspection.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.05,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.278
+        },
+        "python": null,
+        "similar": []
+      },
+      "created_at": "2026-08-20T22:14:51.975Z"
+    },
+    {
+      "id": "ai_def4325c6ec5",
+      "complaint_id": "cmp_2790529bdbde",
+      "workflow_id": "wf_cmp_2790529bdbde",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Street Lighting & Power",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Electricity / Street Lighting",
+      "department_confidence": 0.9,
+      "overall_confidence": 0.8,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [],
+      "summary": "Street Lighting & Power reported at Plot 45, Ward 4.",
+      "recommended_action": "Route to Electricity / Street Lighting for site inspection.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.05,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.428
+        },
+        "python": null,
+        "similar": []
+      },
+      "created_at": "2026-08-20T22:14:51.918Z"
+    },
+    {
+      "id": "ai_4b9dd1d5eacb",
+      "complaint_id": "cmp_8d36d74569c4",
+      "workflow_id": "wf_cmp_8d36d74569c4",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Water Supply & Drainage",
+      "subcategory": null,
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Water Supply & Drainage",
+      "department_confidence": 0.87,
+      "overall_confidence": 0.65,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [],
+      "summary": "Water Supply & Drainage reported at Kalyan Nagar, Ward 3.",
+      "recommended_action": "Route to Water Supply & Drainage for site inspection.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.05,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.278
+        },
+        "python": null,
+        "similar": []
+      },
+      "created_at": "2026-08-20T22:14:51.858Z"
+    },
+    {
+      "id": "ai_a36ae5e9d991",
+      "complaint_id": "cmp_f7055d6460ec",
+      "workflow_id": "wf_cmp_f7055d6460ec",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Sanitation & Waste",
+      "subcategory": null,
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Sanitation & Solid Waste",
+      "department_confidence": 0.79,
+      "overall_confidence": 0.65,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_garbage"
+      ],
+      "summary": "Sanitation & Waste reported at Sector 4B, Ward 2.",
+      "recommended_action": "Route to Sanitation & Solid Waste for site inspection.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.205,
+          "severity": 0.5,
+          "urgency": 0.5,
+          "government_priority": 0.337
+        },
+        "python": null,
+        "similar": [
+          {
+            "id": "cmp_garbage",
+            "score": 0.5050216664840352,
+            "cluster_id": null
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:14:51.801Z"
+    },
+    {
+      "id": "ai_e88726a483c1",
+      "complaint_id": "cmp_e2e469650919",
+      "workflow_id": "wf_cmp_e2e469650919",
+      "model": "heuristic",
+      "used_llm": false,
+      "category": "Roads & Infrastructure",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Education / Municipal Schools",
+      "department_confidence": 0.77,
+      "overall_confidence": 0.65,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_pothole_a",
+        "cmp_pothole_b",
+        "cmp_0f4bb9041a18",
+        "cmp_pothole_c"
+      ],
+      "summary": "Roads & Infrastructure reported at Central School, Ward 1.",
+      "recommended_action": "Route to Education / Municipal Schools for site inspection.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.85,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.718
+        },
+        "python": null,
+        "similar": [
+          {
+            "id": "cmp_pothole_a",
+            "score": 0.6933447411210019,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_b",
+            "score": 0.6897868556379649,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_0f4bb9041a18",
+            "score": 0.6783660849824162,
+            "cluster_id": "clu_central_school_road"
+          },
+          {
+            "id": "cmp_pothole_c",
+            "score": 0.6744737404863305,
+            "cluster_id": "clu_central_school_road"
+          }
+        ]
+      },
+      "created_at": "2026-08-20T22:14:51.725Z"
+    },
+    {
+      "id": "ai_491cdc37dd4d",
+      "complaint_id": "cmp_0f4bb9041a18",
+      "workflow_id": "wf_cmp_0f4bb9041a18",
+      "model": "heuristic-fallback",
+      "used_llm": false,
+      "category": "Education & Community",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Education / Municipal Schools",
+      "department_confidence": 0.79,
+      "overall_confidence": 0.8,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_pothole_c",
+        "cmp_pothole_b"
+      ],
+      "summary": "Education & Community reported at Near Central School.",
+      "recommended_action": "Route to Education / Municipal Schools for site inspection.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "rag_departments",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "scores": {
+          "popularity": 0.8,
+          "severity": 0.8,
+          "urgency": 0.8,
+          "government_priority": 0.69
+        },
+        "python": null,
+        "safety": {
+          "flagged": false,
+          "reason": "ok",
+          "needs_review": false
+        }
+      },
+      "created_at": "2026-08-20T20:13:04.971Z"
+    },
+    {
+      "id": "ai_e7ebd319f67e",
+      "complaint_id": "cmp_review",
+      "workflow_id": "wf_seed_cmp_review",
+      "model": "heuristic-seed",
+      "used_llm": false,
+      "category": "Other Civic Issues",
+      "subcategory": null,
+      "severity": "low",
+      "urgency": "low",
+      "department": "Municipal Administration",
+      "department_confidence": 0.42,
+      "overall_confidence": 0.38,
+      "needs_review": true,
+      "flagged": false,
+      "similar_ids": [],
+      "summary": "Ambiguous report; low confidence, queued for human review.",
+      "recommended_action": "Hold for officer review — category uncertain.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "seeded": true
+      },
+      "created_at": "2026-08-21T08:00:00.000Z"
+    },
+    {
+      "id": "ai_2d4386d86d5e",
+      "complaint_id": "cmp_power",
+      "workflow_id": "wf_seed_cmp_power",
+      "model": "heuristic-seed",
+      "used_llm": false,
+      "category": "Street Lighting & Power",
+      "subcategory": null,
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Electricity / Street Lighting",
+      "department_confidence": 0.86,
+      "overall_confidence": 0.84,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [],
+      "summary": "Unlit pedestrian crossing on a heavy-vehicle corridor.",
+      "recommended_action": "Inspect site and assign field crew.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "seeded": true
+      },
+      "created_at": "2026-08-15T08:00:00.000Z"
+    },
+    {
+      "id": "ai_133dacf3ffac",
+      "complaint_id": "cmp_garbage",
+      "workflow_id": "wf_seed_cmp_garbage",
+      "model": "heuristic-seed",
+      "used_llm": false,
+      "category": "Sanitation & Waste",
+      "subcategory": null,
+      "severity": "medium",
+      "urgency": "medium",
+      "department": "Sanitation & Solid Waste",
+      "department_confidence": 0.86,
+      "overall_confidence": 0.84,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [],
+      "summary": "Missed collection creating a public health nuisance.",
+      "recommended_action": "Inspect site and assign field crew.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "seeded": true
+      },
+      "created_at": "2026-08-21T06:15:00.000Z"
+    },
+    {
+      "id": "ai_dcb7d04c06f9",
+      "complaint_id": "cmp_water",
+      "workflow_id": "wf_seed_cmp_water",
+      "model": "heuristic-seed",
+      "used_llm": false,
+      "category": "Water Supply & Drainage",
+      "subcategory": null,
+      "severity": "medium",
+      "urgency": "high",
+      "department": "Water Supply & Drainage",
+      "department_confidence": 0.86,
+      "overall_confidence": 0.84,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [],
+      "summary": "Recurring waterlogging from blocked storm drain.",
+      "recommended_action": "Inspect site and assign field crew.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "seeded": true
+      },
+      "created_at": "2026-08-20T14:20:00.000Z"
+    },
+    {
+      "id": "ai_d54db9da96f5",
+      "complaint_id": "cmp_pothole_c",
+      "workflow_id": "wf_seed_cmp_pothole_c",
+      "model": "heuristic-seed",
+      "used_llm": false,
+      "category": "Roads & Infrastructure",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "medium",
+      "department": "Public Works Department (Roads)",
+      "department_confidence": 0.86,
+      "overall_confidence": 0.84,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_pothole_a",
+        "cmp_pothole_b"
+      ],
+      "summary": "Persistent road damage near school; likely same underlying defect.",
+      "recommended_action": "Inspect site and assign field crew.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "seeded": true
+      },
+      "created_at": "2026-08-20T11:05:00.000Z"
+    },
+    {
+      "id": "ai_2c46198cfcd5",
+      "complaint_id": "cmp_pothole_b",
+      "workflow_id": "wf_seed_cmp_pothole_b",
+      "model": "heuristic-seed",
+      "used_llm": false,
+      "category": "Roads & Infrastructure",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Public Works Department (Roads)",
+      "department_confidence": 0.86,
+      "overall_confidence": 0.84,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_pothole_a",
+        "cmp_pothole_c"
+      ],
+      "summary": "Broken road surface at school gate forcing pedestrians into traffic.",
+      "recommended_action": "Inspect site and assign field crew.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "seeded": true
+      },
+      "created_at": "2026-08-19T09:40:00.000Z"
+    },
+    {
+      "id": "ai_98b112e5c6ea",
+      "complaint_id": "cmp_pothole_a",
+      "workflow_id": "wf_seed_cmp_pothole_a",
+      "model": "heuristic-seed",
+      "used_llm": false,
+      "category": "Roads & Infrastructure",
+      "subcategory": null,
+      "severity": "high",
+      "urgency": "high",
+      "department": "Public Works Department (Roads)",
+      "department_confidence": 0.86,
+      "overall_confidence": 0.84,
+      "needs_review": false,
+      "flagged": false,
+      "similar_ids": [
+        "cmp_pothole_b",
+        "cmp_pothole_c"
+      ],
+      "summary": "Deep pothole on the school approach road with traffic conflict risk.",
+      "recommended_action": "Inspect site and assign field crew.",
+      "steps": [
+        "validate",
+        "safety",
+        "classify_extract",
+        "retrieve_similar",
+        "cluster",
+        "route_department",
+        "priority",
+        "evaluate"
+      ],
+      "payload": {
+        "seeded": true
+      },
+      "created_at": "2026-08-18T07:10:00.000Z"
+    }
+  ],
+  "complaint_support": [
+    {
+      "user_id": "usr_2b7ffa96c02c",
+      "complaint_id": "cmp_e2e469650919",
+      "created_at": "2026-08-20T22:14:51.988Z"
+    },
+    {
+      "user_id": "usr_047f0b548b93",
+      "complaint_id": "cmp_474db8616636",
+      "created_at": "2026-08-20T22:27:08.029Z"
+    }
+  ],
+  "complaint_events": [
+    {
+      "id": "evt_dda4450b03ac",
+      "complaint_id": "cmp_water",
+      "status": "resolved",
+      "actor": "gov_demo",
+      "note": "Marked resolved by officer.",
+      "created_at": "2026-08-21T03:49:35.419Z"
+    },
+    {
+      "id": "evt_6a463774d9e2",
+      "complaint_id": "cmp_474db8616636",
+      "status": "in_progress",
+      "actor": "gov_demo",
+      "note": "Field squad deployed to site.",
+      "created_at": "2026-08-20T22:27:51.252Z"
+    },
+    {
+      "id": "evt_57bda1bc97b3",
+      "complaint_id": "cmp_b50fea463aff",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Roads & Infrastructure → Public Works Department (Roads) (confidence 0.62, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:27:35.993Z"
+    },
+    {
+      "id": "evt_4a6947ec62ab",
+      "complaint_id": "cmp_b50fea463aff",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:27:25.301Z"
+    },
+    {
+      "id": "evt_01efdb70005a",
+      "complaint_id": "cmp_c56c34eb2ecb",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Education & Community → Education / Municipal Schools (confidence 0.62, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:27:22.235Z"
+    },
+    {
+      "id": "evt_e3b76f66896a",
+      "complaint_id": "cmp_c56c34eb2ecb",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:27:11.452Z"
+    },
+    {
+      "id": "evt_2908f22a85fa",
+      "complaint_id": "cmp_492ff453bd97",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Other Civic Issues → Education / Municipal Schools (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:27:08.015Z"
+    },
+    {
+      "id": "evt_631113696b98",
+      "complaint_id": "cmp_492ff453bd97",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:26:55.061Z"
+    },
+    {
+      "id": "evt_e55a091e34c5",
+      "complaint_id": "cmp_4bf0b143df8d",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Public Safety & Hazards → Electricity / Street Lighting (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:26:50.813Z"
+    },
+    {
+      "id": "evt_964a13e870db",
+      "complaint_id": "cmp_4bf0b143df8d",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:26:42.406Z"
+    },
+    {
+      "id": "evt_148db1702d66",
+      "complaint_id": "cmp_69bd75dabf01",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Water Supply & Drainage → Water Supply & Drainage (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:26:37.782Z"
+    },
+    {
+      "id": "evt_76dded5edfd3",
+      "complaint_id": "cmp_69bd75dabf01",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:26:26.716Z"
+    },
+    {
+      "id": "evt_fffc66a8eecb",
+      "complaint_id": "cmp_f41dce94a1cf",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Sanitation & Waste → Sanitation & Solid Waste (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:26:21.302Z"
+    },
+    {
+      "id": "evt_2ddbe772742e",
+      "complaint_id": "cmp_f41dce94a1cf",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:26:13.292Z"
+    },
+    {
+      "id": "evt_8d1fd5fd4c5a",
+      "complaint_id": "cmp_474db8616636",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Roads & Infrastructure → Education / Municipal Schools (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:26:10.550Z"
+    },
+    {
+      "id": "evt_f32a5bc91ac6",
+      "complaint_id": "cmp_474db8616636",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:25:54.245Z"
+    },
+    {
+      "id": "evt_2571609357c7",
+      "complaint_id": "cmp_652ad65b8953",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:24:59.770Z"
+    },
+    {
+      "id": "evt_61c6c768372e",
+      "complaint_id": "cmp_f878eea7db1b",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Water Supply & Drainage → Water Supply & Drainage (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:24:56.312Z"
+    },
+    {
+      "id": "evt_cb130848bfb9",
+      "complaint_id": "cmp_f878eea7db1b",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:24:43.390Z"
+    },
+    {
+      "id": "evt_1a0bfe0232a4",
+      "complaint_id": "cmp_9456aacb184d",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Sanitation & Waste → Sanitation & Solid Waste (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:24:03.367Z"
+    },
+    {
+      "id": "evt_3c5ff157ac45",
+      "complaint_id": "cmp_9456aacb184d",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:23:51.612Z"
+    },
+    {
+      "id": "evt_2c3a64e170c7",
+      "complaint_id": "cmp_500b5bb0f647",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Roads & Infrastructure → Education / Municipal Schools (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:23:47.904Z"
+    },
+    {
+      "id": "evt_33d38d5f1959",
+      "complaint_id": "cmp_500b5bb0f647",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:23:34.566Z"
+    },
+    {
+      "id": "evt_80277cc13e95",
+      "complaint_id": "cmp_1404e6b2fde6",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Sanitation & Waste → Sanitation & Solid Waste (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:22:17.373Z"
+    },
+    {
+      "id": "evt_9db24dcb5cd8",
+      "complaint_id": "cmp_1404e6b2fde6",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:22:07.705Z"
+    },
+    {
+      "id": "evt_942687bc1340",
+      "complaint_id": "cmp_1d72450fe961",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Roads & Infrastructure → Education / Municipal Schools (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:22:03.766Z"
+    },
+    {
+      "id": "evt_1ae79c99c578",
+      "complaint_id": "cmp_1d72450fe961",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:21:50.526Z"
+    },
+    {
+      "id": "evt_bb23afe11a4f",
+      "complaint_id": "cmp_d7a29b926f7d",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Sanitation & Waste → Sanitation & Solid Waste (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:20:55.451Z"
+    },
+    {
+      "id": "evt_2410672d6f86",
+      "complaint_id": "cmp_d7a29b926f7d",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:20:46.830Z"
+    },
+    {
+      "id": "evt_47495f920e58",
+      "complaint_id": "cmp_e93a9a4c211f",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Roads & Infrastructure → Education / Municipal Schools (confidence 0.82, model openrouter:nvidia/nemotron-3-nano-30b-a3b:free, used_llm=true)",
+      "created_at": "2026-08-20T22:20:42.347Z"
+    },
+    {
+      "id": "evt_a03dc0a273ab",
+      "complaint_id": "cmp_e93a9a4c211f",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:20:31.639Z"
+    },
+    {
+      "id": "evt_e110ad49b7f9",
+      "complaint_id": "cmp_e2e469650919",
+      "status": "in_progress",
+      "actor": "gov_demo",
+      "note": "Field squad deployed to site.",
+      "created_at": "2026-08-20T22:14:52.208Z"
+    },
+    {
+      "id": "evt_743027437bd4",
+      "complaint_id": "cmp_3294c50f5628",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Roads & Infrastructure → Public Works Department (Roads) (confidence 0.8, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:14:52.115Z"
+    },
+    {
+      "id": "evt_477799699ddf",
+      "complaint_id": "cmp_3294c50f5628",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:14:52.064Z"
+    },
+    {
+      "id": "evt_70e0d2b9dee7",
+      "complaint_id": "cmp_a85fd9c74c38",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Education & Community → Education / Municipal Schools (confidence 0.8, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:14:52.055Z"
+    },
+    {
+      "id": "evt_5023ce05ea2c",
+      "complaint_id": "cmp_a85fd9c74c38",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:14:51.997Z"
+    },
+    {
+      "id": "evt_9b2f604c6e3a",
+      "complaint_id": "cmp_2465c972d4cf",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Roads & Infrastructure → Municipal Administration (confidence 0.65, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:14:51.976Z"
+    },
+    {
+      "id": "evt_886f70c7d6b1",
+      "complaint_id": "cmp_2465c972d4cf",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:14:51.927Z"
+    },
+    {
+      "id": "evt_277c78613f3c",
+      "complaint_id": "cmp_2790529bdbde",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Street Lighting & Power → Electricity / Street Lighting (confidence 0.8, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:14:51.919Z"
+    },
+    {
+      "id": "evt_a149dbda93e8",
+      "complaint_id": "cmp_2790529bdbde",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:14:51.868Z"
+    },
+    {
+      "id": "evt_0763ef35627f",
+      "complaint_id": "cmp_8d36d74569c4",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Water Supply & Drainage → Water Supply & Drainage (confidence 0.65, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:14:51.859Z"
+    },
+    {
+      "id": "evt_a657ff7aa9d4",
+      "complaint_id": "cmp_8d36d74569c4",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:14:51.812Z"
+    },
+    {
+      "id": "evt_59fa05abdf2a",
+      "complaint_id": "cmp_f7055d6460ec",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Sanitation & Waste → Sanitation & Solid Waste (confidence 0.65, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:14:51.802Z"
+    },
+    {
+      "id": "evt_b1057cc1c513",
+      "complaint_id": "cmp_f7055d6460ec",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:14:51.743Z"
+    },
+    {
+      "id": "evt_f783feada086",
+      "complaint_id": "cmp_e2e469650919",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Roads & Infrastructure → Education / Municipal Schools (confidence 0.65, model heuristic, used_llm=false)",
+      "created_at": "2026-08-20T22:14:51.726Z"
+    },
+    {
+      "id": "evt_5b2140b7e913",
+      "complaint_id": "cmp_e2e469650919",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T22:14:42.189Z"
+    },
+    {
+      "id": "evt_ae435953c00a",
+      "complaint_id": "cmp_0f4bb9041a18",
+      "status": "open",
+      "actor": "Civic intelligence",
+      "note": "Classified as Education & Community → Education / Municipal Schools (confidence 0.8)",
+      "created_at": "2026-08-20T20:13:04.972Z"
+    },
+    {
+      "id": "evt_df9a9f6f52a1",
+      "complaint_id": "cmp_0f4bb9041a18",
+      "status": "pending_ai",
+      "actor": "Anonymous citizen",
+      "note": "Report submitted. Public profile is not attached.",
+      "created_at": "2026-08-20T20:13:04.806Z"
+    },
+    {
+      "id": "evt_b32cdccd4196",
+      "complaint_id": "cmp_review",
+      "status": "needs_review",
+      "actor": "Citizen",
+      "note": "Report registered.",
+      "created_at": "2026-08-21T08:00:00.000Z"
+    },
+    {
+      "id": "evt_cd2b0eee3ffc",
+      "complaint_id": "cmp_power",
+      "status": "open",
+      "actor": "Citizen",
+      "note": "Report registered.",
+      "created_at": "2026-08-15T08:00:00.000Z"
+    },
+    {
+      "id": "evt_b95e1118cc8e",
+      "complaint_id": "cmp_garbage",
+      "status": "open",
+      "actor": "Citizen",
+      "note": "Report registered.",
+      "created_at": "2026-08-21T06:15:00.000Z"
+    },
+    {
+      "id": "evt_092943383e29",
+      "complaint_id": "cmp_water",
+      "status": "in_progress",
+      "actor": "Citizen",
+      "note": "Report registered.",
+      "created_at": "2026-08-20T14:20:00.000Z"
+    },
+    {
+      "id": "evt_b24e4587163e",
+      "complaint_id": "cmp_pothole_c",
+      "status": "open",
+      "actor": "Citizen",
+      "note": "Report registered.",
+      "created_at": "2026-08-20T11:05:00.000Z"
+    },
+    {
+      "id": "evt_cbd417bc05f7",
+      "complaint_id": "cmp_pothole_b",
+      "status": "open",
+      "actor": "Citizen",
+      "note": "Report registered.",
+      "created_at": "2026-08-19T09:40:00.000Z"
+    },
+    {
+      "id": "evt_8c5095308db2",
+      "complaint_id": "cmp_pothole_a",
+      "status": "open",
+      "actor": "Citizen",
+      "note": "Report registered.",
+      "created_at": "2026-08-18T07:10:00.000Z"
+    }
+  ],
+  "departments": [
+    {
+      "id": "pwd",
+      "name": "Public Works Department (Roads)",
+      "keywords": "pothole road street footpath asphalt pavement bridge crater carriageway",
+      "responsibilities": "Road repair, potholes, footpaths, storm-damaged carriageways, school-approach roads."
+    },
+    {
+      "id": "water",
+      "name": "Water Supply & Drainage",
+      "keywords": "water pipeline leak flooding waterlogging drain sewage",
+      "responsibilities": "Drinking water, leaks, drainage, waterlogging."
+    },
+    {
+      "id": "sanitation",
+      "name": "Sanitation & Solid Waste",
+      "keywords": "garbage trash dump waste bin sanitation",
+      "responsibilities": "Collection, dumping, public bins, street sweeping."
+    },
+    {
+      "id": "power",
+      "name": "Electricity / Street Lighting",
+      "keywords": "electricity light pole transformer outage sparking",
+      "responsibilities": "Street lights, transformers, public electrical hazards."
+    },
+    {
+      "id": "safety",
+      "name": "Public Safety & Disaster",
+      "keywords": "accident hazard collapse fire safety",
+      "responsibilities": "Immediate public hazards and coordination with police/fire."
+    },
+    {
+      "id": "education",
+      "name": "Education / Municipal Schools",
+      "keywords": "school student classroom education campus",
+      "responsibilities": "Civic issues affecting municipal schools and student access. Often coordinates with PWD for approach roads."
+    },
+    {
+      "id": "transport",
+      "name": "Transport & Traffic",
+      "keywords": "bus traffic signal parking transport metro",
+      "responsibilities": "Signals, stops, traffic calming near civic infrastructure."
+    },
+    {
+      "id": "municipal",
+      "name": "Municipal Administration",
+      "keywords": "construction noise permit encroachment",
+      "responsibilities": "Catch-all routing when no specialist department matches."
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "aud_d4edf74027a4",
+      "actor_id": "user_gov_demo",
+      "action": "gov_override",
+      "entity_type": "complaint",
+      "entity_id": "cmp_water",
+      "detail": "{\"status\":\"resolved\",\"note\":\"Marked resolved by officer.\"}",
+      "created_at": "2026-08-21T03:49:35.422Z"
+    },
+    {
+      "id": "aud_ac7d8cb4c9a7",
+      "actor_id": "user_gov_demo",
+      "action": "gov_override",
+      "entity_type": "complaint",
+      "entity_id": "cmp_474db8616636",
+      "detail": "{\"status\":\"in_progress\",\"department\":\"Public Works Department (PWD) / Roads\",\"note\":\"Field squad deployed to site.\"}",
+      "created_at": "2026-08-20T22:27:51.254Z"
+    },
+    {
+      "id": "aud_56e491f970b6",
+      "actor_id": "user_gov_demo",
+      "action": "gov_ask",
+      "entity_type": "briefing",
+      "entity_id": "ask",
+      "detail": "{\"question\":\"Which department currently has the most complaints?\",\"used_llm\":false,\"model\":\"heuristic\"}",
+      "created_at": "2026-08-20T22:27:51.237Z"
+    },
+    {
+      "id": "aud_1d49ff66f431",
+      "actor_id": "user_gov_demo",
+      "action": "gov_ask",
+      "entity_type": "briefing",
+      "entity_id": "ask",
+      "detail": "{\"question\":\"What are the urgent unresolved issues right now?\",\"used_llm\":false,\"model\":\"heuristic\"}",
+      "created_at": "2026-08-20T22:27:48.053Z"
+    },
+    {
+      "id": "aud_4ea7a3f485bd",
+      "actor_id": "user_gov_demo",
+      "action": "gov_ask",
+      "entity_type": "briefing",
+      "entity_id": "ask",
+      "detail": "{\"question\":\"Which ward or area has the most road complaints?\",\"used_llm\":false,\"model\":\"heuristic\"}",
+      "created_at": "2026-08-20T22:27:44.747Z"
+    },
+    {
+      "id": "aud_80ad714d4854",
+      "actor_id": "user_gov_demo",
+      "action": "gov_ask",
+      "entity_type": "briefing",
+      "entity_id": "ask",
+      "detail": "{\"question\":\"Which issue category has the highest complaint volume?\",\"used_llm\":false,\"model\":\"heuristic\"}",
+      "created_at": "2026-08-20T22:27:41.255Z"
+    },
+    {
+      "id": "aud_b3a7527cc900",
+      "actor_id": "user_gov_demo",
+      "action": "gov_override",
+      "entity_type": "complaint",
+      "entity_id": "cmp_e2e469650919",
+      "detail": "{\"status\":\"in_progress\",\"note\":\"Field squad deployed to site.\"}",
+      "created_at": "2026-08-20T22:14:52.209Z"
+    },
+    {
+      "id": "aud_5619e521757c",
+      "actor_id": "user_gov_demo",
+      "action": "gov_ask",
+      "entity_type": "briefing",
+      "entity_id": "ask",
+      "detail": "{\"question\":\"Which department currently has the most complaints?\",\"used_llm\":false,\"model\":\"heuristic\"}",
+      "created_at": "2026-08-20T22:14:52.202Z"
+    },
+    {
+      "id": "aud_cc044f02e9dc",
+      "actor_id": "user_gov_demo",
+      "action": "gov_ask",
+      "entity_type": "briefing",
+      "entity_id": "ask",
+      "detail": "{\"question\":\"What are the urgent unresolved issues right now?\",\"used_llm\":false,\"model\":\"heuristic\"}",
+      "created_at": "2026-08-20T22:14:52.187Z"
+    },
+    {
+      "id": "aud_5ba2633d2914",
+      "actor_id": "user_gov_demo",
+      "action": "gov_ask",
+      "entity_type": "briefing",
+      "entity_id": "ask",
+      "detail": "{\"question\":\"Which ward or area has the most road complaints?\",\"used_llm\":false,\"model\":\"heuristic\"}",
+      "created_at": "2026-08-20T22:14:52.176Z"
+    },
+    {
+      "id": "aud_b46e9407c203",
+      "actor_id": "user_gov_demo",
+      "action": "gov_ask",
+      "entity_type": "briefing",
+      "entity_id": "ask",
+      "detail": "{\"question\":\"Which issue category has the highest complaint volume?\",\"used_llm\":false,\"model\":\"heuristic\"}",
+      "created_at": "2026-08-20T22:14:52.166Z"
+    }
+  ]
+}

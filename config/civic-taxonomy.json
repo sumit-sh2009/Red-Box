@@ -1,0 +1,109 @@
+{
+  "categories": [
+    {
+      "id": "roads",
+      "name": "Roads & Infrastructure",
+      "keywords": ["pothole", "road", "street", "asphalt", "footpath", "pavement", "crater", "carriageway", "broken road", "cave-in"]
+    },
+    {
+      "id": "water",
+      "name": "Water Supply & Drainage",
+      "keywords": ["water", "flood", "waterlog", "drain", "pipeline", "sewage", "leak", "taps", "silt"]
+    },
+    {
+      "id": "sanitation",
+      "name": "Sanitation & Waste",
+      "keywords": ["garbage", "trash", "waste", "dump", "bin", "litter", "collection"]
+    },
+    {
+      "id": "power",
+      "name": "Street Lighting & Power",
+      "keywords": ["light", "electric", "transformer", "power", "outage", "spark", "cable", "pole"]
+    },
+    {
+      "id": "safety",
+      "name": "Public Safety & Hazards",
+      "keywords": ["accident", "hazard", "collapse", "fire", "unsafe", "electrocution"]
+    },
+    {
+      "id": "parks",
+      "name": "Parks & Public Amenities",
+      "keywords": ["park", "playground", "bench", "garden", "amenity"]
+    },
+    {
+      "id": "education",
+      "name": "Education & Community",
+      "keywords": ["school", "student", "classroom", "campus", "children"]
+    },
+    {
+      "id": "transport",
+      "name": "Transport",
+      "keywords": ["bus", "traffic", "signal", "metro", "parking", "stop"]
+    },
+    {
+      "id": "noise",
+      "name": "Noise",
+      "keywords": ["noise", "loudspeaker", "honk"]
+    },
+    {
+      "id": "construction",
+      "name": "Construction",
+      "keywords": ["construction", "debris", "encroach", "permit"]
+    },
+    {
+      "id": "other",
+      "name": "Other Civic Issues",
+      "keywords": []
+    }
+  ],
+  "departments": [
+    {
+      "id": "pwd",
+      "name": "Public Works Department (Roads)",
+      "keywords": ["pothole", "road", "street", "footpath", "asphalt", "pavement", "bridge", "crater", "carriageway"],
+      "responsibilities": "Road repair, potholes, footpaths, storm-damaged carriageways, school-approach roads."
+    },
+    {
+      "id": "water",
+      "name": "Water Supply & Drainage",
+      "keywords": ["water", "pipeline", "leak", "flooding", "waterlogging", "drain", "sewage"],
+      "responsibilities": "Drinking water, leaks, drainage, waterlogging."
+    },
+    {
+      "id": "sanitation",
+      "name": "Sanitation & Solid Waste",
+      "keywords": ["garbage", "trash", "dump", "waste", "bin", "sanitation"],
+      "responsibilities": "Collection, dumping, public bins, street sweeping."
+    },
+    {
+      "id": "power",
+      "name": "Electricity / Street Lighting",
+      "keywords": ["electricity", "light", "pole", "transformer", "outage", "sparking"],
+      "responsibilities": "Street lights, transformers, public electrical hazards."
+    },
+    {
+      "id": "safety",
+      "name": "Public Safety & Disaster",
+      "keywords": ["accident", "hazard", "collapse", "fire", "safety"],
+      "responsibilities": "Immediate public hazards and coordination with police/fire."
+    },
+    {
+      "id": "education",
+      "name": "Education / Municipal Schools",
+      "keywords": ["school", "student", "classroom", "education", "campus"],
+      "responsibilities": "Civic issues affecting municipal schools and student access. Often coordinates with PWD for approach roads."
+    },
+    {
+      "id": "transport",
+      "name": "Transport & Traffic",
+      "keywords": ["bus", "traffic", "signal", "parking", "transport", "metro"],
+      "responsibilities": "Signals, stops, traffic calming near civic infrastructure."
+    },
+    {
+      "id": "municipal",
+      "name": "Municipal Administration",
+      "keywords": ["construction", "noise", "permit", "encroachment"],
+      "responsibilities": "Catch-all routing when no specialist department matches."
+    }
+  ]
+}
