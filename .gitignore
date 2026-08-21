@@ -8,7 +8,7 @@ node_modules/
 dist/
 build/
 out/
-public/
+/public/
 client/dist/
 server/dist/
 government-panel/dist/
