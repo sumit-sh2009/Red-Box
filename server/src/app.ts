@@ -11,7 +11,7 @@ import govRoutes from './routes/gov.js';
 import { db } from './db/database.js';
 import { seedCivicData } from './db/seedCivic.js';
 import { initialUsers } from './db/seed.js';
-import { pgEnabled } from './db/pg.js';
+import { pgEnabled, disablePg } from './db/pg.js';
 import { seedPgDatabase } from './db/pgSeed.js';
 
 dotenv.config();
@@ -25,10 +25,10 @@ export async function bootstrap(): Promise<void> {
   if (pgEnabled()) {
     try {
       await seedPgDatabase();
+      return;
     } catch (err) {
-      console.error('PostgreSQL bootstrap failed — API will still start; check DATABASE_URL:', err);
+      disablePg(err instanceof Error ? err.message : String(err));
     }
-    return;
   }
 
   for (const u of initialUsers) {

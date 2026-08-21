@@ -6,25 +6,65 @@ const { Pool } = pg;
 
 let pool: pg.Pool | null = null;
 let initialized = false;
+let disabledReason: string | null = null;
+
+function isLoopbackUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    return u.hostname === 'localhost' || u.hostname === '127.0.0.1' || u.hostname === '::1';
+  } catch {
+    return /localhost|127\.0\.0\.1/.test(url);
+  }
+}
+
+/** Vercel Postgres sets POSTGRES_URL; .env.example uses DATABASE_URL pointing at local Docker. */
+export function resolveDatabaseUrl(): string | null {
+  const candidates = [
+    process.env.POSTGRES_URL,
+    process.env.POSTGRES_PRISMA_URL,
+    process.env.DATABASE_URL,
+  ];
+
+  for (const raw of candidates) {
+    const url = raw?.trim();
+    if (!url) continue;
+    if (process.env.VERCEL && isLoopbackUrl(url)) {
+      continue;
+    }
+    return url;
+  }
+
+  return null;
+}
+
+export function disablePg(reason: string): void {
+  disabledReason = reason;
+  console.warn('PostgreSQL disabled:', reason);
+}
 
 export function pgEnabled(): boolean {
-  return Boolean(process.env.DATABASE_URL?.trim());
+  if (disabledReason) return false;
+  return Boolean(resolveDatabaseUrl());
 }
 
 export function getPool(): pg.Pool {
   if (!pool) {
-    const connectionString = process.env.DATABASE_URL!;
+    const connectionString = resolveDatabaseUrl();
+    if (!connectionString) {
+      throw new Error('No Postgres connection string');
+    }
     const useSsl =
       process.env.PGSSLMODE === 'require' ||
       process.env.POSTGRES_SSL === 'true' ||
-      (process.env.NODE_ENV === 'production' && !connectionString.includes('localhost'));
+      (process.env.VERCEL === '1' && !isLoopbackUrl(connectionString)) ||
+      (process.env.NODE_ENV === 'production' && !isLoopbackUrl(connectionString));
 
     pool = new Pool({
       connectionString,
       ssl: useSsl ? { rejectUnauthorized: false } : undefined,
       max: process.env.VERCEL ? 1 : 10,
-      idleTimeoutMillis: 30000,
-      connectionTimeoutMillis: 10000,
+      idleTimeoutMillis: 5000,
+      connectionTimeoutMillis: process.env.VERCEL ? 3000 : 10000,
     });
   }
   return pool;
