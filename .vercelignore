@@ -1,6 +1,6 @@
 ai/.venv
 ai/__pycache__
-scripts/
+scripts/e2e_verification.py
 start-all.sh
 docker-compose.yml
 server/src/test-api.ts

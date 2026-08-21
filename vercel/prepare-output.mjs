@@ -6,7 +6,7 @@ const src = path.join(root, 'client', 'dist');
 const dest = path.join(root, 'public');
 
 if (!fs.existsSync(src)) {
-  console.error('prepare-vercel-output: client/dist missing — run client build first');
+  console.error('prepare-output: client/dist missing — run client build first');
   process.exit(1);
 }
 
@@ -18,11 +18,11 @@ if (!fs.existsSync(index)) {
   const appIndex = path.join(dest, 'app', 'index.html');
   if (fs.existsSync(appIndex)) {
     fs.copyFileSync(appIndex, index);
-    console.warn('prepare-vercel-output: root index.html missing — copied from /app/index.html');
+    console.warn('prepare-output: root index.html missing — copied from /app/index.html');
   } else {
-    console.error('prepare-vercel-output: no index.html in client/dist');
+    console.error('prepare-output: no index.html in client/dist');
     process.exit(1);
   }
 }
 
-console.log('prepare-vercel-output: copied client/dist → public/');
+console.log('prepare-output: copied client/dist → public/');
