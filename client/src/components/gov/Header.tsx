@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="min-w-0">
           <p className="civic-label mb-1 text-[color:var(--color-intel)]">Municipal intelligence</p>
           <h1 className="section-heading-lg text-retro-navy tracking-tight">
-            Civic Pulse
+            Red-Box
           </h1>
           <p className="font-body text-sm text-retro-muted mt-0.5">
             Clusters and departments — not identities

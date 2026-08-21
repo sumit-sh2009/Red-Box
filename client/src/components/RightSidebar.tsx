@@ -134,7 +134,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
       </div>
 
       <div className="px-2 text-sm text-retro-muted font-terminal leading-relaxed select-text">
-        CivicPulse · civic reports · 2026
+        Red-Box · civic reports · 2026
       </div>
     </aside>
   );

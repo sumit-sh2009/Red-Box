@@ -1,8 +1,8 @@
 {
-  "name": "civicpulse",
+  "name": "red-box",
   "version": "1.0.0",
   "private": true,
-  "description": "CivicPulse — anonymous civic reporting and government intelligence",
+  "description": "Red-Box — Anonymous civic grievance redressal and municipal AI intelligence platform",
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "npm --prefix server run dev",
