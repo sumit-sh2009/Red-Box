@@ -6,11 +6,19 @@
   "outputDirectory": "public",
   "rewrites": [
     {
+      "source": "/api",
+      "destination": "/api/server"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/api/server"
     },
     {
       "source": "/app",
+      "destination": "/app/index.html"
+    },
+    {
+      "source": "/app/(.*)",
       "destination": "/app/index.html"
     }
   ],
