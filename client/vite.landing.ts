@@ -134,8 +134,7 @@ export function civicLandingPlugin(): Plugin {
       server.middlewares.use(landingMiddleware);
     },
     closeBundle() {
-      const distRoot = path.resolve(__dirname, 'dist');
-      copyLandingIntoDist(distRoot);
+      copyLandingIntoDist(path.resolve(__dirname, '../public'));
     },
   };
 }
