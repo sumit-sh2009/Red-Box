@@ -156,7 +156,7 @@ Suggested path:
 3. Log in as `gov_demo` → Intelligence: wards, clusters, briefing, Ask.
 4. Export CSV/JSON from live store counts. Open a `needs_review` item if present.
 
-Landing shortcuts: `register-complaint.html` → compose, `view-complaint.html` → search, `open-thoughts.html` → feed. The 3D city landing lives next to this repo at `../card/apple-3d-card` and is served at `/` without copying those assets into `client/`.
+Landing shortcuts: `register-complaint.html` → compose, `view-complaint.html` → search, `open-thoughts.html` → feed. The 3D city landing is bundled in `landing/` and copied into `client/dist` at build (sibling `../card/apple-3d-card` still works for local dev).
 
 ---
 
@@ -164,6 +164,8 @@ Landing shortcuts: `register-complaint.html` → compose, `view-complaint.html` 
 
 ```
 Website/
+├── api/             Vercel serverless entry (Express)
+├── landing/         City landing (bundled for deploy)
 ├── client/          React + Vite (base /app/, landing plugin)
 ├── server/          Express API + civic JSON store
 ├── ai/              LangGraph worker, Groq, RAG over kb/
@@ -191,13 +193,41 @@ Website/
 
 ---
 
-## Production checklist
+## Deploy on Vercel
+
+The repo includes `vercel.json` — import it in [Vercel](https://vercel.com/new) with framework preset **Other**.
+
+| Path | Served by |
+| --- | --- |
+| `/` | Static landing (`landing/` → `client/dist` at build) |
+| `/app/` | Vite SPA (`base: /app/`) |
+| `/api/*` | Express serverless (`api/index.ts` → `server/dist/app.js`) |
+
+**Environment variables** (see `.env.vercel.example`):
+
+- `DATABASE_URL` — Postgres connection string (**required** on Vercel for persistent data)
+- `JWT_SECRET` — long random string
+- `GROQ_API_KEY` — primary LLM
+- `OPENROUTER_API_KEY` — optional fallback
+- `AI_SERVICE_URL` — optional external LangGraph worker (Python `ai/` is not deployed on Vercel)
+
+```bash
+npm run install:all
+npm run build
+npx vercel dev    # local Vercel parity
+```
+
+**Production data:** Set `DATABASE_URL` (Vercel Postgres, Neon, or Supabase). Schema auto-applies on boot; demo users and civic seed load when empty. Without `DATABASE_URL`, the API uses JSON files in `server/data/` (local dev only).
+
+---
+
+## Production checklist (self-hosted)
 
 - Set a long random `JWT_SECRET`. Do not ship the demo password as the only auth story.
 - Put Express behind HTTPS; Vite `base` is `/app/` so reverse-proxy `/` (landing) and `/app/` (SPA) plus `/api` to `:3001`.
 - `npm run build` at the repo root compiles server + client (`client/dist/app`).
 - Keep `GROQ_API_KEY` (and any OpenRouter key) in the host secret store, never in git.
-- Civic persistence today is `server/data/civic.json`. Point at Postgres using `server/sql/schema.sql` before real volume.
+- Civic persistence is **PostgreSQL** when `DATABASE_URL` is set (`server/sql/schema.sql`). JSON files in `server/data/` are the offline fallback.
 
 ```nginx
 # sketch — adjust root paths

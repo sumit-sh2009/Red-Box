@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CivicPulse — Report, track, and improve the city</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body data-theme="day">
+
+  <a class="skip-to-content" href="#lifecycle-section">Skip to how it works</a>
+
+  <!-- Top Sticky Scroll Progress Bar -->
+  <div class="top-scroll-progress" id="topScrollProgress"></div>
+
+  <div class="cityscape-viewport" id="viewport">
+
+    <!-- ========================================================================
+         MAIN ANIMATED CITY STAGE
+         ======================================================================== -->
+    <div class="cityscape-stage" id="cityStage">
+
+      <!-- LAYER 1: Living Sky Gradient -->
+      <div class="sky-canvas-layer" id="skyCanvasLayer"></div>
+
+      <!-- Celestial Orb (Sun / Sunset Glow / Twilight Moon) -->
+      <div class="celestial-orb" id="celestialOrb"></div>
+
+      <!-- Birds drifting across the sky -->
+      <div class="birds-group" id="birdsGroup">
+        <svg viewBox="0 0 140 45" fill="rgba(30, 55, 65, 0.65)">
+          <path d="M 12,22 Q 22,12 30,22 Q 38,12 48,22 Q 38,18 30,26 Q 22,18 12,22 Z" />
+          <path d="M 60,14 Q 68,6 74,14 Q 80,6 88,14 Q 80,11 74,17 Q 68,11 60,14 Z" />
+          <path d="M 100,28 Q 108,20 114,28 Q 120,20 128,28 Q 120,25 114,31 Q 108,25 100,28 Z" />
+        </svg>
+      </div>
+
+      <!-- LAYER 2: Far Clouds Track (High Altitude, Slower Drift) -->
+      <div class="clouds-track clouds-far" id="cloudsFar">
+        <div class="cloud-segment">
+          <svg class="cloud-svg" style="top: 12%; left: 8%; width: 155px; height: 55px;" viewBox="0 0 155 55">
+            <path d="M 22,44 Q 10,44 10,32 Q 10,18 26,18 Q 34,8 52,10 Q 66,4 82,12 Q 98,6 114,16 Q 132,16 135,30 Q 145,32 145,44 Z" />
+          </svg>
+          <svg class="cloud-svg" style="top: 20%; left: 48%; width: 185px; height: 62px;" viewBox="0 0 185 62">
+            <path d="M 28,52 Q 12,52 12,38 Q 12,24 30,24 Q 38,12 60,14 Q 78,6 100,16 Q 122,10 138,22 Q 162,22 165,38 Q 175,40 175,52 Z" />
+          </svg>
+          <svg class="cloud-svg" style="top: 8%; left: 80%; width: 130px; height: 46px;" viewBox="0 0 130 46">
+            <path d="M 20,38 Q 8,38 8,26 Q 8,14 24,14 Q 30,6 48,8 Q 62,3 76,11 Q 90,5 102,14 Q 118,14 120,26 Q 126,28 126,38 Z" />
+          </svg>
+        </div>
+        <div class="cloud-segment">
+          <svg class="cloud-svg" style="top: 12%; left: 8%; width: 155px; height: 55px;" viewBox="0 0 155 55">
+            <path d="M 22,44 Q 10,44 10,32 Q 10,18 26,18 Q 34,8 52,10 Q 66,4 82,12 Q 98,6 114,16 Q 132,16 135,30 Q 145,32 145,44 Z" />
+          </svg>
+          <svg class="cloud-svg" style="top: 20%; left: 48%; width: 185px; height: 62px;" viewBox="0 0 185 62">
+            <path d="M 28,52 Q 12,52 12,38 Q 12,24 30,24 Q 38,12 60,14 Q 78,6 100,16 Q 122,10 138,22 Q 162,22 165,38 Q 175,40 175,52 Z" />
+          </svg>
+          <svg class="cloud-svg" style="top: 8%; left: 80%; width: 130px; height: 46px;" viewBox="0 0 130 46">
+            <path d="M 20,38 Q 8,38 8,26 Q 8,14 24,14 Q 30,6 48,8 Q 62,3 76,11 Q 90,5 102,14 Q 118,14 120,26 Q 126,28 126,38 Z" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- LAYER 3: Distant High-Rise Skyline -->
+      <div class="skyline-distant-layer" id="distantSkyline">
+        <svg class="skyline-svg" viewBox="0 0 1600 440" preserveAspectRatio="xMidYMax meet">
+          <defs>
+            <pattern id="gridWindowsFar" width="12" height="16" patternUnits="userSpaceOnUse">
+              <rect x="2" y="3" width="8" height="10" fill="#4d6f78" opacity="0.65" />
+            </pattern>
+            <pattern id="gridWindowsFarDark" width="14" height="20" patternUnits="userSpaceOnUse">
+              <rect x="3" y="4" width="8" height="12" fill="#2d434c" opacity="0.8" />
+            </pattern>
+          </defs>
+
+          <!-- High-Rise 1: Tall White Grid Skyscraper (Left, matching reference) -->
+          <g transform="translate(60, 30)">
+            <rect x="0" y="0" width="165" height="410" fill="#d8e6e8" />
+            <rect x="15" y="0" width="135" height="410" fill="#edf4f5" />
+            <rect x="15" y="20" width="135" height="390" fill="url(#gridWindowsFar)" />
+            <rect x="45" y="-30" width="75" height="30" fill="#bccfd3" />
+            <line x1="82" y1="-30" x2="82" y2="-80" stroke="#7a979e" stroke-width="3.5" />
+            <circle cx="82" cy="-80" r="4.5" fill="#e74c3c" />
+            <rect x="15" y="-12" width="22" height="12" fill="#7a979e" />
+          </g>
+
+          <!-- High-Rise 2: Curved Modernist Apartment (Mid-Left) -->
+          <g transform="translate(345, 110)">
+            <rect x="0" y="0" width="175" height="330" fill="#9cb7bd" />
+            <rect x="10" y="0" width="155" height="330" fill="#b0cacf" />
+            <g fill="#435e66">
+              <rect x="20" y="25" width="135" height="14" rx="2" />
+              <rect x="20" y="55" width="135" height="14" rx="2" />
+              <rect x="20" y="85" width="135" height="14" rx="2" />
+              <rect x="20" y="115" width="135" height="14" rx="2" />
+              <rect x="20" y="145" width="135" height="14" rx="2" />
+              <rect x="20" y="175" width="135" height="14" rx="2" />
+              <rect x="20" y="205" width="135" height="14" rx="2" />
+            </g>
+            <rect x="68" y="15" width="40" height="315" fill="#c3dbe0" />
+            <rect x="30" y="-18" width="35" height="18" fill="#7a979e" />
+            <rect x="98" y="-26" width="48" height="26" fill="#7a979e" />
+            <line x1="122" y1="-26" x2="122" y2="-60" stroke="#5d7b82" stroke-width="2.5" />
+          </g>
+
+          <!-- High-Rise 3: Distant Buff Utility Tower (Mid-Right) -->
+          <g transform="translate(885, 140)">
+            <rect x="0" y="0" width="155" height="300" fill="#d1be9d" />
+            <rect x="12" y="15" width="131" height="285" fill="url(#gridWindowsFar)" />
+            <rect x="25" y="-35" width="42" height="35" rx="3" fill="#8c6d48" />
+            <polygon points="20,-35 46,-52 72,-35" fill="#664d30" />
+            <rect x="90" y="-18" width="45" height="18" fill="#a89578" />
+          </g>
+
+          <!-- High-Rise 4: Tall Dark Slate Modern Skyscraper (Right) -->
+          <g transform="translate(1085, 45)">
+            <rect x="0" y="0" width="185" height="395" fill="#6c838a" />
+            <rect x="15" y="0" width="155" height="395" fill="#7d98a0" />
+            <rect x="20" y="20" width="145" height="375" fill="url(#gridWindowsFarDark)" />
+            <rect x="20" y="60" width="35" height="8" fill="#3a5159" />
+            <rect x="20" y="100" width="35" height="8" fill="#3a5159" />
+            <rect x="20" y="140" width="35" height="8" fill="#3a5159" />
+            <rect x="20" y="180" width="35" height="8" fill="#3a5159" />
+            <rect x="42" y="-24" width="102" height="24" fill="#586f75" />
+            <line x1="62" y1="-24" x2="62" y2="-70" stroke="#3a5159" stroke-width="3" />
+            <line x1="124" y1="-24" x2="124" y2="-88" stroke="#3a5159" stroke-width="2.5" />
+            <circle cx="124" cy="-88" r="4" fill="#e74c3c" />
+          </g>
+
+          <!-- High-Rise 5: Cream Residential Block (Far Right) -->
+          <g transform="translate(1325, 120)">
+            <rect x="0" y="0" width="165" height="320" fill="#e4d9bc" />
+            <g fill="#5c5341">
+              <rect x="20" y="25" width="22" height="32" rx="2" />
+              <rect x="55" y="25" width="22" height="32" rx="2" />
+              <rect x="90" y="25" width="22" height="32" rx="2" />
+              <rect x="125" y="25" width="22" height="32" rx="2" />
+              <rect x="20" y="80" width="22" height="32" rx="2" />
+              <rect x="55" y="80" width="22" height="32" rx="2" />
+              <rect x="90" y="80" width="22" height="32" rx="2" />
+              <rect x="125" y="80" width="22" height="32" rx="2" />
+            </g>
+          </g>
+
+          <!-- Rooftop Utility Cables -->
+          <path d="M 225,95 Q 285,125 345,105" stroke="#486066" stroke-width="1.2" fill="none" opacity="0.65" />
+          <path d="M 520,125 Q 700,175 885,145" stroke="#486066" stroke-width="1.2" fill="none" opacity="0.65" />
+          <path d="M 1040,145 Q 1065,130 1085,115" stroke="#486066" stroke-width="1.2" fill="none" opacity="0.65" />
+          <path d="M 1270,105 Q 1295,125 1325,115" stroke="#486066" stroke-width="1.2" fill="none" opacity="0.65" />
+        </svg>
+      </div>
+
+      <!-- LAYER 4: Near Clouds Track (Foreground Fluffy Clouds) -->
+      <div class="clouds-track clouds-near" id="cloudsNear">
+        <div class="cloud-segment">
+          <svg class="cloud-svg" style="top: 24%; left: 22%; width: 235px; height: 80px;" viewBox="0 0 235 80">
+            <path d="M 32,70 Q 10,70 10,50 Q 10,32 35,32 Q 45,15 75,17 Q 98,6 126,19 Q 150,11 174,26 Q 206,26 209,48 Q 225,51 225,70 Z" />
+          </svg>
+          <svg class="cloud-svg" style="top: 14%; left: 66%; width: 255px; height: 90px;" viewBox="0 0 255 90">
+            <path d="M 32,80 Q 10,80 10,58 Q 10,36 38,36 Q 49,17 84,19 Q 110,7 140,21 Q 166,11 194,28 Q 228,28 234,54 Q 250,58 250,80 Z" />
+          </svg>
+        </div>
+        <div class="cloud-segment">
+          <svg class="cloud-svg" style="top: 24%; left: 22%; width: 235px; height: 80px;" viewBox="0 0 235 80">
+            <path d="M 32,70 Q 10,70 10,50 Q 10,32 35,32 Q 45,15 75,17 Q 98,6 126,19 Q 150,11 174,26 Q 206,26 209,48 Q 225,51 225,70 Z" />
+          </svg>
+          <svg class="cloud-svg" style="top: 14%; left: 66%; width: 255px; height: 90px;" viewBox="0 0 255 90">
+            <path d="M 32,80 Q 10,80 10,58 Q 10,36 38,36 Q 49,17 84,19 Q 110,7 140,21 Q 166,11 194,28 Q 228,28 234,54 Q 250,58 250,80 Z" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- LAYER 5: Midground Colorful Townhouses (8 Distinct Houses) -->
+      <div class="buildings-midground-layer" id="midBuildings">
+        <svg class="buildings-svg" viewBox="0 0 1600 380" preserveAspectRatio="xMidYMax meet">
+
+          <!-- HOUSE 1: Slate Blue Townhouse (x: 0..190) -->
+          <g id="house1">
+            <rect x="0" y="30" width="190" height="350" fill="#5289a7" />
+            <rect x="-4" y="20" width="198" height="14" fill="#3c6e89" />
+            <rect x="0" y="12" width="190" height="10" fill="#6aa0be" />
+            <!-- Windows Row 1 -->
+            <rect x="25" y="55" width="34" height="48" fill="#ffffff" rx="2" />
+            <rect x="28" y="58" width="28" height="42" fill="#1b2f38" class="interactive-window" data-win="1" />
+            <rect x="78" y="55" width="34" height="48" fill="#ffffff" rx="2" />
+            <rect x="81" y="58" width="28" height="42" fill="#1b2f38" class="interactive-window" data-win="2" />
+            <rect x="131" y="55" width="34" height="48" fill="#ffffff" rx="2" />
+            <rect x="134" y="58" width="28" height="42" fill="#1b2f38" class="interactive-window" data-win="3" />
+            <!-- Windows Row 2 -->
+            <rect x="25" y="135" width="34" height="52" fill="#ffffff" rx="2" />
+            <rect x="28" y="138" width="28" height="46" fill="#1b2f38" class="interactive-window" data-win="4" />
+            <rect x="78" y="135" width="34" height="52" fill="#ffffff" rx="2" />
+            <rect x="81" y="138" width="28" height="46" fill="#1b2f38" class="interactive-window" data-win="5" />
+            <rect x="131" y="135" width="34" height="52" fill="#ffffff" rx="2" />
+            <rect x="134" y="138" width="28" height="46" fill="#1b2f38" class="interactive-window" data-win="6" />
+            <!-- Windows Row 3 & Door -->
+            <rect x="25" y="225" width="34" height="60" fill="#ffffff" rx="3" />
+            <rect x="28" y="228" width="28" height="54" fill="#1b2f38" class="interactive-window" data-win="7" />
+            <rect x="78" y="225" width="34" height="60" fill="#ffffff" rx="3" />
+            <rect x="81" y="228" width="28" height="54" fill="#1b2f38" class="interactive-window" data-win="8" />
+            <rect x="130" y="220" width="40" height="160" fill="#2b4756" rx="3" />
+            <rect x="135" y="235" width="30" height="145" fill="#1d303b" />
+            <circle cx="140" cy="290" r="2.5" fill="#e5a43b" />
+            <rect x="30" y="-12" width="22" height="26" fill="#a3473b" />
+            <rect x="26" y="-18" width="30" height="6" fill="#752a20" />
+          </g>
+
+          <!-- HOUSE 2: Sage Green Townhouse (x: 190..390) -->
+          <g id="house2">
+            <rect x="190" y="10" width="200" height="370" fill="#579373" />
+            <rect x="186" y="0" width="208" height="14" fill="#3f7256" />
+            <rect x="198" y="-10" width="184" height="12" fill="#71ad8d" />
+            <rect x="190" y="115" width="200" height="6" fill="#3f7256" />
+            <rect x="190" y="215" width="200" height="6" fill="#3f7256" />
+            <!-- Windows Row 1 -->
+            <rect x="212" y="35" width="36" height="54" fill="#f4ebd9" rx="3" />
+            <rect x="216" y="39" width="28" height="46" fill="#1c3328" class="interactive-window" data-win="9" />
+            <rect x="272" y="35" width="36" height="54" fill="#f4ebd9" rx="3" />
+            <rect x="276" y="39" width="28" height="46" fill="#1c3328" class="interactive-window" data-win="10" />
+            <rect x="332" y="35" width="36" height="54" fill="#f4ebd9" rx="3" />
+            <rect x="336" y="39" width="28" height="46" fill="#1c3328" class="interactive-window" data-win="11" />
+            <!-- Windows Row 2 -->
+            <rect x="212" y="135" width="36" height="56" fill="#f4ebd9" rx="3" />
+            <rect x="216" y="139" width="28" height="48" fill="#1c3328" class="interactive-window" data-win="12" />
+            <rect x="272" y="135" width="36" height="56" fill="#f4ebd9" rx="3" />
+            <rect x="276" y="139" width="28" height="48" fill="#1c3328" class="interactive-window" data-win="13" />
+            <rect x="332" y="135" width="36" height="56" fill="#f4ebd9" rx="3" />
+            <rect x="336" y="139" width="28" height="48" fill="#1c3328" class="interactive-window" data-win="14" />
+            <!-- Windows Row 3 & Door -->
+            <rect x="212" y="235" width="36" height="60" fill="#f4ebd9" rx="3" />
+            <rect x="216" y="239" width="28" height="52" fill="#1c3328" class="interactive-window" data-win="15" />
+            <rect x="272" y="235" width="36" height="60" fill="#f4ebd9" rx="3" />
+            <rect x="276" y="239" width="28" height="52" fill="#1c3328" class="interactive-window" data-win="16" />
+            <rect x="328" y="230" width="44" height="150" fill="#2d4a3b" rx="4" />
+            <rect x="333" y="245" width="34" height="135" fill="#1a2e24" />
+            <circle cx="340" cy="295" r="2.5" fill="#e5a43b" />
+          </g>
+
+          <!-- HOUSE 3: Terracotta / Coral Red Townhouse (x: 390..580) -->
+          <g id="house3">
+            <rect x="390" y="40" width="190" height="340" fill="#c3383f" />
+            <rect x="386" y="28" width="198" height="14" fill="#9e2329" />
+            <rect x="420" y="16" width="130" height="14" fill="#d9535a" />
+            <rect x="390" y="130" width="190" height="5" fill="#8f1f25" />
+            <rect x="390" y="230" width="190" height="5" fill="#8f1f25" />
+            <!-- Windows Row 1 -->
+            <rect x="412" y="60" width="34" height="45" fill="#e0dbd1" rx="2" />
+            <rect x="415" y="64" width="28" height="37" fill="#2b1517" class="interactive-window" data-win="17" />
+            <rect x="468" y="60" width="34" height="45" fill="#e0dbd1" rx="2" />
+            <rect x="471" y="64" width="28" height="37" fill="#2b1517" class="interactive-window" data-win="18" />
+            <rect x="524" y="60" width="34" height="45" fill="#e0dbd1" rx="2" />
+            <rect x="527" y="64" width="28" height="37" fill="#2b1517" class="interactive-window" data-win="19" />
+            <!-- Windows Row 2 -->
+            <rect x="412" y="150" width="34" height="50" fill="#e0dbd1" rx="2" />
+            <rect x="415" y="154" width="28" height="42" fill="#2b1517" class="interactive-window" data-win="20" />
+            <rect x="468" y="150" width="34" height="50" fill="#e0dbd1" rx="2" />
+            <rect x="471" y="154" width="28" height="42" fill="#2b1517" class="interactive-window" data-win="21" />
+            <rect x="524" y="150" width="34" height="50" fill="#e0dbd1" rx="2" />
+            <rect x="527" y="154" width="28" height="42" fill="#2b1517" class="interactive-window" data-win="22" />
+            <!-- Windows Row 3 & Arched Entrance -->
+            <rect x="412" y="245" width="34" height="55" fill="#e0dbd1" rx="2" />
+            <rect x="415" y="249" width="28" height="47" fill="#2b1517" class="interactive-window" data-win="23" />
+            <path d="M 465,380 L 465,248 Q 485,226 505,248 L 505,380 Z" fill="#1b2a38" />
+            <path d="M 470,380 L 470,252 Q 485,232 500,252 L 500,380 Z" fill="#111c26" />
+            <circle cx="476" cy="295" r="2.5" fill="#f1c40f" />
+            <rect x="524" y="245" width="34" height="55" fill="#e0dbd1" rx="2" />
+            <rect x="527" y="249" width="28" height="47" fill="#2b1517" class="interactive-window" data-win="24" />
+          </g>
+
+          <!-- HOUSE 4: Mustard / Golden Ochre Townhouse (x: 580..760) -->
+          <g id="house4">
+            <rect x="580" y="20" width="180" height="360" fill="#e09f35" />
+            <rect x="576" y="10" width="188" height="14" fill="#b87b1c" />
+            <rect x="590" y="0" width="160" height="12" fill="#f5be58" />
+            <!-- Windows Row 1 -->
+            <rect x="598" y="45" width="36" height="52" fill="#f7f3e9" rx="2" />
+            <rect x="602" y="49" width="28" height="44" fill="#30200e" class="interactive-window" data-win="25" />
+            <rect x="652" y="45" width="36" height="52" fill="#f7f3e9" rx="2" />
+            <rect x="656" y="49" width="28" height="44" fill="#30200e" class="interactive-window" data-win="26" />
+            <rect x="706" y="45" width="36" height="52" fill="#f7f3e9" rx="2" />
+            <rect x="710" y="49" width="28" height="44" fill="#30200e" class="interactive-window" data-win="27" />
+            <!-- Windows Row 2 -->
+            <rect x="598" y="135" width="36" height="55" fill="#f7f3e9" rx="2" />
+            <rect x="602" y="139" width="28" height="47" fill="#30200e" class="interactive-window" data-win="28" />
+            <rect x="652" y="135" width="36" height="55" fill="#f7f3e9" rx="2" />
+            <rect x="656" y="139" width="28" height="47" fill="#30200e" class="interactive-window" data-win="29" />
+            <rect x="706" y="135" width="36" height="55" fill="#f7f3e9" rx="2" />
+            <rect x="710" y="139" width="28" height="47" fill="#30200e" class="interactive-window" data-win="30" />
+            <!-- Windows Row 3 & Door -->
+            <rect x="598" y="235" width="36" height="60" fill="#f7f3e9" rx="2" />
+            <rect x="602" y="239" width="28" height="52" fill="#30200e" class="interactive-window" data-win="31" />
+            <rect x="652" y="235" width="36" height="60" fill="#f7f3e9" rx="2" />
+            <rect x="656" y="239" width="28" height="52" fill="#30200e" class="interactive-window" data-win="32" />
+            <rect x="704" y="230" width="40" height="150" fill="#4d3519" rx="3" />
+            <rect x="709" y="245" width="30" height="135" fill="#2d1c0b" />
+            <circle cx="715" cy="295" r="2.5" fill="#f1c40f" />
+          </g>
+
+          <!-- HOUSE 5: Khaki Sand / Warm Tan Beige Townhouse (x: 760..970) -->
+          <g id="house5">
+            <rect x="760" y="0" width="210" height="380" fill="#d7c89f" />
+            <rect x="754" y="-12" width="222" height="16" fill="#b09f71" />
+            <rect x="766" y="-24" width="198" height="14" fill="#ede2c0" />
+            <rect x="760" y="110" width="210" height="6" fill="#b09f71" />
+            <rect x="760" y="215" width="210" height="6" fill="#b09f71" />
+            <!-- Windows Row 1 -->
+            <rect x="776" y="30" width="32" height="48" fill="#ffffff" rx="3" />
+            <rect x="779" y="34" width="26" height="40" fill="#26241d" class="interactive-window" data-win="33" />
+            <rect x="824" y="30" width="32" height="48" fill="#ffffff" rx="3" />
+            <rect x="827" y="34" width="26" height="40" fill="#26241d" class="interactive-window" data-win="34" />
+            <rect x="874" y="30" width="32" height="48" fill="#ffffff" rx="3" />
+            <rect x="877" y="34" width="26" height="40" fill="#26241d" class="interactive-window" data-win="35" />
+            <rect x="922" y="30" width="32" height="48" fill="#ffffff" rx="3" />
+            <rect x="925" y="34" width="26" height="40" fill="#26241d" class="interactive-window" data-win="36" />
+            <!-- Windows Row 2 -->
+            <rect x="776" y="130" width="32" height="52" fill="#ffffff" rx="3" />
+            <rect x="779" y="134" width="26" height="44" fill="#26241d" class="interactive-window" data-win="37" />
+            <rect x="824" y="130" width="32" height="52" fill="#ffffff" rx="3" />
+            <rect x="827" y="134" width="26" height="44" fill="#26241d" class="interactive-window" data-win="38" />
+            <rect x="874" y="130" width="32" height="52" fill="#ffffff" rx="3" />
+            <rect x="877" y="134" width="26" height="44" fill="#26241d" class="interactive-window" data-win="39" />
+            <rect x="922" y="130" width="32" height="52" fill="#ffffff" rx="3" />
+            <rect x="925" y="134" width="26" height="44" fill="#26241d" class="interactive-window" data-win="40" />
+            <!-- Windows Row 3 & Arched Doorway -->
+            <rect x="776" y="235" width="32" height="60" fill="#ffffff" rx="3" />
+            <rect x="779" y="239" width="26" height="52" fill="#26241d" class="interactive-window" data-win="41" />
+            <rect x="824" y="235" width="32" height="60" fill="#ffffff" rx="3" />
+            <rect x="827" y="239" width="26" height="52" fill="#26241d" class="interactive-window" data-win="42" />
+            <path d="M 870,380 L 870,248 Q 890,223 910,248 L 910,380 Z" fill="#3b3224" />
+            <path d="M 875,380 L 875,252 Q 890,232 905,252 L 905,380 Z" fill="#211c13" />
+            <circle cx="881" cy="295" r="2.5" fill="#f1c40f" />
+            <rect x="922" y="235" width="32" height="60" fill="#ffffff" rx="3" />
+            <rect x="925" y="239" width="26" height="52" fill="#26241d" class="interactive-window" data-win="43" />
+          </g>
+
+          <!-- HOUSE 6: Robin's Egg Sky Blue Townhouse (x: 970..1200) -->
+          <g id="house6">
+            <rect x="970" y="15" width="230" height="365" fill="#81b4c9" />
+            <rect x="964" y="5" width="242" height="16" fill="#588ea6" />
+            <rect x="978" y="-6" width="214" height="14" fill="#a4d1e3" />
+            <rect x="970" y="115" width="230" height="8" fill="#588ea6" />
+            <rect x="970" y="220" width="230" height="8" fill="#588ea6" />
+            <!-- Windows Row 1 -->
+            <rect x="990" y="38" width="36" height="50" fill="#ffffff" rx="3" />
+            <rect x="994" y="42" width="28" height="42" fill="#1b2f38" class="interactive-window" data-win="44" />
+            <rect x="1044" y="38" width="36" height="50" fill="#ffffff" rx="3" />
+            <rect x="1048" y="42" width="28" height="42" fill="#1b2f38" class="interactive-window" data-win="45" />
+            <rect x="1098" y="38" width="36" height="50" fill="#ffffff" rx="3" />
+            <rect x="1102" y="42" width="28" height="42" fill="#1b2f38" class="interactive-window" data-win="46" />
+            <rect x="1148" y="38" width="36" height="50" fill="#ffffff" rx="3" />
+            <rect x="1152" y="42" width="28" height="42" fill="#1b2f38" class="interactive-window" data-win="47" />
+            <!-- Windows Row 2 -->
+            <rect x="990" y="135" width="36" height="55" fill="#ffffff" rx="3" />
+            <rect x="994" y="139" width="28" height="47" fill="#1b2f38" class="interactive-window" data-win="48" />
+            <rect x="1044" y="135" width="36" height="55" fill="#ffffff" rx="3" />
+            <rect x="1048" y="139" width="28" height="47" fill="#1b2f38" class="interactive-window" data-win="49" />
+            <rect x="1098" y="135" width="36" height="55" fill="#ffffff" rx="3" />
+            <rect x="1102" y="139" width="28" height="47" fill="#1b2f38" class="interactive-window" data-win="50" />
+            <rect x="1148" y="135" width="36" height="55" fill="#ffffff" rx="3" />
+            <rect x="1152" y="139" width="28" height="47" fill="#1b2f38" class="interactive-window" data-win="51" />
+            <!-- Windows Row 3 & Door -->
+            <rect x="990" y="240" width="36" height="60" fill="#ffffff" rx="3" />
+            <rect x="994" y="244" width="28" height="52" fill="#1b2f38" class="interactive-window" data-win="52" />
+            <rect x="1044" y="240" width="36" height="60" fill="#ffffff" rx="3" />
+            <rect x="1048" y="244" width="28" height="52" fill="#1b2f38" class="interactive-window" data-win="53" />
+            <rect x="1098" y="235" width="44" height="145" fill="#2d4957" rx="4" />
+            <rect x="1103" y="248" width="34" height="132" fill="#182b34" />
+            <circle cx="1110" cy="295" r="2.5" fill="#e5a43b" />
+            <rect x="1148" y="240" width="36" height="60" fill="#ffffff" rx="3" />
+            <rect x="1152" y="244" width="28" height="52" fill="#1b2f38" class="interactive-window" data-win="54" />
+          </g>
+
+          <!-- HOUSE 7: Rose Pink Townhouse (x: 1200..1420) -->
+          <g id="house7">
+            <rect x="1200" y="30" width="220" height="350" fill="#e28498" />
+            <rect x="1196" y="18" width="228" height="15" fill="#ba566d" />
+            <rect x="1210" y="8" width="200" height="12" fill="#f4a8b9" />
+            <!-- Decorative Pediments -->
+            <polygon points="1235,38 1215,48 1255,48" fill="#ffffff" />
+            <rect x="1218" y="48" width="34" height="44" fill="#ffffff" rx="2" />
+            <rect x="1221" y="51" width="28" height="38" fill="#361a22" class="interactive-window" data-win="55" />
+            <polygon points="1305,38 1285,48 1325,48" fill="#ffffff" />
+            <rect x="1288" y="48" width="34" height="44" fill="#ffffff" rx="2" />
+            <rect x="1291" y="51" width="28" height="38" fill="#361a22" class="interactive-window" data-win="56" />
+            <polygon points="1375,38 1355,48 1395,48" fill="#ffffff" />
+            <rect x="1358" y="48" width="34" height="44" fill="#ffffff" rx="2" />
+            <rect x="1361" y="51" width="28" height="38" fill="#361a22" class="interactive-window" data-win="57" />
+            <!-- Windows Row 2 -->
+            <rect x="1218" y="135" width="34" height="50" fill="#ffffff" rx="2" />
+            <rect x="1221" y="139" width="28" height="42" fill="#361a22" class="interactive-window" data-win="58" />
+            <rect x="1288" y="135" width="34" height="50" fill="#ffffff" rx="2" />
+            <rect x="1291" y="139" width="28" height="42" fill="#361a22" class="interactive-window" data-win="59" />
+            <rect x="1358" y="135" width="34" height="50" fill="#ffffff" rx="2" />
+            <rect x="1361" y="139" width="28" height="42" fill="#361a22" class="interactive-window" data-win="60" />
+            <!-- Windows Row 3 & Door -->
+            <rect x="1218" y="235" width="34" height="55" fill="#ffffff" rx="2" />
+            <rect x="1221" y="239" width="28" height="47" fill="#361a22" class="interactive-window" data-win="61" />
+            <path d="M 1280,380 L 1280,248 Q 1305,226 1330,248 L 1330,380 Z" fill="#ffffff" />
+            <path d="M 1286,380 L 1286,252 Q 1305,232 1324,252 L 1324,380 Z" fill="#2d4233" />
+            <circle cx="1292" cy="295" r="2.5" fill="#f1c40f" />
+            <rect x="1358" y="235" width="34" height="55" fill="#ffffff" rx="2" />
+            <rect x="1361" y="239" width="28" height="47" fill="#361a22" class="interactive-window" data-win="62" />
+          </g>
+
+          <!-- HOUSE 8: Slate Lavender / Grey Townhouse (x: 1420..1600) -->
+          <g id="house8">
+            <rect x="1420" y="20" width="180" height="360" fill="#9aaabf" />
+            <rect x="1416" y="10" width="188" height="14" fill="#75879e" />
+            <rect x="1430" y="0" width="160" height="12" fill="#b9c6d6" />
+            <!-- Windows Row 1 -->
+            <rect x="1440" y="45" width="34" height="50" fill="#ffffff" rx="2" />
+            <rect x="1443" y="49" width="28" height="42" fill="#222730" class="interactive-window" data-win="63" />
+            <rect x="1494" y="45" width="34" height="50" fill="#ffffff" rx="2" />
+            <rect x="1497" y="49" width="28" height="42" fill="#222730" class="interactive-window" data-win="64" />
+            <rect x="1548" y="45" width="34" height="50" fill="#ffffff" rx="2" />
+            <rect x="1551" y="49" width="28" height="42" fill="#222730" class="interactive-window" data-win="65" />
+            <!-- Windows Row 2 -->
+            <rect x="1440" y="135" width="34" height="52" fill="#ffffff" rx="2" />
+            <rect x="1443" y="139" width="28" height="44" fill="#222730" class="interactive-window" data-win="66" />
+            <rect x="1494" y="135" width="34" height="52" fill="#ffffff" rx="2" />
+            <rect x="1497" y="139" width="28" height="44" fill="#222730" class="interactive-window" data-win="67" />
+            <rect x="1548" y="135" width="34" height="52" fill="#ffffff" rx="2" />
+            <rect x="1551" y="139" width="28" height="44" fill="#222730" class="interactive-window" data-win="68" />
+          </g>
+
+        </svg>
+      </div>
+
+      <!-- LAYER 7: Street Trees & Red Pixel-Art Letterbox -->
+      <div class="trees-midground-layer" id="treesLayer">
+
+        <div class="tree-item tree-1">
+          <svg viewBox="0 0 105 205" width="105" height="205" style="overflow:visible;">
+            <path d="M 49,205 L 50,102 L 55,102 L 56,205 Z" fill="var(--tree-trunk)" />
+            <path d="M 53,205 L 53,102 L 55,102 L 56,205 Z" fill="#000000" opacity="0.25" />
+            <path d="M 50,135 L 36,115 L 40,113 L 52,128 Z" fill="var(--tree-trunk)" />
+            <path d="M 54,130 L 68,110 L 72,113 L 56,122 Z" fill="var(--tree-trunk)" />
+            <g class="canopy-group">
+              <path d="M 52,100 C 24,100 10,80 14,56 C 7,40 19,20 38,18 C 50,6 70,8 80,22 C 94,18 104,34 98,54 C 106,76 88,100 52,100 Z" fill="var(--tree-shadow)" />
+              <g class="canopy-leaves-mid">
+                <path d="M 26,90 Q 9,78 16,60 Q 34,62 38,80 Z" fill="var(--tree-dark)" />
+                <path d="M 80,90 Q 96,76 88,58 Q 72,60 68,80 Z" fill="var(--tree-dark)" />
+                <path d="M 52,94 C 28,94 18,74 24,54 C 28,34 44,22 52,22 C 60,22 76,34 82,54 C 86,74 76,94 52,94 Z" fill="var(--tree-mid)" />
+                <path d="M 32,72 C 16,60 20,40 38,38 C 44,52 42,64 32,72 Z" fill="var(--tree-light)" />
+                <path d="M 72,72 C 88,60 84,40 68,38 C 60,52 62,64 72,72 Z" fill="var(--tree-light)" />
+              </g>
+              <g class="canopy-leaves-top">
+                <path d="M 52,66 C 36,56 40,24 52,16 C 64,24 70,56 52,66 Z" fill="var(--tree-light)" />
+                <path d="M 45,42 Q 31,30 41,20 Q 50,28 45,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 60,42 Q 74,30 64,20 Q 55,28 60,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 52,38 Q 52,18 57,14 Q 60,26 52,38 Z" fill="var(--tree-highlight)" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="tree-item tree-2">
+          <svg viewBox="0 0 105 205" width="105" height="205" style="overflow:visible;">
+            <path d="M 49,205 L 50,102 L 55,102 L 56,205 Z" fill="var(--tree-trunk)" />
+            <path d="M 53,205 L 53,102 L 55,102 L 56,205 Z" fill="#000000" opacity="0.25" />
+            <path d="M 50,135 L 36,115 L 40,113 L 52,128 Z" fill="var(--tree-trunk)" />
+            <path d="M 54,130 L 68,110 L 72,113 L 56,122 Z" fill="var(--tree-trunk)" />
+            <g class="canopy-group">
+              <path d="M 52,100 C 24,100 10,80 14,56 C 7,40 19,20 38,18 C 50,6 70,8 80,22 C 94,18 104,34 98,54 C 106,76 88,100 52,100 Z" fill="var(--tree-shadow)" />
+              <g class="canopy-leaves-mid">
+                <path d="M 26,90 Q 9,78 16,60 Q 34,62 38,80 Z" fill="var(--tree-dark)" />
+                <path d="M 80,90 Q 96,76 88,58 Q 72,60 68,80 Z" fill="var(--tree-dark)" />
+                <path d="M 52,94 C 28,94 18,74 24,54 C 28,34 44,22 52,22 C 60,22 76,34 82,54 C 86,74 76,94 52,94 Z" fill="var(--tree-mid)" />
+                <path d="M 32,72 C 16,60 20,40 38,38 C 44,52 42,64 32,72 Z" fill="var(--tree-light)" />
+                <path d="M 72,72 C 88,60 84,40 68,38 C 60,52 62,64 72,72 Z" fill="var(--tree-light)" />
+              </g>
+              <g class="canopy-leaves-top">
+                <path d="M 52,66 C 36,56 40,24 52,16 C 64,24 70,56 52,66 Z" fill="var(--tree-light)" />
+                <path d="M 45,42 Q 31,30 41,20 Q 50,28 45,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 60,42 Q 74,30 64,20 Q 55,28 60,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 52,38 Q 52,18 57,14 Q 60,26 52,38 Z" fill="var(--tree-highlight)" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="tree-item tree-3">
+          <svg viewBox="0 0 105 205" width="105" height="205" style="overflow:visible;">
+            <path d="M 49,205 L 50,102 L 55,102 L 56,205 Z" fill="var(--tree-trunk)" />
+            <path d="M 53,205 L 53,102 L 55,102 L 56,205 Z" fill="#000000" opacity="0.25" />
+            <path d="M 50,135 L 36,115 L 40,113 L 52,128 Z" fill="var(--tree-trunk)" />
+            <path d="M 54,130 L 68,110 L 72,113 L 56,122 Z" fill="var(--tree-trunk)" />
+            <g class="canopy-group">
+              <path d="M 52,100 C 24,100 10,80 14,56 C 7,40 19,20 38,18 C 50,6 70,8 80,22 C 94,18 104,34 98,54 C 106,76 88,100 52,100 Z" fill="var(--tree-shadow)" />
+              <g class="canopy-leaves-mid">
+                <path d="M 26,90 Q 9,78 16,60 Q 34,62 38,80 Z" fill="var(--tree-dark)" />
+                <path d="M 80,90 Q 96,76 88,58 Q 72,60 68,80 Z" fill="var(--tree-dark)" />
+                <path d="M 52,94 C 28,94 18,74 24,54 C 28,34 44,22 52,22 C 60,22 76,34 82,54 C 86,74 76,94 52,94 Z" fill="var(--tree-mid)" />
+                <path d="M 32,72 C 16,60 20,40 38,38 C 44,52 42,64 32,72 Z" fill="var(--tree-light)" />
+                <path d="M 72,72 C 88,60 84,40 68,38 C 60,52 62,64 72,72 Z" fill="var(--tree-light)" />
+              </g>
+              <g class="canopy-leaves-top">
+                <path d="M 52,66 C 36,56 40,24 52,16 C 64,24 70,56 52,66 Z" fill="var(--tree-light)" />
+                <path d="M 45,42 Q 31,30 41,20 Q 50,28 45,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 60,42 Q 74,30 64,20 Q 55,28 60,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 52,38 Q 52,18 57,14 Q 60,26 52,38 Z" fill="var(--tree-highlight)" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="tree-item tree-4">
+          <svg viewBox="0 0 105 205" width="105" height="205" style="overflow:visible;">
+            <path d="M 49,205 L 50,102 L 55,102 L 56,205 Z" fill="var(--tree-trunk)" />
+            <path d="M 53,205 L 53,102 L 55,102 L 56,205 Z" fill="#000000" opacity="0.25" />
+            <path d="M 50,135 L 36,115 L 40,113 L 52,128 Z" fill="var(--tree-trunk)" />
+            <path d="M 54,130 L 68,110 L 72,113 L 56,122 Z" fill="var(--tree-trunk)" />
+            <g class="canopy-group">
+              <path d="M 52,100 C 24,100 10,80 14,56 C 7,40 19,20 38,18 C 50,6 70,8 80,22 C 94,18 104,34 98,54 C 106,76 88,100 52,100 Z" fill="var(--tree-shadow)" />
+              <g class="canopy-leaves-mid">
+                <path d="M 26,90 Q 9,78 16,60 Q 34,62 38,80 Z" fill="var(--tree-dark)" />
+                <path d="M 80,90 Q 96,76 88,58 Q 72,60 68,80 Z" fill="var(--tree-dark)" />
+                <path d="M 52,94 C 28,94 18,74 24,54 C 28,34 44,22 52,22 C 60,22 76,34 82,54 C 86,74 76,94 52,94 Z" fill="var(--tree-mid)" />
+                <path d="M 32,72 C 16,60 20,40 38,38 C 44,52 42,64 32,72 Z" fill="var(--tree-light)" />
+                <path d="M 72,72 C 88,60 84,40 68,38 C 60,52 62,64 72,72 Z" fill="var(--tree-light)" />
+              </g>
+              <g class="canopy-leaves-top">
+                <path d="M 52,66 C 36,56 40,24 52,16 C 64,24 70,56 52,66 Z" fill="var(--tree-light)" />
+                <path d="M 45,42 Q 31,30 41,20 Q 50,28 45,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 60,42 Q 74,30 64,20 Q 55,28 60,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 52,38 Q 52,18 57,14 Q 60,26 52,38 Z" fill="var(--tree-highlight)" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- RED PIXEL-ART LETTERBOX (Placed in center street trees) -->
+        <div class="pixel-letterbox-container" id="pixelLetterbox" title="Click to check your mail!">
+          <div class="letterbox-pulse-hint"></div>
+          
+          <div class="letterbox-popup" id="letterboxPopup">
+            <span>ÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã‚Â¬ YOU'VE GOT MAIL!</span><br/>
+            <span style="color:#d97706; font-size:7px;">"A breezy peaceful day in the city ÃƒÂ¢Ã…â€œÃ¢â‚¬Â°ÃƒÂ¯Ã‚Â¸Ã‚ÂÃƒÂ¢Ã…â€œÃ‚Â¨"</span>
+          </div>
+
+          <svg class="pixel-letterbox-svg" viewBox="0 0 24 32">
+            <rect x="4" y="29" width="16" height="3" fill="#1b2430" opacity="0.6" />
+            <rect x="10" y="16" width="4" height="14" fill="#3b2d24" />
+            <rect x="12" y="16" width="2" height="14" fill="#241a14" />
+            <rect x="4" y="4" width="16" height="13" fill="#dc2626" />
+            <rect x="5" y="3" width="14" height="2" fill="#ef4444" />
+            <rect x="7" y="2" width="10" height="2" fill="#f87171" />
+            <rect x="8" y="2" width="8" height="1" fill="#fca5a5" />
+            <rect x="17" y="5" width="3" height="12" fill="#991b1b" />
+            <rect x="4" y="16" width="16" height="1" fill="#7f1d1d" />
+            <rect x="7" y="7" width="10" height="2" fill="#18181b" />
+            <rect x="8" y="8" width="8" height="1" fill="#27272a" />
+            <rect x="11" y="11" width="2" height="2" fill="#f59e0b" />
+            <rect x="11" y="11" width="1" height="1" fill="#fde68a" />
+            <rect x="2" y="6" width="2" height="7" fill="#d97706" />
+            <rect x="1" y="5" width="4" height="3" fill="#fbbf24" />
+          </svg>
+        </div>
+
+        <div class="tree-item tree-5">
+          <svg viewBox="0 0 105 205" width="105" height="205" style="overflow:visible;">
+            <path d="M 49,205 L 50,102 L 55,102 L 56,205 Z" fill="var(--tree-trunk)" />
+            <path d="M 53,205 L 53,102 L 55,102 L 56,205 Z" fill="#000000" opacity="0.25" />
+            <path d="M 50,135 L 36,115 L 40,113 L 52,128 Z" fill="var(--tree-trunk)" />
+            <path d="M 54,130 L 68,110 L 72,113 L 56,122 Z" fill="var(--tree-trunk)" />
+            <g class="canopy-group">
+              <path d="M 52,100 C 24,100 10,80 14,56 C 7,40 19,20 38,18 C 50,6 70,8 80,22 C 94,18 104,34 98,54 C 106,76 88,100 52,100 Z" fill="var(--tree-shadow)" />
+              <g class="canopy-leaves-mid">
+                <path d="M 26,90 Q 9,78 16,60 Q 34,62 38,80 Z" fill="var(--tree-dark)" />
+                <path d="M 80,90 Q 96,76 88,58 Q 72,60 68,80 Z" fill="var(--tree-dark)" />
+                <path d="M 52,94 C 28,94 18,74 24,54 C 28,34 44,22 52,22 C 60,22 76,34 82,54 C 86,74 76,94 52,94 Z" fill="var(--tree-mid)" />
+                <path d="M 32,72 C 16,60 20,40 38,38 C 44,52 42,64 32,72 Z" fill="var(--tree-light)" />
+                <path d="M 72,72 C 88,60 84,40 68,38 C 60,52 62,64 72,72 Z" fill="var(--tree-light)" />
+              </g>
+              <g class="canopy-leaves-top">
+                <path d="M 52,66 C 36,56 40,24 52,16 C 64,24 70,56 52,66 Z" fill="var(--tree-light)" />
+                <path d="M 45,42 Q 31,30 41,20 Q 50,28 45,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 60,42 Q 74,30 64,20 Q 55,28 60,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 52,38 Q 52,18 57,14 Q 60,26 52,38 Z" fill="var(--tree-highlight)" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="tree-item tree-6">
+          <svg viewBox="0 0 105 205" width="105" height="205" style="overflow:visible;">
+            <path d="M 49,205 L 50,102 L 55,102 L 56,205 Z" fill="var(--tree-trunk)" />
+            <path d="M 53,205 L 53,102 L 55,102 L 56,205 Z" fill="#000000" opacity="0.25" />
+            <path d="M 50,135 L 36,115 L 40,113 L 52,128 Z" fill="var(--tree-trunk)" />
+            <path d="M 54,130 L 68,110 L 72,113 L 56,122 Z" fill="var(--tree-trunk)" />
+            <g class="canopy-group">
+              <path d="M 52,100 C 24,100 10,80 14,56 C 7,40 19,20 38,18 C 50,6 70,8 80,22 C 94,18 104,34 98,54 C 106,76 88,100 52,100 Z" fill="var(--tree-shadow)" />
+              <g class="canopy-leaves-mid">
+                <path d="M 26,90 Q 9,78 16,60 Q 34,62 38,80 Z" fill="var(--tree-dark)" />
+                <path d="M 80,90 Q 96,76 88,58 Q 72,60 68,80 Z" fill="var(--tree-dark)" />
+                <path d="M 52,94 C 28,94 18,74 24,54 C 28,34 44,22 52,22 C 60,22 76,34 82,54 C 86,74 76,94 52,94 Z" fill="var(--tree-mid)" />
+                <path d="M 32,72 C 16,60 20,40 38,38 C 44,52 42,64 32,72 Z" fill="var(--tree-light)" />
+                <path d="M 72,72 C 88,60 84,40 68,38 C 60,52 62,64 72,72 Z" fill="var(--tree-light)" />
+              </g>
+              <g class="canopy-leaves-top">
+                <path d="M 52,66 C 36,56 40,24 52,16 C 64,24 70,56 52,66 Z" fill="var(--tree-light)" />
+                <path d="M 45,42 Q 31,30 41,20 Q 50,28 45,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 60,42 Q 74,30 64,20 Q 55,28 60,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 52,38 Q 52,18 57,14 Q 60,26 52,38 Z" fill="var(--tree-highlight)" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="tree-item tree-7">
+          <svg viewBox="0 0 105 205" width="105" height="205" style="overflow:visible;">
+            <path d="M 49,205 L 50,102 L 55,102 L 56,205 Z" fill="var(--tree-trunk)" />
+            <path d="M 53,205 L 53,102 L 55,102 L 56,205 Z" fill="#000000" opacity="0.25" />
+            <path d="M 50,135 L 36,115 L 40,113 L 52,128 Z" fill="var(--tree-trunk)" />
+            <path d="M 54,130 L 68,110 L 72,113 L 56,122 Z" fill="var(--tree-trunk)" />
+            <g class="canopy-group">
+              <path d="M 52,100 C 24,100 10,80 14,56 C 7,40 19,20 38,18 C 50,6 70,8 80,22 C 94,18 104,34 98,54 C 106,76 88,100 52,100 Z" fill="var(--tree-shadow)" />
+              <g class="canopy-leaves-mid">
+                <path d="M 26,90 Q 9,78 16,60 Q 34,62 38,80 Z" fill="var(--tree-dark)" />
+                <path d="M 80,90 Q 96,76 88,58 Q 72,60 68,80 Z" fill="var(--tree-dark)" />
+                <path d="M 52,94 C 28,94 18,74 24,54 C 28,34 44,22 52,22 C 60,22 76,34 82,54 C 86,74 76,94 52,94 Z" fill="var(--tree-mid)" />
+                <path d="M 32,72 C 16,60 20,40 38,38 C 44,52 42,64 32,72 Z" fill="var(--tree-light)" />
+                <path d="M 72,72 C 88,60 84,40 68,38 C 60,52 62,64 72,72 Z" fill="var(--tree-light)" />
+              </g>
+              <g class="canopy-leaves-top">
+                <path d="M 52,66 C 36,56 40,24 52,16 C 64,24 70,56 52,66 Z" fill="var(--tree-light)" />
+                <path d="M 45,42 Q 31,30 41,20 Q 50,28 45,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 60,42 Q 74,30 64,20 Q 55,28 60,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 52,38 Q 52,18 57,14 Q 60,26 52,38 Z" fill="var(--tree-highlight)" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="tree-item tree-8">
+          <svg viewBox="0 0 105 205" width="105" height="205" style="overflow:visible;">
+            <path d="M 49,205 L 50,102 L 55,102 L 56,205 Z" fill="var(--tree-trunk)" />
+            <path d="M 53,205 L 53,102 L 55,102 L 56,205 Z" fill="#000000" opacity="0.25" />
+            <path d="M 50,135 L 36,115 L 40,113 L 52,128 Z" fill="var(--tree-trunk)" />
+            <path d="M 54,130 L 68,110 L 72,113 L 56,122 Z" fill="var(--tree-trunk)" />
+            <g class="canopy-group">
+              <path d="M 52,100 C 24,100 10,80 14,56 C 7,40 19,20 38,18 C 50,6 70,8 80,22 C 94,18 104,34 98,54 C 106,76 88,100 52,100 Z" fill="var(--tree-shadow)" />
+              <g class="canopy-leaves-mid">
+                <path d="M 26,90 Q 9,78 16,60 Q 34,62 38,80 Z" fill="var(--tree-dark)" />
+                <path d="M 80,90 Q 96,76 88,58 Q 72,60 68,80 Z" fill="var(--tree-dark)" />
+                <path d="M 52,94 C 28,94 18,74 24,54 C 28,34 44,22 52,22 C 60,22 76,34 82,54 C 86,74 76,94 52,94 Z" fill="var(--tree-mid)" />
+                <path d="M 32,72 C 16,60 20,40 38,38 C 44,52 42,64 32,72 Z" fill="var(--tree-light)" />
+                <path d="M 72,72 C 88,60 84,40 68,38 C 60,52 62,64 72,72 Z" fill="var(--tree-light)" />
+              </g>
+              <g class="canopy-leaves-top">
+                <path d="M 52,66 C 36,56 40,24 52,16 C 64,24 70,56 52,66 Z" fill="var(--tree-light)" />
+                <path d="M 45,42 Q 31,30 41,20 Q 50,28 45,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 60,42 Q 74,30 64,20 Q 55,28 60,42 Z" fill="var(--tree-highlight)" />
+                <path d="M 52,38 Q 52,18 57,14 Q 60,26 52,38 Z" fill="var(--tree-highlight)" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- ======================================================================
+           LAYER 8 & 9: ROAD SURFACE & AUTHENTIC 2-WAY MINIATURE TRAFFIC SYSTEM
+           - UPPER LANE: Traffic moving LEFT (ÃƒÂ¢Ã¢â‚¬Â Ã‚Â ÃƒÂ¢Ã¢â‚¬Â Ã‚Â ÃƒÂ¢Ã¢â‚¬Â Ã‚Â), facing LEFT
+           - LOWER LANE: Traffic moving RIGHT (ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢), facing RIGHT
+           ====================================================================== -->
+      <div class="road-ground-layer" id="roadLayer">
+        
+        <div class="sidewalk-slab"></div>
+        <div class="road-divider-line"></div>
+
+        <!-- ====================================================================
+             UPPER LANE (BACK LANE): Moves strictly LEFT (Ã¢â€ Â Ã¢â€ Â Ã¢â€ Â), Left-Facing Single Sprites
+             ==================================================================== -->
+        <div class="traffic-lane lane-upper" id="laneUpper">
+
+          <!-- Car U1: NYC Taxi (Facing Left, moving Left) -->
+          <div class="vehicle" id="carU1">
+            <div class="honk-bubble">Taxi! Ã°Å¸Å¡â€¢</div>
+            <img src="cars/car-yellow-left.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+          <!-- Car U2: Emerald Woody Wagon (Facing Left, moving Left) -->
+          <div class="vehicle" id="carU2">
+            <div class="honk-bubble">Surf's up! Ã°Å¸Ââ€ž</div>
+            <img src="cars/car-emerald-left.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+          <!-- Car U3: Turquoise Fastback (Facing Left, moving Left) -->
+          <div class="vehicle" id="carU3">
+            <div class="honk-bubble">Beep! Ã°Å¸Å½Âµ</div>
+            <img src="cars/car-cyan-left.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+          <!-- Car U4: Plum Purple Saloon (Facing Left, moving Left) -->
+          <div class="vehicle" id="carU4">
+            <div class="honk-bubble">Toot! Ã°Å¸â€™Å“</div>
+            <img src="cars/car-purple-left.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+          <!-- Car U5: Rose Compact (Facing Left, moving Left) -->
+          <div class="vehicle" id="carU5">
+            <div class="honk-bubble">Pip pip! Ã°Å¸Å’Â¸</div>
+            <img src="cars/car-magenta-left.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+        </div>
+
+        <!-- ====================================================================
+             LOWER LANE (FRONT LANE): Moves strictly RIGHT (Ã¢â€ â€™ Ã¢â€ â€™ Ã¢â€ â€™), Right-Facing Single Sprites
+             ==================================================================== -->
+        <div class="traffic-lane lane-lower" id="laneLower">
+
+          <!-- Car L1: Crimson Sedan (Facing Right, moving Right) -->
+          <div class="vehicle" id="carL1">
+            <div class="honk-bubble">Beep! Ã°Å¸Å¡â€”</div>
+            <img src="cars/car-red-right.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+          <!-- Car L2: Amber Gold Coupe (Facing Right, moving Right) -->
+          <div class="vehicle" id="carL2">
+            <div class="honk-bubble">Honk honk! Ã¢Å“Â¨</div>
+            <img src="cars/car-amber-right.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+          <!-- Car L3: Teal Pickup Truck (Facing Right, moving Right) -->
+          <div class="vehicle" id="carL3">
+            <div class="honk-bubble">Toot toot! Ã°Å¸Å’Â¿</div>
+            <img src="cars/car-teal-right.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+          <!-- Car L4: Navy Saloon (Facing Right, moving Right) -->
+          <div class="vehicle" id="carL4">
+            <div class="honk-bubble">Beep beep! Ã°Å¸Ââ„¢Ã¯Â¸Â</div>
+            <img src="cars/car-blue-right.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+          <!-- Car L5: Orange Sport Coupe (Facing Right, moving Right) -->
+          <div class="vehicle" id="carL5">
+            <div class="honk-bubble">Pip pip! Ã¢Ëœâ‚¬Ã¯Â¸Â</div>
+            <img src="cars/car-orange-right.svg" alt="" width="160" height="60" draggable="false" />
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LAYER 10: Wind-Blown Drifting Leaves Layer -->
+      <div class="leaves-particle-layer" id="leafParticlesLayer"></div>
+
+      <!-- Ambient Atmosphere Overlay -->
+      <div class="ambient-atmosphere-layer"></div>
+
+    </div>
+
+    <!-- ========================================================================
+         FLOATING UNOBTRUSIVE MINI TOOLBAR (Top-Right)
+         ======================================================================== -->
+    <div class="floating-mini-bar">
+      <!-- Audio Toggle Button -->
+      <button class="mini-icon-btn" id="audioToggleBtn" title="Toggle City Breeze & Audio Synthesizer">
+        <svg id="audioIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+      </button>
+
+      <!-- Settings / Options Sheet Toggle -->
+      <button class="mini-icon-btn" id="settingsSheetBtn" title="Adjust Atmosphere & Physics">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+
+      <!-- Collapsible Settings Panel -->
+      <div class="control-sheet" id="controlSheet">
+        <div class="sheet-title">
+          <span>Atmosphere & Physics</span>
+          <span style="font-size:0.65rem; color:#64748b;">GPU 60FPS</span>
+        </div>
+
+        <div class="theme-picker">
+          <button class="theme-opt-btn is-active" data-theme-val="day">Day</button>
+          <button class="theme-opt-btn" data-theme-val="afternoon">Afternoon</button>
+          <button class="theme-opt-btn" data-theme-val="sunset">Sunset</button>
+          <button class="theme-opt-btn" data-theme-val="dusk">Dusk</button>
+        </div>
+
+        <div class="sheet-row">
+          <span>Wind Strength</span>
+          <input type="range" min="0.4" max="2.4" step="0.1" value="1.0" class="slider-style" id="windRange" />
+        </div>
+
+        <div class="sheet-row">
+          <span>Traffic Speed</span>
+          <input type="range" min="0.4" max="2.4" step="0.1" value="1.0" class="slider-style" id="trafficRange" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtle Helpful Hint Pill (Bottom-Left) -->
+    <div class="hint-pill" id="hintPill">
+      <div class="hint-dot"></div>
+      <span>Tip: Click mailbox, cars & windows to interact!</span>
+    </div>
+
+    <!-- ========================================================================
+         HERO CIVIC PORTAL OVERLAY & CENTER-ALIGNED ACTION BUTTONS
+         ======================================================================== -->
+    <div class="hero-center-overlay" id="heroOverlay">
+      
+      <!-- 1. Tag / Badge -->
+      <div class="hero-badge hero-fade-in-1">
+        <span class="badge-dot"></span>
+        <span>CivicPulse · Anonymous civic reports</span>
+      </div>
+
+      <!-- 2. Headline -->
+      <h1 class="hero-title hero-fade-in-2">Your city’s problems,<br>routed to the right desk.</h1>
+      
+      <!-- 3. Subheading -->
+      <p class="hero-subtitle hero-fade-in-3">File a pothole, a flooded street, or a dark lane in under a minute. Public reports stay anonymous. Government sees clusters, wards, and action — not identities.</p>
+
+      <!-- 4. Three Center-Aligned Action Buttons -->
+      <div class="hero-actions-container hero-fade-in-4">
+        <!-- Button 1: Register a Complaint (Primary CTA with Glowing Highlight) -->
+        <a href="register-complaint.html" class="civic-btn btn-register is-primary-cta" role="button" aria-label="Register a Complaint">
+          <span class="button_top">
+            <span class="btn-icon icon-pencil">📝</span>
+            <span class="btn-text">Register a Complaint</span>
+          </span>
+        </a>
+
+        <!-- Button 2: View Complaint -->
+        <a href="view-complaint.html" class="civic-btn btn-view" role="button" aria-label="View Complaint">
+          <span class="button_top">
+            <span class="btn-icon icon-magnifier">🔍</span>
+            <span class="btn-text">View Complaint</span>
+          </span>
+        </a>
+
+        <!-- Button 3: Open Thoughts -->
+        <a href="open-thoughts.html" class="civic-btn btn-thoughts" role="button" aria-label="Open Thoughts">
+          <span class="button_top">
+            <span class="btn-icon icon-bulb">💡</span>
+            <span class="btn-text">Open Thoughts</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- 5. Complaint Lifecycle Dropdown & Scroll Toggle -->
+      <a href="#lifecycle-section" class="lifecycle-dropdown-toggle hero-fade-in-5" id="lifecycleDropdownToggle" role="button" aria-label="Explore how reports are resolved">
+        <span class="toggle-sparkle">↓</span>
+        <span class="toggle-title">How a report is resolved</span>
+        <span class="toggle-arrow">▼</span>
+      </a>
+
+      <ul class="hero-pillars hero-fade-in-5" aria-label="What CivicPulse guarantees">
+        <li><strong>Anonymous</strong> on the public feed</li>
+        <li><strong>AI-routed</strong> to the right department</li>
+        <li><strong>Tracked</strong> until the file is closed</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <!-- ==========================================================================
+       COMPLAINT LIFECYCLE SCROLL-TRIGGERED ANIMATION SECTION
+       Sequence: Complaint -> Register -> Solved
+       ========================================================================== -->
+  <section class="lifecycle-section" id="lifecycle-section">
+    <div class="lifecycle-container">
+
+      <!-- Section Header with Ambient Glow -->
+      <div class="lifecycle-header">
+        <div class="header-glow"></div>
+        <div class="section-tag reveal-on-scroll">
+          <span class="tag-sparkle">✦</span>
+          <span>From street to desk</span>
+        </div>
+        <h2 class="section-heading reveal-on-scroll">How a report becomes action</h2>
+        <p class="section-subheading reveal-on-scroll">
+          One filing. One tracking path. No lost paper between offices — classify, cluster, route, and close.
+        </p>
+      </div>
+
+      <!-- Interactive Progress Line Track -->
+      <div class="timeline-tracker-wrapper">
+        <div class="timeline-track-bg">
+          <div class="timeline-track-fill" id="timelineTrackFill"></div>
+        </div>
+      </div>
+
+      <!-- The 3 Lifecycle Stages: Complaint -> Register -> Solved -->
+      <div class="stages-grid" id="stagesGrid">
+
+        <!-- STAGE 1: COMPLAINT -->
+        <div class="stage-card" data-stage="1" id="stageCard1">
+          <div class="stage-step-indicator">
+            <div class="step-circle">
+              <span class="step-num">1</span>
+              <span class="step-check">✓</span>
+            </div>
+            <div class="step-connector-mobile"></div>
+          </div>
+          <div class="stage-card-body">
+            <div class="stage-badge badge-complaint">Step 01 • Citizen Discovery</div>
+            <div class="stage-icon-box">📝</div>
+            <h3 class="stage-title">Complaint</h3>
+            <p class="stage-desc">
+              A resident spots an issue—such as a pothole, broken streetlight, or waste spill—and reports it with photos, a description, and GPS coordinates.
+            </p>
+            <div class="stage-action-highlight">
+              <span class="highlight-dot"></span>
+              <span>Instant geo-tagged report</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: REGISTER -->
+        <div class="stage-card" data-stage="2" id="stageCard2">
+          <div class="stage-step-indicator">
+            <div class="step-circle">
+              <span class="step-num">2</span>
+              <span class="step-check">✓</span>
+            </div>
+            <div class="step-connector-mobile"></div>
+          </div>
+          <div class="stage-card-body">
+            <div class="stage-badge badge-register">Step 02 • Municipal Action</div>
+            <div class="stage-icon-box">🏛️</div>
+            <h3 class="stage-title">Register</h3>
+            <p class="stage-desc">
+              The civic authority verifies and logs the complaint into the official tracking system, assigns a unique Tracking ID, and dispatches a field crew.
+            </p>
+            <div class="stage-action-highlight">
+              <span class="highlight-dot"></span>
+              <span>Ticket logged & crew assigned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: SOLVED -->
+        <div class="stage-card" data-stage="3" id="stageCard3">
+          <div class="stage-step-indicator">
+            <div class="step-circle">
+              <span class="step-num">3</span>
+              <span class="step-check">✓</span>
+            </div>
+          </div>
+          <div class="stage-card-body">
+            <div class="stage-badge badge-solved">Step 03 • Ground Verification</div>
+            <div class="stage-icon-box">✅</div>
+            <h3 class="stage-title">Solved</h3>
+            <p class="stage-desc">
+              Municipal technicians complete on-ground repairs. Resolution photos and status updates are published for citizen verification and case closure.
+            </p>
+            <div class="stage-action-highlight">
+              <span class="highlight-dot"></span>
+              <span>Repair verified & closed</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Lifecycle Footer Call-to-Action -->
+      <div class="lifecycle-footer-cta">
+        <div class="cta-inner">
+          <h3 class="cta-title">See something broken on your street?</h3>
+          <p class="cta-subtitle">File it once. Stay anonymous. Let the city actually receive it.</p>
+          <div class="cta-actions">
+            <a href="register-complaint.html" class="civic-btn btn-register" role="button">
+              <span class="button_top">
+                <span class="btn-icon">📝</span>
+                <span class="btn-text">Register a Complaint</span>
+              </span>
+            </a>
+            <a href="view-complaint.html" class="civic-btn btn-view" role="button">
+              <span class="button_top">
+                <span class="btn-icon">🔍</span>
+                <span class="btn-text">View Complaint</span>
+              </span>
+            </a>
+            <a href="open-thoughts.html" class="civic-btn btn-thoughts" role="button">
+              <span class="button_top">
+                <span class="btn-icon">💡</span>
+                <span class="btn-text">Open Thoughts</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>
+        <p class="footer-brand">CivicPulse</p>
+        <p class="footer-tag">Anonymous civic reports. Structured government intelligence.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="register-complaint.html">File a report</a>
+        <a href="view-complaint.html">Track issues</a>
+        <a href="open-thoughts.html">City feed</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT ENGINE: PHYSICS, TRAFFIC COLLISION AVOIDANCE & SYNTHESIZER
+       ========================================================================== -->
+  <script src="app.js"></script>
+
+</body>
+</html>

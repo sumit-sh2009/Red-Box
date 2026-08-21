@@ -2,6 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { User, SafeUser, Post, PostWithDetails, Like, Follow, Notification, NotificationWithDetails, HashtagTrend, Badge } from '../types/index.js';
 import { initialUsers, initialPosts, initialFollows, initialLikes, initialNotifications } from './seed.js';
+import { ensureSeedDataFile, resolveDataDir } from '../paths.js';
+import { pgEnabled } from './pg.js';
+import * as pgDb from './databasePg.js';
 
 interface DatabaseSchema {
   users: User[];
@@ -11,10 +14,11 @@ interface DatabaseSchema {
   notifications: Notification[];
 }
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+const DATA_DIR = resolveDataDir();
 const DB_FILE = path.join(DATA_DIR, 'db.json');
+ensureSeedDataFile(DATA_DIR, 'db.json');
 
-class Database {
+class JsonDatabase {
   private data: DatabaseSchema = {
     users: [],
     posts: [],
@@ -798,4 +802,51 @@ class Database {
   }
 }
 
-export const db = new Database();
+const jsonDb = new JsonDatabase();
+
+function usePg() {
+  return pgEnabled();
+}
+
+export const db = {
+  toSafeUser: (user: User, currentUserId?: string | null) =>
+    usePg() ? pgDb.toSafeUser(user, currentUserId) : Promise.resolve(jsonDb.toSafeUser(user, currentUserId)),
+  findUserById: (id: string) =>
+    usePg() ? pgDb.findUserById(id) : Promise.resolve(jsonDb.findUserById(id)),
+  findUserByUsername: (username: string) =>
+    usePg() ? pgDb.findUserByUsername(username) : Promise.resolve(jsonDb.findUserByUsername(username)),
+  createUser: (user: User) =>
+    usePg() ? pgDb.createUser(user) : Promise.resolve(jsonDb.createUser(user)),
+  updateUser: (id: string, updates: Partial<User>) =>
+    usePg() ? pgDb.updateUser(id, updates) : Promise.resolve(jsonDb.updateUser(id, updates)),
+  searchUsers: (query: string, currentUserId?: string) =>
+    usePg() ? pgDb.searchUsers(query, currentUserId) : Promise.resolve(jsonDb.searchUsers(query, currentUserId)),
+  getSuggestedUsers: (currentUserId?: string, limit = 5) =>
+    usePg() ? pgDb.getSuggestedUsers(currentUserId, limit) : Promise.resolve(jsonDb.getSuggestedUsers(currentUserId, limit)),
+  getUserBadges: (userId: string) =>
+    usePg() ? pgDb.getUserBadges(userId) : Promise.resolve(jsonDb.getUserBadges(userId)),
+  enrichPost: (post: Post, currentUserId?: string | null) =>
+    usePg() ? pgDb.enrichPost(post, currentUserId) : Promise.resolve(jsonDb.enrichPost(post, currentUserId)),
+  getPosts: (options: Parameters<JsonDatabase['getPosts']>[0]) =>
+    usePg() ? pgDb.getPosts(options) : Promise.resolve(jsonDb.getPosts(options)),
+  findPostById: (id: string, currentUserId?: string | null) =>
+    usePg() ? pgDb.findPostById(id, currentUserId) : Promise.resolve(jsonDb.findPostById(id, currentUserId)),
+  createPost: (post: Post) =>
+    usePg() ? pgDb.createPost(post) : Promise.resolve(jsonDb.createPost(post)),
+  deletePost: (postId: string, userId: string) =>
+    usePg() ? pgDb.deletePost(postId, userId) : Promise.resolve(jsonDb.deletePost(postId, userId)),
+  toggleLike: (userId: string, postId: string) =>
+    usePg() ? pgDb.toggleLike(userId, postId) : Promise.resolve(jsonDb.toggleLike(userId, postId)),
+  toggleRepost: (userId: string, postId: string) =>
+    usePg() ? pgDb.toggleRepost(userId, postId) : Promise.resolve(jsonDb.toggleRepost(userId, postId)),
+  toggleFollow: (followerId: string, followingId: string) =>
+    usePg() ? pgDb.toggleFollow(followerId, followingId) : Promise.resolve(jsonDb.toggleFollow(followerId, followingId)),
+  createNotification: (notif: Notification) =>
+    usePg() ? pgDb.createNotification(notif) : Promise.resolve(jsonDb.createNotification(notif)),
+  getNotifications: (userId: string) =>
+    usePg() ? pgDb.getNotifications(userId) : Promise.resolve(jsonDb.getNotifications(userId)),
+  markNotificationsAsRead: (userId: string) =>
+    usePg() ? pgDb.markNotificationsAsRead(userId) : Promise.resolve(jsonDb.markNotificationsAsRead(userId)),
+  getTrends: () =>
+    usePg() ? pgDb.getTrends() : Promise.resolve(jsonDb.getTrends()),
+};

@@ -1,0 +1,1853 @@
+/* ==========================================================================
+       DESIGN TOKENS & DYNAMIC ATMOSPHERE THEMES
+       ========================================================================== */
+    :root {
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-pixel: 'Press Start 2P', monospace;
+
+      /* Base Layout Dimensions */
+      --road-height: 125px;
+      --baseline-bottom: 125px;
+
+      /* Day Theme (Matches Reference Illustration Palette Closely) */
+      --sky-top: #6db6c2;
+      --sky-mid: #89c5cc;
+      --sky-bottom: #aedde0;
+      --ambient-tint: rgba(255, 255, 255, 0);
+      --facade-filter: brightness(1) saturate(1) contrast(1);
+      
+      --cloud-far-color: rgba(235, 246, 248, 0.72);
+      --cloud-near-color: rgba(255, 255, 255, 0.94);
+      --cloud-shadow: rgba(35, 75, 85, 0.1);
+
+      --sun-core: #fffce6;
+      --sun-glow: rgba(255, 250, 220, 0.45);
+
+      --window-lit-color: #ffe699;
+      --window-lit-glow: rgba(255, 215, 100, 0.6);
+
+      --tree-trunk: #513622;
+      --tree-shadow: #1b4520;
+      --tree-dark: #2d6b2f;
+      --tree-mid: #46913c;
+      --tree-light: #6bc24e;
+      --tree-highlight: #9fe266;
+
+      --road-surface: #3c424a;
+      --road-curb-top: #d2dae0;
+      --road-curb-front: #9faab3;
+      --road-divider: #f5c518;
+
+      /* Dynamic Physics Variables */
+      --wind-sway-deg: 3.2deg;
+      --wind-duration: 4.0s;
+      --wind-multiplier: 1.0;
+      --traffic-multiplier: 1.0;
+      --parallax-sky-x: 0px;
+      --parallax-bg-x: 0px;
+      --parallax-mid-x: 0px;
+      --parallax-trees-x: 0px;
+      --parallax-road-x: 0px;
+    }
+
+    /* Afternoon Warmth Theme */
+    [data-theme="afternoon"] {
+      --sky-top: #559db2;
+      --sky-mid: #86bed0;
+      --sky-bottom: #f2cb9b;
+      --ambient-tint: rgba(255, 160, 50, 0.08);
+      --facade-filter: brightness(1.02) saturate(1.15) sepia(0.08);
+      --cloud-far-color: rgba(255, 240, 225, 0.75);
+      --cloud-near-color: rgba(255, 250, 240, 0.96);
+      --cloud-shadow: rgba(60, 45, 40, 0.12);
+      --sun-core: #ffeaae;
+      --sun-glow: rgba(255, 180, 70, 0.55);
+    }
+
+    /* Golden Sunset Theme */
+    [data-theme="sunset"] {
+      --sky-top: #3d2b56;
+      --sky-mid: #ab4e68;
+      --sky-bottom: #f38d51;
+      --ambient-tint: rgba(245, 110, 50, 0.18);
+      --facade-filter: brightness(0.92) saturate(1.25) sepia(0.22);
+      --cloud-far-color: rgba(220, 160, 180, 0.72);
+      --cloud-near-color: rgba(255, 215, 195, 0.95);
+      --cloud-shadow: rgba(50, 15, 30, 0.2);
+      --sun-core: #ff9d54;
+      --sun-glow: rgba(255, 120, 40, 0.7);
+    }
+
+    /* Dusk / Twilight Theme */
+    [data-theme="dusk"] {
+      --sky-top: #151b36;
+      --sky-mid: #252f54;
+      --sky-bottom: #474775;
+      --ambient-tint: rgba(20, 25, 60, 0.32);
+      --facade-filter: brightness(0.78) saturate(0.9) hue-rotate(-10deg);
+      --cloud-far-color: rgba(35, 45, 75, 0.65);
+      --cloud-near-color: rgba(60, 75, 110, 0.85);
+      --cloud-shadow: rgba(5, 10, 25, 0.35);
+      --sun-core: #f5f8ff;
+      --sun-glow: rgba(180, 210, 255, 0.4);
+    }
+
+    /* ==========================================================================
+       BASE & RESET
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    button, a.civic-btn, .theme-opt-btn, .hint-pill, input, .control-sheet {
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: #0b1118;
+      font-family: var(--font-sans);
+      color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ==========================================================================
+       CINEMATIC FULL-BLEED VIEWPORT SCENE
+       ========================================================================== */
+    .cityscape-viewport {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 640px;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    .cityscape-stage {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      contain: layout paint size;
+    }
+
+    /* ==========================================================================
+       LAYER 1: LIVING SKY GRADIENT
+       ========================================================================== */
+    .sky-canvas-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 48%, var(--sky-bottom) 100%);
+      transition: background 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: background;
+    }
+
+    /* Celestial Orb (Sun/Moon) */
+    .celestial-orb {
+      position: absolute;
+      top: 45px;
+      left: 14%;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: var(--sun-core);
+      box-shadow: 0 0 45px 15px var(--sun-glow), 0 0 90px 40px var(--sun-glow);
+      pointer-events: none;
+      z-index: 2;
+      transform: translate3d(0, var(--parallax-sky-y, 0px), 0);
+      transition: background 1.4s ease, box-shadow 1.4s ease;
+      will-change: transform, background, box-shadow;
+    }
+
+    [data-theme="sunset"] .celestial-orb {
+      top: 140px;
+      left: 32%;
+      width: 86px;
+      height: 86px;
+    }
+
+    [data-theme="dusk"] .celestial-orb {
+      top: 50px;
+      left: 80%;
+      width: 52px;
+      height: 52px;
+      box-shadow: 0 0 25px 8px rgba(210, 230, 255, 0.5), inset -8px -6px 0 0 #b0c6ea;
+    }
+
+    /* Gentle Flying Birds Group */
+    .birds-group {
+      position: absolute;
+      top: 15%;
+      left: 0;
+      width: 140px;
+      height: 45px;
+      pointer-events: none;
+      z-index: 2;
+      animation: flyAcrossSky 52s linear infinite;
+      opacity: 0.65;
+      transform: translate3d(0, var(--parallax-sky-y, 0px), 0);
+    }
+
+    @keyframes flyAcrossSky {
+      0% { transform: translate3d(-180px, var(--parallax-sky-y, 0px), 0); }
+      100% { transform: translate3d(calc(100vw + 180px), calc(-40px + var(--parallax-sky-y, 0px)), 0); }
+    }
+
+    [data-theme="dusk"] .birds-group { opacity: 0.2; }
+
+    /* ==========================================================================
+       LAYER 2 & 4: MULTI-PLANE CONTINUOUS DRIFTING CLOUDS
+       ========================================================================== */
+    .clouds-track {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 50%;
+      pointer-events: none;
+      display: flex;
+      will-change: transform;
+    }
+
+    .clouds-far {
+      z-index: 3;
+      top: 2%;
+      animation: driftCloudsFar 110s linear infinite;
+      transform: translate3d(var(--parallax-sky-x), var(--parallax-clouds-far-y, 0px), 0);
+    }
+
+    .clouds-near {
+      z-index: 5;
+      top: 8%;
+      animation: driftCloudsNear 68s linear infinite;
+      transform: translate3d(var(--parallax-sky-x), var(--parallax-clouds-near-y, 0px), 0);
+    }
+
+    .cloud-segment {
+      width: 50%;
+      height: 100%;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .cloud-svg {
+      position: absolute;
+      filter: drop-shadow(0 10px 14px var(--cloud-shadow));
+      transition: fill 1.4s ease;
+      will-change: transform;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .cloud-svg:hover {
+      transform: scale(1.04);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .clouds-far .cloud-svg {
+      fill: var(--cloud-far-color);
+      animation: cloudGentleBob 7.5s ease-in-out infinite alternate;
+    }
+
+    .clouds-near .cloud-svg {
+      fill: var(--cloud-near-color);
+      animation: cloudGentleBob 5.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes driftCloudsFar {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    @keyframes driftCloudsNear {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    @keyframes cloudGentleBob {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(0, -6px, 0); }
+    }
+
+    /* ==========================================================================
+       LAYER 3: DISTANT SKYSCRAPER SKYLINE
+       ========================================================================== */
+    .skyline-distant-layer {
+      position: absolute;
+      bottom: var(--baseline-bottom);
+      left: 50%;
+      width: 100%;
+      min-width: 1440px;
+      max-width: 1920px;
+      height: 440px;
+      pointer-events: none;
+      z-index: 4;
+      transform: translate3d(calc(-50% + var(--parallax-bg-x)), var(--parallax-skyline-y, 0px), 0);
+      transition: transform 0.12s ease-out;
+      will-change: transform;
+    }
+
+    .skyline-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ==========================================================================
+       LAYER 6: MIDGROUND ROW HOUSES (The 8 Colorful Townhouses)
+       ========================================================================== */
+    .buildings-midground-layer {
+      position: absolute;
+      bottom: var(--baseline-bottom);
+      left: 50%;
+      width: 100%;
+      min-width: 1440px;
+      max-width: 1920px;
+      height: 380px;
+      z-index: 6;
+      transform: translate3d(calc(-50% + var(--parallax-mid-x)), var(--parallax-mid-y, 0px), 0);
+      filter: var(--facade-filter);
+      transition: filter 1.4s ease, transform 0.12s ease-out;
+      will-change: transform, filter;
+    }
+
+    .buildings-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Interactive Windows */
+    .interactive-window {
+      cursor: pointer;
+      pointer-events: auto;
+      transition: fill 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
+    }
+
+    .interactive-window:hover {
+      opacity: 0.9;
+      filter: brightness(1.2);
+    }
+
+    .interactive-window.is-lit {
+      fill: var(--window-lit-color) !important;
+      opacity: 0.98 !important;
+      filter: drop-shadow(0 0 8px var(--window-lit-glow)) !important;
+    }
+
+    [data-theme="sunset"] .interactive-window.is-lit,
+    [data-theme="dusk"] .interactive-window.is-lit {
+      fill: #ffcf54 !important;
+      filter: drop-shadow(0 0 10px rgba(255, 195, 60, 0.85)) !important;
+    }
+
+    /* ==========================================================================
+       LAYER 7: STREET TREES & RED PIXEL-ART LETTERBOX
+       ========================================================================== */
+    .trees-midground-layer {
+      position: absolute;
+      bottom: var(--baseline-bottom);
+      left: 50%;
+      width: 100%;
+      min-width: 1440px;
+      max-width: 1920px;
+      height: 220px;
+      z-index: 7;
+      transform: translate3d(calc(-50% + var(--parallax-trees-x)), var(--parallax-trees-y, 0px), 0);
+      pointer-events: none;
+      transition: transform 0.12s ease-out;
+      will-change: transform;
+    }
+
+    /* Organic Tree Unit Swaying */
+    .tree-item {
+      position: absolute;
+      bottom: 0;
+      width: 105px;
+      height: 205px;
+      transform-origin: 50% 100%;
+      will-change: transform;
+      animation: treeHarmonicSway var(--wind-duration) ease-in-out infinite alternate;
+    }
+
+    /* Individual timing and placement matching the artwork */
+    .tree-1 { left: 55px;  animation-delay: -0.3s; animation-duration: calc(var(--wind-duration) * 0.95); }
+    .tree-2 { left: 250px; animation-delay: -1.7s; animation-duration: calc(var(--wind-duration) * 1.05); }
+    .tree-3 { left: 450px; animation-delay: -0.9s; animation-duration: calc(var(--wind-duration) * 0.92); }
+    .tree-4 { left: 660px; animation-delay: -2.3s; animation-duration: calc(var(--wind-duration) * 1.08); }
+    .tree-5 { left: 880px; animation-delay: -0.6s; animation-duration: calc(var(--wind-duration) * 0.98); }
+    .tree-6 { left: 1090px; animation-delay: -1.9s; animation-duration: calc(var(--wind-duration) * 1.03); }
+    .tree-7 { left: 1290px; animation-delay: -1.2s; animation-duration: calc(var(--wind-duration) * 0.94); }
+    .tree-8 { left: 1480px; animation-delay: -2.7s; animation-duration: calc(var(--wind-duration) * 1.06); }
+
+    @keyframes treeHarmonicSway {
+      0% {
+        transform: rotate(calc(-0.4 * var(--wind-sway-deg))) skewX(-0.5deg);
+      }
+      100% {
+        transform: rotate(calc(1.4 * var(--wind-sway-deg))) skewX(1.2deg);
+      }
+    }
+
+    /* Internal Canopy Flutter */
+    .canopy-group {
+      transform-origin: 52px 95px;
+      animation: canopyFlutter calc(2.4s / var(--wind-multiplier, 1)) ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    .canopy-leaves-mid {
+      animation: leafClusterFlutter 1.8s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    .canopy-leaves-top {
+      animation: leafClusterFlutter 1.4s ease-in-out infinite alternate -0.6s;
+      transform-origin: center;
+    }
+
+    @keyframes canopyFlutter {
+      0% { transform: rotate(-0.8deg) scale(0.99, 1.01); }
+      100% { transform: rotate(2.4deg) scale(1.02, 0.98); }
+    }
+
+    @keyframes leafClusterFlutter {
+      0% { transform: translate3d(-1px, 0.5px, 0) rotate(-1deg); }
+      100% { transform: translate3d(1.5px, -1px, 0) rotate(2deg); }
+    }
+
+    /* ==========================================================================
+       RED PIXEL-ART LETTERBOX (Centerpiece Object)
+       ========================================================================== */
+    .pixel-letterbox-container {
+      position: absolute;
+      bottom: 2px;
+      left: 778px; /* Perfectly centered between yellow and tan townhouses among trees */
+      z-index: 10;
+      pointer-events: auto;
+      cursor: pointer;
+      width: 48px;
+      height: 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      transform-origin: bottom center;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .pixel-letterbox-container:hover {
+      transform: scale(1.15) translateY(-4px);
+    }
+
+    .pixel-letterbox-container:active {
+      transform: scale(0.95);
+    }
+
+    .pixel-letterbox-svg {
+      width: 48px;
+      height: 64px;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.45));
+    }
+
+    /* Pixel Art Mailbox Notification / Letter Popup */
+    .letterbox-popup {
+      position: absolute;
+      bottom: 74px;
+      left: 50%;
+      transform: translateX(-50%) translateY(12px) scale(0.85);
+      background: #fffdf5;
+      border: 3px solid #1e293b;
+      box-shadow: 4px 4px 0px #000000;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-family: var(--font-pixel);
+      font-size: 8.5px;
+      line-height: 1.5;
+      color: #1e293b;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 50;
+      text-align: center;
+    }
+
+    .letterbox-popup::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px 8px 0;
+      border-style: solid;
+      border-color: #1e293b transparent;
+      display: block;
+      width: 0;
+    }
+
+    .letterbox-popup.is-open {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .letterbox-pulse-hint {
+      position: absolute;
+      top: -6px;
+      right: -4px;
+      width: 10px;
+      height: 10px;
+      background: #facc15;
+      border: 2px solid #000;
+      border-radius: 50%;
+      animation: pixelPulse 1.8s infinite;
+    }
+
+    @keyframes pixelPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.4); }
+    }
+
+    /* ==========================================================================
+       LAYER 8: ROAD, PAVEMENT & SIDEWALK BASELINE
+       ========================================================================== */
+    .road-ground-layer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: var(--road-height);
+      z-index: 8;
+      background: var(--road-surface);
+      transform: translate3d(var(--parallax-road-x), 0, 0);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+      transition: background 1.4s ease;
+    }
+
+    .sidewalk-slab {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 16px;
+      background: linear-gradient(180deg, var(--road-curb-top) 0%, var(--road-curb-front) 100%);
+      border-bottom: 2px solid #22262c;
+      transition: background 1.4s ease;
+    }
+
+    .road-divider-line {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-image: linear-gradient(90deg, var(--road-divider) 62%, transparent 38%);
+      background-size: 48px 4px;
+      opacity: 0.88;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* ==========================================================================
+       LAYER 9: TWO-WAY FIXED ROAD LANES
+       - Upper lane: Traffic moving LEFT (ÃƒÂ¢Ã¢â‚¬Â Ã‚Â ÃƒÂ¢Ã¢â‚¬Â Ã‚Â ÃƒÂ¢Ã¢â‚¬Â Ã‚Â), positioned at bottom: 64px
+       - Lower lane: Traffic moving RIGHT (ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢), positioned at bottom: 10px
+       ========================================================================== */
+        .traffic-lane {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .lane-upper {
+      bottom: 64px;
+      z-index: 9;
+    }
+
+    .lane-lower {
+      bottom: 10px;
+      z-index: 12;
+    }
+
+    /* ==========================================================================
+       RIGID 2D VEHICLE SPRITES (Single DOM element architecture)
+       The ONLY animated property is translate3d(X, 0, 0) on .vehicle.
+       The <img> itself is never scaled, rotated, skewed, or filtered.
+       ========================================================================== */
+    .vehicle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 160px;
+      height: 60px;
+      pointer-events: auto;
+      cursor: pointer;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      transform-style: flat !important;
+      perspective: none !important;
+      filter: none !important;
+      -webkit-filter: none !important;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .vehicle img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      transform: none !important;
+      animation: none !important;
+      filter: none !important;
+      -webkit-filter: none !important;
+      box-shadow: none !important;
+    }
+
+    .vehicle *,
+    .vehicle::before,
+    .vehicle::after {
+      transform: none !important;
+      animation: none !important;
+      filter: none !important;
+      -webkit-filter: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Interactive Horn Honk Wave */
+    .honk-bubble {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%) scale(0) !important;
+      background: #ffffff;
+      color: #0f172a;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      border: 1.5px solid #0f172a;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+      z-index: 30;
+      white-space: nowrap;
+    }
+
+    .honk-bubble.honk-active {
+      transform: translateX(-50%) scale(1) !important;
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       LAYER 10: MULTI-DEPTH LEAF PARTICLE SYSTEM
+       ========================================================================== */
+    .leaves-particle-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 15;
+      overflow: hidden;
+    }
+
+    .leaf-particle {
+      position: absolute;
+      border-radius: 85% 0 85% 0;
+      will-change: transform, opacity;
+      pointer-events: none;
+    }
+
+    /* Ambient Atmosphere Overlay */
+    .ambient-atmosphere-layer {
+      position: absolute;
+      inset: 0;
+      background: var(--ambient-tint);
+      pointer-events: none;
+      z-index: 11;
+      mix-blend-mode: multiply;
+      transition: background 1.4s ease;
+    }
+
+    /* ==========================================================================
+       UNOBTRUSIVE FLOATING MINI TOOLBAR (Top-Right)
+       ========================================================================== */
+    .floating-mini-bar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 80;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mini-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mini-icon-btn:hover {
+      background: rgba(30, 41, 59, 0.85);
+      transform: scale(1.08);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .mini-icon-btn:active {
+      transform: scale(0.94);
+    }
+
+    .control-sheet {
+      position: absolute;
+      top: 52px;
+      right: 0;
+      width: 280px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px) scale(0.95);
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .control-sheet.is-expanded {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+
+    .sheet-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .theme-picker {
+      display: flex;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 3px;
+      border-radius: 10px;
+      gap: 3px;
+    }
+
+    .theme-opt-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 6px 0;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .theme-opt-btn.is-active {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+
+    .sheet-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+
+    .slider-style {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 120px;
+      height: 4px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      outline: none;
+    }
+
+    .slider-style::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #38bdf8;
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
+    }
+
+    /* Little Interactive Hint Pill on Bottom Left */
+    .hint-pill {
+      position: absolute;
+      bottom: 18px;
+      left: 24px;
+      z-index: 80;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .hint-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 8px #34d399;
+      animation: pulseHint 2s infinite;
+    }
+
+    @keyframes pulseHint {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* Accessibility: Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .cloud-plane, .sun-body, .pixel-flag, .tree-crown-sway,
+      .leaf-particle, .stage-card, .timeline-track-fill,
+      .hero-fade-in-1, .hero-fade-in-2, .hero-fade-in-3, .hero-fade-in-4, .hero-fade-in-5,
+      .is-primary-cta::after, .lifecycle-footer-cta, .stage-icon-box {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ==========================================================================
+       TOP STICKY SCROLL PROGRESS BAR
+       ========================================================================== */
+    .top-scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0b2545 0%, #0284c7 55%, #17663f 100%);
+      z-index: 1000;
+      box-shadow: none;
+      transition: width 0.08s ease-out;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       HERO CENTER OVERLAY & STAGGERED ENTRANCE TYPOGRAPHY
+       ========================================================================== */
+    .hero-center-overlay {
+      position: absolute;
+      top: 34%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 75;
+      width: 92%;
+      max-width: 880px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      padding: 28px 24px 24px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(11, 17, 24, 0.28) 0%, rgba(11, 17, 24, 0.18) 100%);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 16px 48px rgba(11, 17, 24, 0.18);
+    }
+
+    @keyframes heroFadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(26px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-fade-in-1 {
+      animation: heroFadeSlideUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+    }
+    .hero-fade-in-2 {
+      animation: heroFadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+    }
+    .hero-fade-in-3 {
+      animation: heroFadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.30s both;
+    }
+    .hero-fade-in-4 {
+      animation: heroFadeSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+    }
+    .hero-fade-in-5 {
+      animation: heroFadeSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      padding: 6px 18px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #f8fafc;
+      text-transform: uppercase;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+      margin-bottom: 0.85rem;
+      pointer-events: auto;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 10px #38bdf8;
+      animation: pulseHint 1.8s infinite;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 4.2vw, 2.75rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.035em;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.8), 0 4px 35px rgba(0, 0, 0, 0.95);
+      line-height: 1.12;
+      pointer-events: auto;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #eef2f6;
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+      pointer-events: auto;
+    }
+
+    .hero-pillars {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 20px;
+      margin-top: 1.25rem;
+      pointer-events: auto;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #f8fafc;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-pillars li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-pillars strong {
+      font-weight: 800;
+    }
+
+    /* Three Center-Aligned Buttons Container */
+    .hero-actions-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      pointer-events: auto;
+      margin: 0 auto 1.5rem auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       UIVERSE.IO TACTILE 3D PUSH BUTTONS WITH MICRO-INTERACTIONS
+       ========================================================================== */
+    button, a.civic-btn {
+      /* Variables */
+      --button_radius: 0.75em;
+      --button_color: #e8e8e8;
+      --button_outline_color: #000000;
+      font-size: 17px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--button_radius);
+      background: var(--button_outline_color);
+      display: inline-block;
+      text-decoration: none;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-sans);
+      position: relative;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .button_top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-sizing: border-box;
+      border: 2px solid var(--button_outline_color);
+      border-radius: var(--button_radius);
+      padding: 0.75em 1.5em;
+      background: var(--button_color);
+      color: var(--button_outline_color);
+      transform: translateY(-0.2em);
+      transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), background 0.18s ease;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button:hover .button_top, a.civic-btn:hover .button_top {
+      /* Pull the button upwards when hovered */
+      transform: translateY(-0.35em);
+    }
+
+    button:active .button_top, a.civic-btn:active .button_top {
+      /* Push the button downwards when pressed */
+      transform: translateY(0);
+    }
+
+    /* Primary CTA Glowing Pulse Highlight (Register a Complaint) */
+    .is-primary-cta {
+      position: relative;
+    }
+
+    .is-primary-cta::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: calc(var(--button_radius) + 5px);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.7), rgba(14, 165, 233, 0.25));
+      z-index: -1;
+      filter: blur(10px);
+      animation: primaryCtaAura 2.6s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes primaryCtaAura {
+      0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.98);
+      }
+      50% {
+        opacity: 0.95;
+        transform: scale(1.05);
+        filter: blur(14px);
+      }
+    }
+
+    /* Subtle Civic Thematic Accents */
+    .btn-register {
+      --button_color: #e0f2fe;
+    }
+    .btn-register:hover .button_top {
+      background: #bae6fd;
+    }
+
+    .btn-view {
+      --button_color: #f1f5f9;
+    }
+    .btn-view:hover .button_top {
+      background: #e2e8f0;
+    }
+
+    .btn-thoughts {
+      --button_color: #fef9c3;
+    }
+    .btn-thoughts:hover .button_top {
+      background: #fef08a;
+    }
+
+    .btn-icon {
+      font-size: 1.15rem;
+      line-height: 1;
+      display: inline-block;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-text {
+      white-space: nowrap;
+    }
+
+    /* Icon Micro-Animations */
+    /* 1. Pencil Wiggle */
+    @keyframes pencilWiggle {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(-14deg) scale(1.2); }
+      75% { transform: rotate(12deg) scale(1.2); }
+    }
+    .btn-register:hover .icon-pencil {
+      animation: pencilWiggle 0.4s ease-in-out infinite alternate;
+    }
+
+    /* 2. Magnifier Pulse */
+    @keyframes magnifierPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.26) rotate(-12deg); }
+    }
+    .btn-view:hover .icon-magnifier {
+      animation: magnifierPulse 0.55s ease-in-out infinite;
+    }
+
+    /* 3. Bulb Glow */
+    @keyframes bulbGlow {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #fef08a); }
+      50% { transform: scale(1.24); filter: drop-shadow(0 0 10px #facc15) brightness(1.3); }
+    }
+    .btn-thoughts:hover .icon-bulb {
+      animation: bulbGlow 0.65s ease-in-out infinite;
+    }
+
+    /* Tactile Click Ripple */
+    .btn-ripple-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      transform: scale(0);
+      animation: rippleExpand 0.55s linear;
+      pointer-events: none;
+    }
+
+    @keyframes rippleExpand {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* ==========================================================================
+       COMPLAINT LIFECYCLE DROPDOWN / SCROLL TOGGLE PILL
+       ========================================================================== */
+    .lifecycle-dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #f8fafc;
+      background: rgba(15, 23, 42, 0.78);
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: auto;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      animation: bouncePrompt 2.5s infinite;
+      cursor: pointer;
+    }
+
+    .lifecycle-dropdown-toggle:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+    }
+
+    .toggle-sparkle {
+      color: #38bdf8;
+      font-size: 0.9rem;
+    }
+
+    .toggle-arrow {
+      font-size: 0.72rem;
+      transition: transform 0.2s ease;
+    }
+
+    .lifecycle-dropdown-toggle:hover .toggle-arrow {
+      transform: translateY(2px);
+    }
+
+    @keyframes bouncePrompt {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(6px); }
+      60% { transform: translateY(3px); }
+    }
+
+    @keyframes bouncePrompt {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(6px); }
+      60% { transform: translateY(3px); }
+    }
+
+    /* ==========================================================================
+       SCROLL-TRIGGERED COMPLAINT LIFECYCLE SECTION
+       ========================================================================== */
+    /* ==========================================================================
+       SCROLL-TRIGGERED COMPLAINT LIFECYCLE SECTION (DAYTIME LIVING CITY THEME)
+       ========================================================================== */
+    .lifecycle-section {
+      position: relative;
+      z-index: 50;
+      background: linear-gradient(180deg, #dbeefe 0%, #eff6ff 22%, #f4f1ea 70%, #fcfbf8 100%);
+      padding: clamp(4.5rem, 8vw, 7.5rem) 1.5rem clamp(5rem, 9vw, 8rem);
+      color: #0f172a;
+      box-shadow: 0 -12px 32px rgba(11, 37, 69, 0.06);
+      overflow: hidden;
+    }
+
+    /* Ambient background radial sky glow */
+    .lifecycle-section::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 750px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .lifecycle-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .lifecycle-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 4.5rem;
+      position: relative;
+    }
+
+    /* Header Ambient Sky Glow */
+    .header-glow {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 120px;
+      background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.3) 0%, rgba(255,255,255,0) 75%);
+      filter: blur(25px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #0284c7;
+      background: #e0f2fe;
+      border: 1.5px solid #7dd3fc;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.12);
+    }
+
+    .tag-sparkle {
+      color: #0284c7;
+    }
+
+    .section-heading {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-subheading {
+      font-size: 1.05rem;
+      color: #475569;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Connected Progress Bar Tracker */
+    .timeline-tracker-wrapper {
+      position: relative;
+      width: 78%;
+      margin: 0 auto 2rem;
+      height: 8px;
+    }
+
+    .timeline-track-bg {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background: rgba(2, 132, 199, 0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+
+    .timeline-track-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #0284c7 0%, #06b6d4 50%, #10b981 100%);
+      border-radius: 9999px;
+      transition: width 0.08s linear;
+      box-shadow: 0 0 12px rgba(2, 132, 199, 0.5);
+    }
+
+    /* Three Stages Grid */
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.25rem;
+      position: relative;
+      margin-bottom: 6rem;
+    }
+
+    /* Individual Stage Card (Direct Scroll-Linked Scrubbing) */
+    .stage-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      perspective: 1000px;
+      opacity: 0;
+      transform: translateY(50px) scale(0.92);
+      will-change: opacity, transform;
+      pointer-events: none;
+    }
+
+    /* Step Node / Circle Indicator with Progressive Light-up */
+    .stage-step-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    /* Initial state: Dim / Crisp Grey */
+    .step-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #94a3b8;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      z-index: 5;
+    }
+
+    .step-num {
+      display: block;
+      transition: opacity 0.2s ease;
+    }
+
+    .step-check {
+      display: none;
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    /* Lit state when node is reached: Pop + Emerald Glow */
+    .stage-card.node-lit .step-circle {
+      background: #10b981;
+      border-color: #059669;
+      color: #ffffff;
+      transform: scale(1.18);
+      box-shadow: 0 0 24px rgba(16, 185, 129, 0.6), 0 6px 20px rgba(16, 185, 129, 0.35);
+      animation: nodePulseGlow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes nodePulseGlow {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 rgba(16, 185, 129, 0); }
+      50% { transform: scale(1.24); box-shadow: 0 0 30px rgba(16, 185, 129, 0.85); }
+      100% { transform: scale(1.18); box-shadow: 0 0 24px rgba(16, 185, 129, 0.6), 0 6px 20px rgba(16, 185, 129, 0.35); }
+    }
+
+    .stage-card.node-lit .step-circle .step-num {
+      display: none;
+    }
+
+    .stage-card.node-lit .step-circle .step-check {
+      display: block;
+      animation: checkPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes checkPop {
+      0% { transform: scale(0.4); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .step-connector-mobile {
+      display: none;
+    }
+
+    /* Stage Card Body (Bright Clean Card & 3D Tilt) */
+    .stage-card-body {
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 2.2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    /* Themed Card Hover Glows */
+    #stageCard1:hover .stage-card-body {
+      border-color: #38bdf8 !important;
+      box-shadow: 0 16px 36px rgba(56, 189, 248, 0.22), 0 4px 12px rgba(56, 189, 248, 0.12) !important;
+    }
+    #stageCard1:hover .stage-icon-box {
+      animation: iconFloat 0.8s ease-in-out infinite alternate;
+    }
+
+    #stageCard2:hover .stage-card-body {
+      border-color: #f59e0b !important;
+      box-shadow: 0 16px 36px rgba(245, 158, 11, 0.22), 0 4px 12px rgba(245, 158, 11, 0.12) !important;
+    }
+    #stageCard2:hover .stage-icon-box {
+      animation: iconFloat 0.8s ease-in-out infinite alternate;
+    }
+
+    #stageCard3:hover .stage-card-body {
+      border-color: #10b981 !important;
+      box-shadow: 0 16px 36px rgba(16, 185, 129, 0.22), 0 4px 12px rgba(16, 185, 129, 0.12) !important;
+    }
+    #stageCard3:hover .stage-icon-box {
+      animation: iconFloat 0.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes iconFloat {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-8px) scale(1.12); }
+    }
+
+    .stage-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-complaint {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1.5px solid #bae6fd;
+    }
+
+    .badge-register {
+      background: #fef3c7;
+      color: #b45309;
+      border: 1.5px solid #fde68a;
+    }
+
+    .badge-solved {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1.5px solid #bbf7d0;
+    }
+
+    .stage-icon-box {
+      font-size: 2.3rem;
+      margin-bottom: 0.75rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.12));
+      display: inline-block;
+      transition: transform 0.25s ease;
+    }
+
+    .stage-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .stage-desc {
+      font-size: 0.94rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .stage-action-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .highlight-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #0284c7;
+    }
+
+    /* Lifecycle Footer CTA with Bright Friendly Shifting Gradient */
+    .lifecycle-footer-cta {
+      background: linear-gradient(135deg, #0b2545 0%, #163a66 55%, #0b2545 100%);
+      background-size: 200% 200%;
+      animation: gradientShiftFlow 16s ease infinite;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: clamp(2rem, 4vw, 3.25rem) 1.75rem;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(11, 37, 69, 0.22);
+      color: #ffffff;
+    }
+
+    @keyframes gradientShiftFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .cta-inner {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-subtitle {
+      font-size: 1rem;
+      color: #e0f2fe;
+      margin-bottom: 1.75rem;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE ADAPTATIONS FOR TABLET & MOBILE
+       ========================================================================== */
+    @media (max-width: 960px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+      .hero-actions-container {
+        gap: 12px;
+      }
+      button, a.civic-btn {
+        font-size: 15px;
+      }
+      .stages-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .timeline-tracker-wrapper {
+        display: none;
+      }
+      .step-connector-mobile {
+        display: block;
+        position: absolute;
+        bottom: -2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: 2.5rem;
+        background: #cbd5e1;
+        border-radius: 9999px;
+      }
+      .stage-card.visible .step-connector-mobile {
+        background: #10b981;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-center-overlay {
+        top: 36%;
+        width: 95%;
+      }
+      .hero-title {
+        font-size: 1.65rem;
+      }
+      .hero-subtitle {
+        font-size: 0.88rem;
+        margin-bottom: 1rem;
+      }
+      .hero-actions-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+      }
+      button, a.civic-btn {
+        width: 100%;
+      }
+      .button_top {
+        width: 100%;
+      }
+      .section-heading {
+        font-size: 1.75rem;
+      }
+      .lifecycle-section {
+        padding: 4.5rem 1rem 5.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .timeline-track-fill {
+        width: 100% !important;
+        transition: none !important;
+      }
+      .stage-card-body {
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto !important;
+        transition: none !important;
+      }
+      .step-circle {
+        opacity: 1 !important;
+        transform: none !important;
+        background: #10b981 !important;
+        border-color: #34d399 !important;
+        color: #ffffff !important;
+        transition: none !important;
+      }
+      .step-circle .step-num {
+        display: none !important;
+      }
+      .step-circle .step-check {
+        display: block !important;
+      }
+    }
+
+    /* Skip link, footer, scroll reveal, focus — polish pass */
+    .skip-to-content {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      z-index: 2000;
+      background: #0b2545;
+      color: #fcfbf8;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .skip-to-content:focus {
+      top: 12px;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1), transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stage-card {
+      transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 220ms ease;
+    }
+
+    a.civic-btn:focus-visible,
+    button:focus-visible,
+    .lifecycle-dropdown-toggle:focus-visible {
+      outline: 3px solid #f8fafc;
+      outline-offset: 3px;
+    }
+
+    .site-footer {
+      background: #0b1118;
+      color: #cbd5e1;
+      padding: 2rem 1.5rem 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .site-footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2rem;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #f8fafc;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-tag {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      max-width: 28rem;
+      color: #94a3b8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+    }
+
+    .footer-links a {
+      color: #e2e8f0;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+      border-bottom-color: rgba(255, 255, 255, 0.45);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .hero-center-overlay,
+      .lifecycle-footer-cta {
+        animation: none !important;
+      }
+    }
+
+

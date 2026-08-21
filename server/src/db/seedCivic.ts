@@ -20,8 +20,8 @@ function event(complaintId: string, status: string, note: string, at: string): C
   };
 }
 
-export function seedCivic(authorCitizenId: string) {
-  if (!civic.isEmpty()) return;
+export async function seedCivicData(authorCitizenId: string): Promise<void> {
+  if (!(await civic.isEmpty())) return;
 
   const clusterId = 'clu_central_school_road';
   const t0 = '2026-08-18T07:10:00.000Z';
@@ -46,7 +46,7 @@ export function seedCivic(authorCitizenId: string) {
     created_at: t0,
     updated_at: t2,
   };
-  civic.upsertCluster(cluster);
+  await civic.upsertCluster(cluster);
 
   const rows: Array<{
     id: string;
@@ -178,7 +178,7 @@ export function seedCivic(authorCitizenId: string) {
     },
   ];
 
-  rows.forEach((r) => {
+  for (const r of rows) {
     const complaint: Complaint = {
       id: r.id,
       author_id: authorCitizenId,
@@ -194,8 +194,8 @@ export function seedCivic(authorCitizenId: string) {
       created_at: r.at,
       updated_at: r.at,
     };
-    civic.createComplaint(complaint, event(r.id, r.status, 'Report registered.', r.at));
-    civic.saveAnalysis({
+    await civic.createComplaint(complaint, event(r.id, r.status, 'Report registered.', r.at));
+    await civic.saveAnalysis({
       id: newId('ai'),
       complaint_id: r.id,
       workflow_id: `wf_seed_${r.id}`,
@@ -219,7 +219,12 @@ export function seedCivic(authorCitizenId: string) {
       payload: { seeded: true },
       created_at: r.at,
     });
-  });
+  }
 
   console.log('Seeded civic complaints, Central School cluster, and review example.');
+}
+
+/** @deprecated Use seedCivicData */
+export async function seedCivic(authorCitizenId: string): Promise<void> {
+  await seedCivicData(authorCitizenId);
 }

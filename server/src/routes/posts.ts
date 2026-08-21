@@ -6,12 +6,11 @@ import { Post } from '../types/index.js';
 
 const router = Router();
 
-// GET /api/posts - Fetch feed / filtered posts
-router.get('/', extractUser, (req: AuthRequest, res: Response) => {
+router.get('/', extractUser, async (req: AuthRequest, res: Response) => {
   try {
     const { tab, userId, tag, search, filter, page, limit } = req.query;
 
-    const result = db.getPosts({
+    const result = await db.getPosts({
       tab: (tab as 'foryou' | 'following') || 'foryou',
       userId: userId as string,
       tag: tag as string,
@@ -23,42 +22,38 @@ router.get('/', extractUser, (req: AuthRequest, res: Response) => {
     });
 
     return res.json(result);
-  } catch (err: any) {
+  } catch (err) {
     console.error('Error fetching posts:', err);
     return res.status(500).json({ error: 'Failed to fetch posts.' });
   }
 });
 
-// GET /api/posts/:id - Fetch single post with full threaded replies
-router.get('/:id', extractUser, (req: AuthRequest, res: Response) => {
+router.get('/:id', extractUser, async (req: AuthRequest, res: Response) => {
   try {
     const { id } = req.params;
-    const post = db.findPostById(id, req.user?.id);
+    const post = await db.findPostById(id, req.user?.id);
 
     if (!post) {
       return res.status(404).json({ error: 'Chirp not found in the pixelverse.' });
     }
 
     return res.json({ post });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Error fetching post thread:', err);
     return res.status(500).json({ error: 'Failed to fetch post thread.' });
   }
 });
 
-// POST /api/posts - Create a chirp, reply, repost, or quote-chirp
-router.post('/', requireAuth, (req: AuthRequest, res: Response) => {
+router.post('/', requireAuth, async (req: AuthRequest, res: Response) => {
   try {
     const user = req.user!;
     const { content, image_url, parent_post_id, repost_of_id, quote_post_id } = req.body;
 
-    // Validation: content max 280 chars
     const text = (content || '').trim();
     if (text.length > 280) {
       return res.status(400).json({ error: 'Chirps cannot exceed 280 characters.' });
     }
 
-    // A pure repost doesn't need content or image, but a standard chirp or reply or quote does
     if (!repost_of_id && !text && !image_url) {
       return res.status(400).json({ error: 'Chirp cannot be empty.' });
     }
@@ -77,57 +72,56 @@ router.post('/', requireAuth, (req: AuthRequest, res: Response) => {
       reposts_count: 0,
     };
 
-    db.createPost(newPost);
-    const enriched = db.enrichPost(newPost, user.id);
+    await db.createPost(newPost);
+    const enriched = await db.enrichPost(newPost, user.id);
 
     return res.status(201).json({
       message: 'Chirp transmitted!',
       post: enriched,
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Error creating post:', err);
     return res.status(500).json({ error: 'Failed to broadcast chirp.' });
   }
 });
 
-// DELETE /api/posts/:id - Delete own post
-router.delete('/:id', requireAuth, (req: AuthRequest, res: Response) => {
+router.delete('/:id', requireAuth, async (req: AuthRequest, res: Response) => {
   try {
     const { id } = req.params;
-    const success = db.deletePost(id, req.user!.id);
+    const success = await db.deletePost(id, req.user!.id);
 
     if (!success) {
       return res.status(403).json({ error: 'Could not delete chirp. You can only delete your own chirps.' });
     }
 
     return res.json({ message: 'Chirp disintegrated from the timeline.' });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Error deleting post:', err);
     return res.status(500).json({ error: 'Failed to delete post.' });
   }
 });
 
-// POST /api/posts/:id/like - Toggle like
-router.post('/:id/like', requireAuth, (req: AuthRequest, res: Response) => {
+router.post('/:id/like', requireAuth, async (req: AuthRequest, res: Response) => {
   try {
     const { id } = req.params;
-    const result = db.toggleLike(req.user!.id, id);
+    const result = await db.toggleLike(req.user!.id, id);
     return res.json(result);
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Error toggling like:', err);
-    return res.status(400).json({ error: err.message || 'Failed to toggle like.' });
+    const message = err instanceof Error ? err.message : 'Failed to toggle like.';
+    return res.status(400).json({ error: message });
   }
 });
 
-// POST /api/posts/:id/repost - Toggle pure repost
-router.post('/:id/repost', requireAuth, (req: AuthRequest, res: Response) => {
+router.post('/:id/repost', requireAuth, async (req: AuthRequest, res: Response) => {
   try {
     const { id } = req.params;
-    const result = db.toggleRepost(req.user!.id, id);
+    const result = await db.toggleRepost(req.user!.id, id);
     return res.json(result);
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Error toggling repost:', err);
-    return res.status(400).json({ error: err.message || 'Failed to toggle repost.' });
+    const message = err instanceof Error ? err.message : 'Failed to toggle repost.';
+    return res.status(400).json({ error: message });
   }
 });
 

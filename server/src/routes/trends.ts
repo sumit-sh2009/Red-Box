@@ -3,12 +3,11 @@ import { db } from '../db/database.js';
 
 const router = Router();
 
-// GET /api/trends
-router.get('/', (req: Request, res: Response) => {
+router.get('/', async (_req: Request, res: Response) => {
   try {
-    const trends = db.getTrends();
+    const trends = await db.getTrends();
     return res.json({ trends });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Error fetching trends:', err);
     return res.status(500).json({ error: 'Failed to fetch trends.' });
   }

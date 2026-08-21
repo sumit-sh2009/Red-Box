@@ -4,23 +4,21 @@ import { requireAuth, AuthRequest } from '../middleware/auth.js';
 
 const router = Router();
 
-// GET /api/notifications
-router.get('/', requireAuth, (req: AuthRequest, res: Response) => {
+router.get('/', requireAuth, async (req: AuthRequest, res: Response) => {
   try {
-    const notifications = db.getNotifications(req.user!.id);
+    const notifications = await db.getNotifications(req.user!.id);
     return res.json({ notifications });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Error fetching notifications:', err);
     return res.status(500).json({ error: 'Failed to fetch notifications.' });
   }
 });
 
-// POST /api/notifications/read
-router.post('/read', requireAuth, (req: AuthRequest, res: Response) => {
+router.post('/read', requireAuth, async (req: AuthRequest, res: Response) => {
   try {
-    db.markNotificationsAsRead(req.user!.id);
+    await db.markNotificationsAsRead(req.user!.id);
     return res.json({ success: true });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Error marking notifications as read:', err);
     return res.status(500).json({ error: 'Failed to mark notifications as read.' });
   }
