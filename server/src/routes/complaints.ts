@@ -22,12 +22,12 @@ function moderationDenied(mod: { action: string; rewrite_message: string; reason
   };
 }
 
-router.get('/', extractUser, (req: AuthRequest, res: Response) => {
+router.get('/', extractUser, async (req: AuthRequest, res: Response) => {
   const mine = req.query.mine === '1';
   if (mine && !req.user) {
     return res.status(401).json({ error: 'Login required to view your reports.' });
   }
-  const result = civic.listComplaints({
+  const result = await civic.listComplaints({
     mineUserId: mine ? req.user!.id : undefined,
     publicOnly: !mine,
     search: req.query.search as string,
@@ -36,10 +36,13 @@ router.get('/', extractUser, (req: AuthRequest, res: Response) => {
     page: req.query.page ? parseInt(String(req.query.page), 10) : 1,
     limit: req.query.limit ? parseInt(String(req.query.limit), 10) : 20,
   });
+  const complaints = await Promise.all(
+    result.complaints.map((c) => civic.toPublic(c, req.user?.id))
+  );
   return res.json({
     total: result.total,
     hasMore: result.hasMore,
-    complaints: result.complaints.map((c) => civic.toPublic(c, req.user?.id)),
+    complaints,
   });
 });
 
@@ -59,13 +62,13 @@ router.post('/moderate', requireAuth, async (req: AuthRequest, res: Response) =>
   }
 });
 
-router.get('/:id', extractUser, (req: AuthRequest, res: Response) => {
-  const c = civic.findComplaint(req.params.id);
+router.get('/:id', extractUser, async (req: AuthRequest, res: Response) => {
+  const c = await civic.findComplaint(req.params.id);
   if (!c) return res.status(404).json({ error: 'Report not found.' });
   if (c.status === 'flagged' && req.user?.id !== c.author_id && req.user?.role !== 'government') {
     return res.status(404).json({ error: 'Report not found.' });
   }
-  return res.json({ complaint: civic.toPublic(c, req.user?.id) });
+  return res.json({ complaint: await civic.toPublic(c, req.user?.id) });
 });
 
 router.post('/', requireAuth, async (req: AuthRequest, res: Response) => {
@@ -108,7 +111,7 @@ router.post('/', requireAuth, async (req: AuthRequest, res: Response) => {
       updated_at: now,
     };
 
-    civic.createComplaint(complaint, {
+    await civic.createComplaint(complaint, {
       id: newId('evt'),
       complaint_id: complaint.id,
       status: 'pending_ai',
@@ -118,23 +121,27 @@ router.post('/', requireAuth, async (req: AuthRequest, res: Response) => {
     });
 
     await analyzeComplaint(complaint);
-    const fresh = civic.findComplaint(complaint.id)!;
+    const fresh = await civic.findComplaint(complaint.id);
+    if (!fresh) {
+      return res.status(500).json({ error: 'Could not file report.' });
+    }
     return res.status(201).json({
       message: 'Report filed. It is publicly anonymous.',
-      complaint: civic.toPublic(fresh, req.user!.id),
+      complaint: await civic.toPublic(fresh, req.user!.id),
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
     return res.status(500).json({ error: 'Could not file report.' });
   }
 });
 
-router.post('/:id/support', requireAuth, (req: AuthRequest, res: Response) => {
+router.post('/:id/support', requireAuth, async (req: AuthRequest, res: Response) => {
   try {
-    const result = civic.toggleSupport(req.user!.id, req.params.id);
+    const result = await civic.toggleSupport(req.user!.id, req.params.id);
     return res.json(result);
-  } catch (err: any) {
-    return res.status(400).json({ error: err.message || 'Could not record support.' });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Could not record support.';
+    return res.status(400).json({ error: message });
   }
 });
 

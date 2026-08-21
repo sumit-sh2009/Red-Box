@@ -102,3 +102,47 @@ CREATE TABLE IF NOT EXISTS audit_logs (
   detail TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+CREATE TABLE IF NOT EXISTS posts (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL REFERENCES users(id),
+  content TEXT NOT NULL DEFAULT '',
+  image_url TEXT,
+  parent_post_id TEXT,
+  repost_of_id TEXT,
+  quote_post_id TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  likes_count INTEGER NOT NULL DEFAULT 0,
+  replies_count INTEGER NOT NULL DEFAULT 0,
+  reposts_count INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS idx_posts_user ON posts (user_id);
+CREATE INDEX IF NOT EXISTS idx_posts_parent ON posts (parent_post_id);
+CREATE INDEX IF NOT EXISTS idx_posts_created ON posts (created_at DESC);
+
+CREATE TABLE IF NOT EXISTS post_likes (
+  user_id TEXT NOT NULL,
+  post_id TEXT NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (user_id, post_id)
+);
+
+CREATE TABLE IF NOT EXISTS follows (
+  follower_id TEXT NOT NULL REFERENCES users(id),
+  following_id TEXT NOT NULL REFERENCES users(id),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (follower_id, following_id)
+);
+
+CREATE TABLE IF NOT EXISTS notifications (
+  id TEXT PRIMARY KEY,
+  recipient_id TEXT NOT NULL REFERENCES users(id),
+  actor_id TEXT NOT NULL REFERENCES users(id),
+  type TEXT NOT NULL,
+  post_id TEXT,
+  is_read BOOLEAN NOT NULL DEFAULT FALSE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_notifications_recipient ON notifications (recipient_id, created_at DESC);

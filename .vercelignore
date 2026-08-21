@@ -1,0 +1,9 @@
+ai/.venv
+ai/__pycache__
+scripts/
+start-all.sh
+docker-compose.yml
+server/src/test-api.ts
+.firecrawl
+.hermes
+.cursor

@@ -7,7 +7,6 @@ import { User } from '../types/index.js';
 
 const router = Router();
 
-// POST /api/auth/signup
 router.post('/signup', async (req: Request, res: Response) => {
   try {
     const { username, display_name, password, bio, avatar_id, banner_color } = req.body;
@@ -25,7 +24,7 @@ router.post('/signup', async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Password must be at least 6 characters long.' });
     }
 
-    const existing = db.findUserByUsername(cleanUsername);
+    const existing = await db.findUserByUsername(cleanUsername);
     if (existing) {
       return res.status(409).json({ error: `Username @${cleanUsername} is already claimed! Choose another.` });
     }
@@ -45,8 +44,8 @@ router.post('/signup', async (req: Request, res: Response) => {
       role: 'citizen',
     };
 
-    db.createUser(newUser);
-    const safeUser = db.toSafeUser(newUser, newUser.id);
+    await db.createUser(newUser);
+    const safeUser = await db.toSafeUser(newUser, newUser.id);
     const token = generateToken(safeUser);
 
     return res.status(201).json({
@@ -54,13 +53,12 @@ router.post('/signup', async (req: Request, res: Response) => {
       user: safeUser,
       token,
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Signup error:', err);
     return res.status(500).json({ error: 'Internal server error during registration.' });
   }
 });
 
-// POST /api/auth/login
 router.post('/login', async (req: Request, res: Response) => {
   try {
     const { username, password } = req.body;
@@ -70,7 +68,7 @@ router.post('/login', async (req: Request, res: Response) => {
     }
 
     const cleanUsername = username.trim().toLowerCase();
-    const user = db.findUserByUsername(cleanUsername);
+    const user = await db.findUserByUsername(cleanUsername);
 
     if (!user) {
       return res.status(401).json({ error: 'Invalid username or password.' });
@@ -81,7 +79,7 @@ router.post('/login', async (req: Request, res: Response) => {
       return res.status(401).json({ error: 'Invalid username or password.' });
     }
 
-    const safeUser = db.toSafeUser(user, user.id);
+    const safeUser = await db.toSafeUser(user, user.id);
     const token = generateToken(safeUser);
 
     return res.json({
@@ -89,13 +87,12 @@ router.post('/login', async (req: Request, res: Response) => {
       user: safeUser,
       token,
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error('Login error:', err);
     return res.status(500).json({ error: 'Internal server error during login.' });
   }
 });
 
-// GET /api/auth/me
 router.get('/me', requireAuth, (req: AuthRequest, res: Response) => {
   if (!req.user) {
     return res.status(401).json({ error: 'Not authenticated' });

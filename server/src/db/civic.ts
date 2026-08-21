@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
+import { ensureSeedDataFile, resolveDataDir } from '../paths.js';
+import { DEPARTMENTS } from './departments.js';
+import { pgEnabled } from './pg.js';
+import * as pgCivic from './civicPg.js';
 import {
   AiAnalysis,
   AuditLog,
@@ -12,6 +16,8 @@ import {
   publicComplaintDto,
 } from '../types/civic.js';
 
+export { DEPARTMENTS };
+
 interface CivicSchema {
   complaints: Complaint[];
   clusters: Cluster[];
@@ -22,80 +28,11 @@ interface CivicSchema {
   audit_logs: AuditLog[];
 }
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+const DATA_DIR = resolveDataDir();
 const CIVIC_FILE = path.join(DATA_DIR, 'civic.json');
+ensureSeedDataFile(DATA_DIR, 'civic.json');
 
-function loadDepartmentsFromTaxonomy(): Department[] | null {
-  const candidates = [
-    path.resolve(process.cwd(), '../config/civic-taxonomy.json'),
-    path.resolve(process.cwd(), 'config/civic-taxonomy.json'),
-  ];
-  const file = candidates.find((p) => fs.existsSync(p));
-  if (!file) return null;
-  const raw = JSON.parse(fs.readFileSync(file, 'utf-8')) as {
-    departments?: Array<{ id: string; name: string; keywords?: string[]; responsibilities?: string }>;
-  };
-  if (!raw.departments?.length) return null;
-  return raw.departments.map((d) => ({
-    id: d.id,
-    name: d.name,
-    keywords: (d.keywords || []).join(' '),
-    responsibilities: d.responsibilities || '',
-  }));
-}
-
-export const DEPARTMENTS: Department[] = loadDepartmentsFromTaxonomy() || [
-  {
-    id: 'pwd',
-    name: 'Public Works Department (Roads)',
-    keywords: 'pothole road street footpath asphalt pavement bridge',
-    responsibilities: 'Road repair, potholes, footpaths, storm-damaged carriageways.',
-  },
-  {
-    id: 'water',
-    name: 'Water Supply & Drainage',
-    keywords: 'water pipeline leak flooding waterlogging drain sewage',
-    responsibilities: 'Drinking water, leaks, drainage, waterlogging.',
-  },
-  {
-    id: 'sanitation',
-    name: 'Sanitation & Solid Waste',
-    keywords: 'garbage trash dump waste bin sanitation sewage',
-    responsibilities: 'Collection, dumping, public bins, street sweeping.',
-  },
-  {
-    id: 'power',
-    name: 'Electricity / Street Lighting',
-    keywords: 'electricity light pole transformer outage sparking',
-    responsibilities: 'Street lights, transformers, public electrical hazards.',
-  },
-  {
-    id: 'safety',
-    name: 'Public Safety & Disaster',
-    keywords: 'accident hazard collapse fire safety crime',
-    responsibilities: 'Immediate public hazards and coordination with police/fire.',
-  },
-  {
-    id: 'education',
-    name: 'Education / Municipal Schools',
-    keywords: 'school student classroom education campus',
-    responsibilities: 'Civic issues affecting municipal schools and access.',
-  },
-  {
-    id: 'transport',
-    name: 'Transport & Traffic',
-    keywords: 'bus stop traffic signal parking transport metro',
-    responsibilities: 'Signals, stops, traffic calming near civic infrastructure.',
-  },
-  {
-    id: 'municipal',
-    name: 'Municipal Administration',
-    keywords: 'construction noise permit encroachment',
-    responsibilities: 'Catch-all routing when no specialist department matches.',
-  },
-];
-
-class CivicStore {
+class JsonCivicStore {
   private data: CivicSchema = {
     complaints: [],
     clusters: [],
@@ -466,7 +403,62 @@ class CivicStore {
   }
 }
 
-export const civic = new CivicStore();
+const jsonCivic = new JsonCivicStore();
+
+function usePg() {
+  return pgEnabled();
+}
+
+export const civic = {
+  isEmpty: () => (usePg() ? pgCivic.isEmpty() : Promise.resolve(jsonCivic.isEmpty())),
+  listDepartments: () =>
+    usePg() ? pgCivic.listDepartments() : Promise.resolve(jsonCivic.listDepartments()),
+  createComplaint: (c: Complaint, event?: ComplaintEvent) =>
+    usePg() ? pgCivic.createComplaint(c, event) : Promise.resolve(jsonCivic.createComplaint(c, event)),
+  updateComplaint: (id: string, patch: Partial<Complaint>) =>
+    usePg() ? pgCivic.updateComplaint(id, patch) : Promise.resolve(jsonCivic.updateComplaint(id, patch)),
+  findComplaint: (id: string) =>
+    usePg() ? pgCivic.findComplaint(id) : Promise.resolve(jsonCivic.findComplaint(id)),
+  listComplaints: (opts: Parameters<typeof jsonCivic.listComplaints>[0]) =>
+    usePg() ? pgCivic.listComplaints(opts) : Promise.resolve(jsonCivic.listComplaints(opts)),
+  addEvent: (ev: ComplaintEvent) =>
+    usePg() ? pgCivic.addEvent(ev) : Promise.resolve(jsonCivic.addEvent(ev)),
+  eventsFor: (complaintId: string) =>
+    usePg() ? pgCivic.eventsFor(complaintId) : Promise.resolve(jsonCivic.eventsFor(complaintId)),
+  toggleSupport: (userId: string, complaintId: string) =>
+    usePg() ? pgCivic.toggleSupport(userId, complaintId) : Promise.resolve(jsonCivic.toggleSupport(userId, complaintId)),
+  isSupported: (userId: string | undefined, complaintId: string) =>
+    usePg() ? pgCivic.isSupported(userId, complaintId) : Promise.resolve(jsonCivic.isSupported(userId, complaintId)),
+  saveAnalysis: (a: AiAnalysis) =>
+    usePg() ? pgCivic.saveAnalysis(a) : Promise.resolve(jsonCivic.saveAnalysis(a)),
+  analysisFor: (complaintId: string) =>
+    usePg() ? pgCivic.analysisFor(complaintId) : Promise.resolve(jsonCivic.analysisFor(complaintId)),
+  listAnalyses: () =>
+    usePg() ? pgCivic.listAnalyses() : Promise.resolve(jsonCivic.listAnalyses()),
+  findCluster: (id: string | null) =>
+    usePg() ? pgCivic.findCluster(id) : Promise.resolve(jsonCivic.findCluster(id)),
+  listClusters: () =>
+    usePg() ? pgCivic.listClusters() : Promise.resolve(jsonCivic.listClusters()),
+  upsertCluster: (cluster: Cluster) =>
+    usePg() ? pgCivic.upsertCluster(cluster) : Promise.resolve(jsonCivic.upsertCluster(cluster)),
+  attachToCluster: (complaintId: string, clusterId: string) =>
+    usePg() ? pgCivic.attachToCluster(complaintId, clusterId) : Promise.resolve(jsonCivic.attachToCluster(complaintId, clusterId)),
+  complaintsInCluster: (clusterId: string) =>
+    usePg() ? pgCivic.complaintsInCluster(clusterId) : Promise.resolve(jsonCivic.complaintsInCluster(clusterId)),
+  audit: (log: AuditLog) =>
+    usePg() ? pgCivic.audit(log) : Promise.resolve(jsonCivic.audit(log)),
+  openComplaints: () =>
+    usePg() ? pgCivic.openComplaints() : Promise.resolve(jsonCivic.openComplaints()),
+  departmentStats: () =>
+    usePg() ? pgCivic.departmentStats() : Promise.resolve(jsonCivic.departmentStats()),
+  overview: () => (usePg() ? pgCivic.overview() : Promise.resolve(jsonCivic.overview())),
+  trends: () => (usePg() ? pgCivic.trends() : Promise.resolve(jsonCivic.trends())),
+  emerging: () => (usePg() ? pgCivic.emerging() : Promise.resolve(jsonCivic.emerging())),
+  toPublic: (c: Complaint, currentUserId?: string | null) =>
+    usePg() ? pgCivic.toPublic(c, currentUserId) : Promise.resolve(jsonCivic.toPublic(c, currentUserId)),
+  seedIfEmpty: (seedFn: () => void | Promise<void>) =>
+    usePg() ? pgCivic.seedIfEmpty(seedFn) : Promise.resolve(jsonCivic.seedIfEmpty(seedFn as () => void)),
+};
 
 export function newId(prefix: string) {
   return `${prefix}_${uuidv4().replace(/-/g, '').slice(0, 12)}`;

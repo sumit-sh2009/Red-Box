@@ -6,8 +6,13 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-/** Original landing page — do not edit files in this folder. */
-export const LANDING_ROOT = path.resolve(__dirname, '../../card/apple-3d-card');
+/** City landing — bundled in `landing/` for deploy; optional sibling `card/apple-3d-card` for local dev. */
+export const LANDING_ROOT = (() => {
+  const bundled = path.resolve(__dirname, '../../landing');
+  const sibling = path.resolve(__dirname, '../../card/apple-3d-card');
+  if (fs.existsSync(bundled)) return bundled;
+  return sibling;
+})();
 
 const MIME: Record<string, string> = {
   '.html': 'text/html; charset=utf-8',

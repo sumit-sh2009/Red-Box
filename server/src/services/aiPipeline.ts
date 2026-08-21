@@ -67,11 +67,11 @@ export async function moderateComplaint(body: string, location_text: string): Pr
   return heuristic;
 }
 
-function localSimilar(complaint: Complaint): SimilarHit[] {
+async function localSimilar(complaint: Complaint): Promise<SimilarHit[]> {
   const q = `${complaint.body} ${complaint.location_text}`;
-  return civic
-    .listComplaints({ publicOnly: false, limit: 200 })
-    .complaints.filter((c) => c.id !== complaint.id)
+  const listed = await civic.listComplaints({ publicOnly: false, limit: 200 });
+  return listed.complaints
+    .filter((c) => c.id !== complaint.id)
     .map((c) => ({
       id: c.id,
       score: similarity(q, `${c.body} ${c.location_text}`),
@@ -84,12 +84,13 @@ function localSimilar(complaint: Complaint): SimilarHit[] {
 
 export async function analyzeComplaint(complaint: Complaint): Promise<AnalyzeResult> {
   const steps = ['validate', 'safety'];
+  const existingList = await civic.listComplaints({ publicOnly: false, limit: 200 });
   const python = await postAi('/analyze-complaint', {
     complaint_id: complaint.id,
     body: complaint.body,
     location_text: complaint.location_text,
     image_present: Boolean(complaint.image_url),
-    existing: civic.listComplaints({ publicOnly: false, limit: 200 }).complaints.map((c) => ({
+    existing: existingList.complaints.map((c) => ({
       id: c.id,
       body: c.body,
       location_text: c.location_text,
@@ -104,7 +105,7 @@ export async function analyzeComplaint(complaint: Complaint): Promise<AnalyzeRes
   const local = classifyHeuristic(complaint.body, complaint.location_text);
   const similar: SimilarHit[] = Array.isArray(python?.similar)
     ? (python!.similar as SimilarHit[])
-    : localSimilar(complaint);
+    : await localSimilar(complaint);
 
   const category = String(python?.category || local.category);
   const severity = String(python?.severity || local.severity);
@@ -129,10 +130,10 @@ export async function analyzeComplaint(complaint: Complaint): Promise<AnalyzeRes
 
   if (top && top.score >= CLUSTER_THRESHOLD && top.cluster_id) {
     clusterId = top.cluster_id;
-    civic.attachToCluster(complaint.id, top.cluster_id);
+    await civic.attachToCluster(complaint.id, top.cluster_id);
   } else if (top && top.score >= CLUSTER_THRESHOLD) {
     const title = `${category} — ${complaint.location_text.slice(0, 48) || 'area'}`;
-    const cluster = civic.upsertCluster({
+    const cluster = await civic.upsertCluster({
       id: newId('clu'),
       title,
       summary: String(python?.cluster_summary || `${category} reports near ${complaint.location_text}`),
@@ -147,10 +148,10 @@ export async function analyzeComplaint(complaint: Complaint): Promise<AnalyzeRes
       updated_at: new Date().toISOString(),
     });
     clusterId = cluster.id;
-    civic.attachToCluster(complaint.id, cluster.id);
-    civic.attachToCluster(top.id, cluster.id);
+    await civic.attachToCluster(complaint.id, cluster.id);
+    await civic.attachToCluster(top.id, cluster.id);
   } else {
-    const cluster = civic.upsertCluster({
+    const cluster = await civic.upsertCluster({
       id: newId('clu'),
       title: `${category} — ${complaint.location_text.slice(0, 48) || 'unspecified'}`,
       summary: String(python?.summary || local.summary),
@@ -165,11 +166,11 @@ export async function analyzeComplaint(complaint: Complaint): Promise<AnalyzeRes
       updated_at: new Date().toISOString(),
     });
     clusterId = cluster.id;
-    civic.attachToCluster(complaint.id, cluster.id);
+    await civic.attachToCluster(complaint.id, cluster.id);
   }
   steps.push('cluster', 'rag_departments', 'route_department');
 
-  const cluster = civic.findCluster(clusterId);
+  const cluster = await civic.findCluster(clusterId);
   const ageHours = (Date.now() - new Date(complaint.created_at).getTime()) / 3600000;
   const pythonScores = python?.scores as Record<string, number> | undefined;
   const scores =
@@ -185,14 +186,14 @@ export async function analyzeComplaint(complaint: Complaint): Promise<AnalyzeRes
   steps.push('priority', 'evaluate');
 
   if (needsReview) {
-    civic.updateComplaint(complaint.id, {
+    await civic.updateComplaint(complaint.id, {
       status: 'needs_review',
       category,
       cluster_id: clusterId,
       ward: complaint.ward || guessWard(complaint.location_text),
     });
   } else {
-    civic.updateComplaint(complaint.id, {
+    await civic.updateComplaint(complaint.id, {
       status: 'open',
       category,
       cluster_id: clusterId,
@@ -222,8 +223,8 @@ export async function analyzeComplaint(complaint: Complaint): Promise<AnalyzeRes
     payload: { scores, python: python || null, similar },
     created_at: new Date().toISOString(),
   };
-  civic.saveAnalysis(analysis);
-  civic.addEvent({
+  await civic.saveAnalysis(analysis);
+  await civic.addEvent({
     id: newId('evt'),
     complaint_id: complaint.id,
     status: needsReview ? 'needs_review' : 'open',
@@ -252,7 +253,7 @@ export async function groundedSummary(stats: Record<string, unknown>) {
 export async function govAsk(question: string) {
   const python = await postAi('/gov-ask', { question }, 40000);
   if (python && python.answer) return python;
-  const overview = civic.overview();
+  const overview = await civic.overview();
   return {
     used_llm: false,
     model: 'heuristic',
