@@ -23,7 +23,11 @@ export async function bootstrap(): Promise<void> {
   booted = true;
 
   if (pgEnabled()) {
-    await seedPgDatabase();
+    try {
+      await seedPgDatabase();
+    } catch (err) {
+      console.error('PostgreSQL bootstrap failed — API will still start; check DATABASE_URL:', err);
+    }
     return;
   }
 
