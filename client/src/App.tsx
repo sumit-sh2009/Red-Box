@@ -307,7 +307,7 @@ export const App: React.FC = () => {
             </div>
             <div>
               <span className="font-display text-[15px] font-semibold text-retro-text tracking-tight block leading-none">
-                CivicPulse
+                Red-Box
               </span>
               <span className="civic-label text-[10px] mt-1 block">India · anonymous reports</span>
             </div>

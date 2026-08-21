@@ -1,7 +1,7 @@
-# CivicPulse
+# Red-Box
 
 <p align="center">
-  <img src="client/public/favicon.svg" width="72" height="72" alt="CivicPulse" />
+  <img src="client/public/favicon.svg" width="72" height="72" alt="Red-Box" />
 </p>
 
 <p align="center">

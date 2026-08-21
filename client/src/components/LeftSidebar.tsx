@@ -57,7 +57,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
             }}
             role="link"
             tabIndex={0}
-            aria-label="CivicPulse home"
+            aria-label="Red-Box home"
           >
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 bg-retro-navy rounded-sm flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.04]">
@@ -65,7 +65,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
               </div>
               <div>
                 <h1 className="font-display text-lg font-semibold text-retro-text leading-none">
-                  CivicPulse
+                  Red-Box
                 </h1>
                 <div className="civic-label mt-1.5">Anonymous civic reports</div>
               </div>

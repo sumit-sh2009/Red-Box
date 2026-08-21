@@ -235,7 +235,7 @@ function drawHeader(r: ReportDoc, generatedAt?: string) {
   ink(doc, WHITE);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(16);
-  doc.text('CivicPulse', MARGIN, 12);
+  doc.text('Red-Box', MARGIN, 12);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.text('Civic Intelligence Report', MARGIN, 19);
@@ -692,7 +692,7 @@ function drawFooters(r: ReportDoc) {
     r.doc.setFont('helvetica', 'normal');
     r.doc.setFontSize(7);
     r.doc.text(
-      'CivicPulse  ·  Anonymous filings  ·  Figures from live civic store',
+      'Red-Box  ·  Anonymous filings  ·  Figures from live civic store',
       MARGIN,
       r.pageH - 6
     );

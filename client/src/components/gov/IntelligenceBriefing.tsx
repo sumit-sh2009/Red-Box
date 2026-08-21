@@ -65,7 +65,7 @@ export const IntelligenceBriefing: React.FC<IntelligenceBriefingProps> = ({
         <div>
           <p className="civic-label mb-1 text-intel flex items-center gap-2">
             <span className="intel-pulse" aria-hidden />
-            CivicPulse intelligence briefing
+            Red-Box intelligence briefing
           </p>
           <h2 id="intel-briefing-title" className="font-body text-lg font-semibold text-retro-text">
             Situation overview
