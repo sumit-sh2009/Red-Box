@@ -1,0 +1,338 @@
+{
+  "users": [
+    {
+      "id": "user_knight",
+      "username": "pixel_knight",
+      "display_name": "Sir Galahad",
+      "bio": "⚔️ 8-bit Paladin of the Open Realm. Defender of clean pixels and turn-based coffee.",
+      "avatar_id": "knight",
+      "banner_color": "#3a86ff",
+      "password_hash": "$2a$08$9BpZWUxskEk./hRqIm6G3ub3wEG7ENAJWylMskEQtDRVWUSmdYTta",
+      "created_at": "2026-08-01T10:00:00.000Z",
+      "followers_count": 42,
+      "following_count": 15,
+      "role": "citizen"
+    },
+    {
+      "id": "user_cat",
+      "username": "cyber_cat",
+      "display_name": "Neon Neko",
+      "bio": "🐾 Cyberpunk feline lurking on rooftops. I render in 60fps and nap in 240p. #pixelart",
+      "avatar_id": "cat",
+      "banner_color": "#ff006e",
+      "password_hash": "$2a$08$9BpZWUxskEk./hRqIm6G3ub3wEG7ENAJWylMskEQtDRVWUSmdYTta",
+      "created_at": "2026-08-02T11:30:00.000Z",
+      "followers_count": 88,
+      "following_count": 24,
+      "role": "citizen"
+    },
+    {
+      "id": "user_wizard",
+      "username": "arcane_wiz",
+      "display_name": "Archmage Zephyr",
+      "bio": "🧙‍♂️ Casting CSS spells and compiling chiptune melodies. Level 99 Frontend Alchemist.",
+      "avatar_id": "wizard",
+      "banner_color": "#8338ec",
+      "password_hash": "$2a$08$9BpZWUxskEk./hRqIm6G3ub3wEG7ENAJWylMskEQtDRVWUSmdYTta",
+      "created_at": "2026-08-03T09:15:00.000Z",
+      "followers_count": 65,
+      "following_count": 31,
+      "role": "citizen"
+    },
+    {
+      "id": "user_ninja",
+      "username": "shadow_ninja",
+      "display_name": "Kuro Shinobi",
+      "bio": "🥷 Slashing bugs silently in the night. Precision is key, both in katana and in pixels.",
+      "avatar_id": "ninja",
+      "banner_color": "#1a1a24",
+      "password_hash": "$2a$08$9BpZWUxskEk./hRqIm6G3ub3wEG7ENAJWylMskEQtDRVWUSmdYTta",
+      "created_at": "2026-08-04T14:20:00.000Z",
+      "followers_count": 51,
+      "following_count": 19,
+      "role": "citizen"
+    },
+    {
+      "id": "user_bot",
+      "username": "corgi_bot",
+      "display_name": "Bit Corgi",
+      "bio": "🐶 Beep boop! The friendliest 16-bit canine on the network. Will fetch your tweets and your bones.",
+      "avatar_id": "corgi",
+      "banner_color": "#fb5607",
+      "password_hash": "$2a$08$9BpZWUxskEk./hRqIm6G3ub3wEG7ENAJWylMskEQtDRVWUSmdYTta",
+      "created_at": "2026-08-05T08:00:00.000Z",
+      "followers_count": 121,
+      "following_count": 45,
+      "role": "citizen"
+    },
+    {
+      "id": "user_pilot",
+      "username": "astro_pilot",
+      "display_name": "Captain Nova",
+      "bio": "🚀 Exploring outer retro-space in a CRT starcruiser. Transmitting thoughts from Sector 7.",
+      "avatar_id": "astronaut",
+      "banner_color": "#06d6a0",
+      "password_hash": "$2a$08$9BpZWUxskEk./hRqIm6G3ub3wEG7ENAJWylMskEQtDRVWUSmdYTta",
+      "created_at": "2026-08-06T16:45:00.000Z",
+      "followers_count": 73,
+      "following_count": 28,
+      "role": "citizen"
+    },
+    {
+      "id": "user_citizen_demo",
+      "username": "citizen_demo",
+      "display_name": "Citizen Demo",
+      "bio": "Demo account for filing anonymous civic reports.",
+      "avatar_id": "knight",
+      "banner_color": "#3a86ff",
+      "password_hash": "$2a$08$PYsqz4VZD4dWZ8F7tksQFu/857H/NP6yzA82DfXXbBwSi0cUosrqm",
+      "role": "citizen",
+      "created_at": "2026-08-10T10:00:00.000Z",
+      "followers_count": 0,
+      "following_count": 0
+    },
+    {
+      "id": "user_gov_demo",
+      "username": "gov_demo",
+      "display_name": "Municipal Intelligence",
+      "bio": "Government demo account. Use this panel to read clusters, not identities.",
+      "avatar_id": "wizard",
+      "banner_color": "#8338ec",
+      "password_hash": "$2a$08$PYsqz4VZD4dWZ8F7tksQFu/857H/NP6yzA82DfXXbBwSi0cUosrqm",
+      "role": "government",
+      "created_at": "2026-08-10T10:00:00.000Z",
+      "followers_count": 0,
+      "following_count": 0
+    },
+    {
+      "id": "usr_2b7ffa96c02c",
+      "username": "citizen_audit_1787264038",
+      "display_name": "Audit Citizen",
+      "bio": "Testing citizen",
+      "avatar_id": "knight",
+      "banner_color": "#3a86ff",
+      "password_hash": "$2a$10$KK54LADSpKzZ7FW2cAqF3enZx6wgvbbixCIdIxm5dj7jo3SEJk1xa",
+      "created_at": "2026-08-20T22:13:58.781Z",
+      "followers_count": 0,
+      "following_count": 0,
+      "role": "citizen"
+    },
+    {
+      "id": "usr_21d2bd6b691d",
+      "username": "citizen_audit_1787264409",
+      "display_name": "Audit Citizen",
+      "bio": "Testing citizen",
+      "avatar_id": "knight",
+      "banner_color": "#3a86ff",
+      "password_hash": "$2a$10$P7AGbCj4.Ysoz9wvlmulieiKbwxAGlbbTV1O6VxQuDc7GCuuDad/i",
+      "created_at": "2026-08-20T22:20:09.876Z",
+      "followers_count": 0,
+      "following_count": 0,
+      "role": "citizen"
+    },
+    {
+      "id": "usr_2945f0b17c59",
+      "username": "citizen_audit_1787264496",
+      "display_name": "Audit Citizen",
+      "bio": "Testing citizen",
+      "avatar_id": "knight",
+      "banner_color": "#3a86ff",
+      "password_hash": "$2a$10$Xa28HQmcTocvNcOZMXLPgumd0B8OJfTQbbOrCu3BrT6RB07tv3jEi",
+      "created_at": "2026-08-20T22:21:36.581Z",
+      "followers_count": 0,
+      "following_count": 0,
+      "role": "citizen"
+    },
+    {
+      "id": "usr_94c3db936329",
+      "username": "citizen_audit_1787264598",
+      "display_name": "Audit Citizen",
+      "bio": "Testing citizen",
+      "avatar_id": "knight",
+      "banner_color": "#3a86ff",
+      "password_hash": "$2a$10$IpyoakIXFTMh7EauVg2oBuz26wDT1k2jxCb3PqKtKSN1id0jO1xD2",
+      "created_at": "2026-08-20T22:23:18.466Z",
+      "followers_count": 0,
+      "following_count": 0,
+      "role": "citizen"
+    },
+    {
+      "id": "usr_047f0b548b93",
+      "username": "citizen_audit_1787264721",
+      "display_name": "Audit Citizen",
+      "bio": "Testing citizen",
+      "avatar_id": "knight",
+      "banner_color": "#3a86ff",
+      "password_hash": "$2a$10$jAHhJYfJ0f993mCUmvfNveScra/MRPRj1Dm0.zZ906zP5WzTuv2Oi",
+      "created_at": "2026-08-20T22:25:21.675Z",
+      "followers_count": 0,
+      "following_count": 0,
+      "role": "citizen"
+    }
+  ],
+  "posts": [
+    {
+      "id": "post_1",
+      "user_id": "user_knight",
+      "content": "Hail travelers! Welcome to #OpenThoughts — an authentic 8-bit sanctuary for open minds. No algorithms, pure pixel vibrations. ⚔️✨",
+      "created_at": "2026-08-17T08:30:00.000Z",
+      "likes_count": 24,
+      "replies_count": 2,
+      "reposts_count": 5
+    },
+    {
+      "id": "post_1_reply_1",
+      "user_id": "user_cat",
+      "content": "@pixel_knight Finally a realm where my paws don't trigger accidental retweets. Loving the CRT scanlines! 🐾",
+      "parent_post_id": "post_1",
+      "created_at": "2026-08-17T08:45:00.000Z",
+      "likes_count": 12,
+      "replies_count": 1,
+      "reposts_count": 1
+    },
+    {
+      "id": "post_1_reply_2",
+      "user_id": "user_knight",
+      "content": "@cyber_cat Glad to have you in our party, neon wanderer. May your frame rates stay at 60fps.",
+      "parent_post_id": "post_1_reply_1",
+      "created_at": "2026-08-17T09:00:00.000Z",
+      "likes_count": 8,
+      "replies_count": 0,
+      "reposts_count": 0
+    },
+    {
+      "id": "post_2",
+      "user_id": "user_wizard",
+      "content": "Just brewed a new potion using pure Web Audio API oscillators. Check out those 8-bit chimes on every like! #gamedev #chiptune 🔮",
+      "created_at": "2026-08-17T11:15:00.000Z",
+      "likes_count": 31,
+      "replies_count": 0,
+      "reposts_count": 8
+    },
+    {
+      "id": "post_3",
+      "user_id": "user_bot",
+      "content": "WOOF! Did anyone try the Game Boy green palette yet? Feels like 1989 in the best way possible. #8bit #retrogaming 🐶🎮",
+      "created_at": "2026-08-17T13:00:00.000Z",
+      "likes_count": 45,
+      "replies_count": 1,
+      "reposts_count": 12
+    },
+    {
+      "id": "post_4",
+      "user_id": "user_pilot",
+      "content": "Floating above the pixel nebula. Transmitting live coordinates: 0x7F2A. Who wants to join the exploration fleet? 🚀🌌 #indiedev",
+      "created_at": "2026-08-17T14:45:00.000Z",
+      "likes_count": 19,
+      "replies_count": 0,
+      "reposts_count": 3
+    },
+    {
+      "id": "post_5_quote",
+      "user_id": "user_ninja",
+      "content": "Truth right here. When you only have 4 shades of olive green, every single pixel placement is tactical. 🗡️",
+      "quote_post_id": "post_3",
+      "created_at": "2026-08-17T15:20:00.000Z",
+      "likes_count": 14,
+      "replies_count": 0,
+      "reposts_count": 2
+    }
+  ],
+  "follows": [
+    {
+      "follower_id": "user_knight",
+      "following_id": "user_cat",
+      "created_at": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "follower_id": "user_knight",
+      "following_id": "user_wizard",
+      "created_at": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "follower_id": "user_knight",
+      "following_id": "user_bot",
+      "created_at": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "follower_id": "user_cat",
+      "following_id": "user_knight",
+      "created_at": "2026-08-11T00:00:00.000Z"
+    },
+    {
+      "follower_id": "user_cat",
+      "following_id": "user_pilot",
+      "created_at": "2026-08-11T00:00:00.000Z"
+    },
+    {
+      "follower_id": "user_wizard",
+      "following_id": "user_ninja",
+      "created_at": "2026-08-12T00:00:00.000Z"
+    },
+    {
+      "follower_id": "user_bot",
+      "following_id": "user_knight",
+      "created_at": "2026-08-13T00:00:00.000Z"
+    }
+  ],
+  "likes": [
+    {
+      "user_id": "user_cat",
+      "post_id": "post_1",
+      "created_at": "2026-08-17T08:35:00.000Z"
+    },
+    {
+      "user_id": "user_wizard",
+      "post_id": "post_1",
+      "created_at": "2026-08-17T08:40:00.000Z"
+    },
+    {
+      "user_id": "user_bot",
+      "post_id": "post_1",
+      "created_at": "2026-08-17T08:50:00.000Z"
+    },
+    {
+      "user_id": "user_knight",
+      "post_id": "post_2",
+      "created_at": "2026-08-17T11:20:00.000Z"
+    },
+    {
+      "user_id": "user_ninja",
+      "post_id": "post_3",
+      "created_at": "2026-08-17T13:05:00.000Z"
+    },
+    {
+      "user_id": "user_pilot",
+      "post_id": "post_3",
+      "created_at": "2026-08-17T13:10:00.000Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1",
+      "recipient_id": "user_knight",
+      "actor_id": "user_cat",
+      "type": "like",
+      "post_id": "post_1",
+      "is_read": false,
+      "created_at": "2026-08-17T08:35:00.000Z"
+    },
+    {
+      "id": "notif_2",
+      "recipient_id": "user_knight",
+      "actor_id": "user_cat",
+      "type": "reply",
+      "post_id": "post_1_reply_1",
+      "is_read": false,
+      "created_at": "2026-08-17T08:45:00.000Z"
+    },
+    {
+      "id": "notif_3",
+      "recipient_id": "user_knight",
+      "actor_id": "user_bot",
+      "type": "follow",
+      "is_read": true,
+      "created_at": "2026-08-13T00:00:00.000Z"
+    }
+  ]
+}
