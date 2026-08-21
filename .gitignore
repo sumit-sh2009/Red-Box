@@ -1,4 +1,6 @@
 .firecrawl/
+.hermes/
+.cursor/
 node_modules
 dist
 .env

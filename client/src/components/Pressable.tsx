@@ -18,16 +18,6 @@ interface PressableProps extends Omit<React.HTMLAttributes<HTMLElement>, 'onAnim
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
-/**
- * <Pressable> — consistent tactile feedback wrapper.
- * - Hover: optional 1px lift via motion (skipped under reduced motion).
- * - Press: scale down to `pressScale` (default 0.97) then back.
- * - CSS fallback: `.civic-press-fb:active` provides a same-feel transform when
- *   motion is unavailable (e.g. SSR or very old browsers).
- *
- * Use everywhere we want the "snappy click" feel — sidebar nav, chips, cards,
- * action buttons, theme switcher, etc. Stays consistent across all 4 themes.
- */
 export const Pressable: React.FC<PressableProps> = ({
   as = 'button',
   hoverLift = true,

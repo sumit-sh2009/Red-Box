@@ -324,7 +324,7 @@ class Database {
       {
         id: 'early_pioneer',
         name: 'Genesis Player',
-        description: 'Pioneer adventurer of the Open thoughts universe.',
+        description: 'Joined CivicPulse in the first wave.',
         icon: 'diamond',
         tier: 'gold',
         category: 'milestone',
