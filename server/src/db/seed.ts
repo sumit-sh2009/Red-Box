@@ -115,7 +115,7 @@ export const initialPosts: Post[] = [
   {
     id: 'post_1',
     user_id: 'user_knight',
-    content: 'Welcome to Open thoughts! 🛡️ Finally, a social network where every pixel has dignity and borders are strictly hard-edged. What are you building today, fellow adventurers? #pixelart #gamedev',
+    content: 'Welcome to CivicPulse. File civic issues with a location — public cards stay anonymous.',
     created_at: '2026-08-17T08:30:00.000Z',
     likes_count: 18,
     replies_count: 3,

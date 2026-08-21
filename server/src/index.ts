@@ -46,7 +46,7 @@ app.use('/api/gov', govRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString(), message: 'Open thoughts pixel server running!' });
+  res.json({ status: 'ok', time: new Date().toISOString(), service: 'civicpulse-api' });
 });
 
 // Error handling

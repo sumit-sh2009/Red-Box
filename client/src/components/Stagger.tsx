@@ -15,18 +15,6 @@ interface StaggerProps {
   children: React.ReactNode;
 }
 
-/**
- * <Stagger> — wraps children and applies a cascading entrance animation.
- * - Sets `--civic-stagger-step` on the wrapper.
- * - Sets `--civic-stagger-i` on each child.
- * - Adds `civic-stagger-children` + a per-child enter class.
- *
- * The CSS in `index.css` reads these custom props to compute `animation-delay`.
- * If a child already has a `style` prop, we merge (don't overwrite) the
- * stagger index. If a child has its own `className`, we preserve it.
- *
- * Use for: feed cards, notification rows, sidebar sections, KPI tiles, etc.
- */
 export const Stagger: React.FC<StaggerProps> = ({
   as = 'div',
   step = 60,

@@ -15,15 +15,6 @@ interface RevealProps {
   inView?: boolean;
 }
 
-/**
- * <Reveal> — single-element entrance animation.
- * - Default: fade up 8px over 320ms with the project's --ease-civic curve.
- * - Under reduced motion: fades in with no translate.
- * - When `inView` is provided, animation only plays once that flips true.
- *
- * Use this anywhere we want one-shot entrance polish — page sections, list
- * items that load lazily, sidebar headers, etc. For groups, use <Stagger>.
- */
 export const Reveal: React.FC<RevealProps> = ({
   as = 'div',
   delay = 0,

@@ -1,8 +1,8 @@
 {
-  "name": "openthoughts-pixelchat",
+  "name": "civicpulse",
   "version": "1.0.0",
   "private": true,
-  "description": "Open thoughts - Retro 8-bit Pixel-Art Social Network",
+  "description": "CivicPulse — anonymous civic reporting and government intelligence",
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "npm --prefix server run dev",
