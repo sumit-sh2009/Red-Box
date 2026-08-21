@@ -6,12 +6,18 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-/** City landing — bundled in `landing/` for deploy; optional sibling `card/apple-3d-card` for local dev. */
+/** City landing — `Website/landing` in this repo; optional sibling `card/apple-3d-card` for local dev. */
 export const LANDING_ROOT = (() => {
-  const bundled = path.resolve(__dirname, '../../landing');
-  const sibling = path.resolve(__dirname, '../../card/apple-3d-card');
-  if (fs.existsSync(bundled)) return bundled;
-  return sibling;
+  const candidates = [
+    path.resolve(__dirname, '../landing'),
+    path.resolve(process.cwd(), '../landing'),
+    path.resolve(process.cwd(), 'landing'),
+    path.resolve(__dirname, '../../card/apple-3d-card'),
+  ];
+  const found = candidates.find((p) => fs.existsSync(path.join(p, 'index.html')));
+  if (found) return found;
+  console.warn('[civic-landing] Landing folder not found. Tried:', candidates.join(', '));
+  return candidates[0];
 })();
 
 const MIME: Record<string, string> = {
@@ -134,7 +140,7 @@ export function civicLandingPlugin(): Plugin {
       server.middlewares.use(landingMiddleware);
     },
     closeBundle() {
-      copyLandingIntoDist(path.resolve(__dirname, '../public'));
+      copyLandingIntoDist(path.resolve(__dirname, 'dist'));
     },
   };
 }
